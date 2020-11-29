@@ -68,8 +68,8 @@
 
 ### **Some-New-Token**
 
-- `Node.js`: - **Some-New-Token** `12.0.0`
-- `yarn` > `npm` > `cnpm`: - **Some-New-Token**.
+- `Node.js`: - 版本最好大于 `12.0.0`
+- `yarn` : - 包管理工具.
 
 ### UI **Some-New-Token**
 

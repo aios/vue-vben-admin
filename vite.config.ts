@@ -55,7 +55,7 @@ const viteConfig: UserConfig = {
    * Available options are 'terser' or 'esbuild'.
    * @default 'terser'
    */
-  minify: isDevFn() ? 'esbuild' : 'terser',
+  minify: isDevFn() ? false : 'terser',
   /**
    * Base public path when served in production.
    * @default '/'
@@ -89,7 +89,7 @@ const viteConfig: UserConfig = {
    * Transpile target for esbuild.
    * @default 'es2020'
    */
-  esbuildTarget: 'es2020',
+  esbuildTarget: 'es2019',
   /**
    * Whether to log asset info to console
    * @default false

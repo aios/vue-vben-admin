@@ -71,6 +71,7 @@
 <script lang="ts">
   import { defineComponent, nextTick, onMounted, reactive, ref, toRaw, unref } from 'vue';
   import { Checkbox } from 'ant-design-vue';
+
   import { Button } from '/@/components/Button';
   import { AppLocalePicker } from '/@/components/Application';
   // import { BasicDragVerify, DragVerifyActionType } from '/@/components/Verify/index';
