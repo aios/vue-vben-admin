@@ -73,13 +73,13 @@ export function removeClass(el: Element, cls: string) {
   }
 }
 /**
- * 获取当前元素的left、top偏移
- *   left：元素最左侧距离文档左侧的距离
- *   top:元素最顶端距离文档顶端的距离
- *   right:元素最右侧距离文档右侧的距离
- *   bottom：元素最底端距离文档底端的距离
- *   rightIncludeBody：元素最左侧距离文档右侧的距离
- *   bottomIncludeBody：元素最底端距离文档最底部的距离
+ * __Some-New-Token__left、top__Some-New-Token__
+ *   left：__Some-New-Token__
+ *   top:__Some-New-Token__
+ *   right:__Some-New-Token__
+ *   bottom：__Some-New-Token__
+ *   rightIncludeBody：__Some-New-Token__
+ *   bottomIncludeBody：__Some-New-Token__
  *
  * @description:
  */

@@ -1,4 +1,4 @@
-// axios配置  可自行根据项目进行更改，只需更改该文件即可，其他文件可以不动
+// axios__Some-New-Token__  __Some-New-Token__，__Some-New-Token__，__Some-New-Token__
 // The axios configuration can be changed according to the project, just change the file, other files can be left unchanged
 
 import type { AxiosResponse } from 'axios';
@@ -22,40 +22,40 @@ import { errorStore } from '/@/store/modules/error';
 import { errorResult } from './const';
 import { useI18n } from '/@/hooks/web/useI18n';
 
-const { t } = useI18n('sys.api');
 const globSetting = useGlobSetting();
 const prefix = globSetting.urlPrefix;
 const { createMessage, createErrorModal } = useMessage();
 
 /**
- * @description: 数据处理，方便区分多种处理方式
+ * @description: __Some-New-Token__，__Some-New-Token__
  */
 const transform: AxiosTransform = {
   /**
-   * @description: 处理请求数据
+   * @description: __Some-New-Token__
    */
   transformRequestData: (res: AxiosResponse<Result>, options: RequestOptions) => {
+    const { t } = useI18n('sys.api');
     const { isTransformRequestResult } = options;
-    // 不进行任何处理，直接返回
-    // 用于页面代码可能需要直接获取code，data，message这些信息时开启
+    // __Some-New-Token__，__Some-New-Token__
+    // __Some-New-Token__code，data，message__Some-New-Token__
     if (!isTransformRequestResult) {
       return res.data;
     }
-    // 错误的时候返回
+    // __Some-New-Token__
 
     const { data } = res;
     if (!data) {
       // return '[HTTP] Request has no return value';
       return errorResult;
     }
-    //  这里 code，result，message为 后台统一的字段，需要在 types.ts内修改为项目自己的接口返回格式
+    //  __Some-New-Token__ code，result，message__Some-New-Token__ __Some-New-Token__，__Some-New-Token__ types.ts__Some-New-Token__
     const { code, result, message } = data;
 
-    // 这里逻辑可以根据项目进行修改
+    // __Some-New-Token__
     const hasSuccess = data && Reflect.has(data, 'code') && code === ResultEnum.SUCCESS;
     if (!hasSuccess) {
       if (message) {
-        // errorMessageMode=‘modal’的时候会显示modal错误弹窗，而不是消息提示，用于一些比较重要的错误
+        // errorMessageMode=‘modal’__Some-New-Token__modal__Some-New-Token__，__Some-New-Token__，__Some-New-Token__
         if (options.errorMessageMode === 'modal') {
           createErrorModal({ title: t('errorTip'), content: message });
         } else {
@@ -66,11 +66,11 @@ const transform: AxiosTransform = {
       return errorResult;
     }
 
-    // 接口请求成功，直接返回结果
+    // __Some-New-Token__，__Some-New-Token__
     if (code === ResultEnum.SUCCESS) {
       return result;
     }
-    // 接口请求错误，统一提示错误信息
+    // __Some-New-Token__，__Some-New-Token__
     if (code === ResultEnum.ERROR) {
       if (message) {
         createMessage.error(data.message);
@@ -82,7 +82,7 @@ const transform: AxiosTransform = {
       }
       return errorResult;
     }
-    // 登录超时
+    // __Some-New-Token__
     if (code === ResultEnum.TIMEOUT) {
       const timeoutMsg = t('timeoutMessage');
       createErrorModal({
@@ -95,7 +95,7 @@ const transform: AxiosTransform = {
     return errorResult;
   },
 
-  // 请求之前处理config
+  // __Some-New-Token__config
   beforeRequestHook: (config, options) => {
     const { apiUrl, joinPrefix, joinParamsToUrl, formatDate } = options;
 
@@ -110,13 +110,13 @@ const transform: AxiosTransform = {
       const now = new Date().getTime();
       if (!isString(config.params)) {
         config.data = {
-          // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
+          // __Some-New-Token__ get __Some-New-Token__，__Some-New-Token__。
           params: Object.assign(config.params || {}, {
             _t: now,
           }),
         };
       } else {
-        // 兼容restful风格
+        // __Some-New-Token__restful__Some-New-Token__
         config.url = config.url + config.params + `?_t=${now}`;
         config.params = undefined;
       }
@@ -129,7 +129,7 @@ const transform: AxiosTransform = {
           config.url = setObjToUrlParams(config.url as string, config.data);
         }
       } else {
-        // 兼容restful风格
+        // __Some-New-Token__restful__Some-New-Token__
         config.url = config.url + config.params;
         config.params = undefined;
       }
@@ -138,10 +138,10 @@ const transform: AxiosTransform = {
   },
 
   /**
-   * @description: 请求拦截器处理
+   * @description: __Some-New-Token__
    */
   requestInterceptors: (config) => {
-    // 请求之前处理config
+    // __Some-New-Token__config
     const token = getToken();
     if (token) {
       // jwt token
@@ -151,9 +151,10 @@ const transform: AxiosTransform = {
   },
 
   /**
-   * @description: 响应错误处理
+   * @description: __Some-New-Token__
    */
   responseInterceptorsCatch: (error: any) => {
+    const { t } = useI18n('sys.api');
     errorStore.setupErrorHandle(error);
     const { response, code, message } = error || {};
     const msg: string =
@@ -182,26 +183,26 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
     deepMerge(
       {
         timeout: 10 * 1000,
-        // 基础接口地址
+        // __Some-New-Token__
         // baseURL: globSetting.apiUrl,
-        // 接口可能会有通用的地址部分，可以统一抽取出来
+        // __Some-New-Token__，__Some-New-Token__
         prefixUrl: prefix,
         headers: { 'Content-Type': ContentTypeEnum.JSON },
-        // 数据处理方式
+        // __Some-New-Token__
         transform,
-        // 配置项，下面的选项都可以在独立的接口请求中覆盖
+        // __Some-New-Token__，__Some-New-Token__
         requestOptions: {
-          // 默认将prefix 添加到url
+          // __Some-New-Token__prefix __Some-New-Token__url
           joinPrefix: true,
-          // 需要对返回数据进行处理
+          // __Some-New-Token__
           isTransformRequestResult: true,
-          // post请求的时候添加参数到url
+          // post__Some-New-Token__url
           joinParamsToUrl: false,
-          // 格式化提交参数时间
+          // __Some-New-Token__
           formatDate: true,
-          // 消息提示类型
+          // __Some-New-Token__
           errorMessageMode: 'none',
-          // 接口地址
+          // __Some-New-Token__
           apiUrl: globSetting.apiUrl,
         },
       },

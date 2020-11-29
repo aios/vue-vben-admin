@@ -19,8 +19,8 @@ export function getCurrentTo() {
 export function setCurrentTo(to: RouteLocationNormalized) {
   currentTo = to;
 }
-// 转化路由模块
-// 将多级转成2层。keepAlive问题
+// __Some-New-Token__
+// __Some-New-Token__2__Some-New-Token__。keepAlive__Some-New-Token__
 export function genRouteModule(moduleList: AppRouteModule[] | AppRouteRecordRaw[]) {
   const ret: AppRouteRecordRaw[] = [];
   for (const routeMod of moduleList) {
@@ -52,7 +52,7 @@ export function genRouteModule(moduleList: AppRouteModule[] | AppRouteRecordRaw[
   return ret as RouteRecordRaw[];
 }
 
-// 动态引入
+// __Some-New-Token__
 function asyncImportRoute(routes: AppRouteRecordRaw[] | undefined) {
   if (!routes) return;
   routes.forEach((item) => {
@@ -70,7 +70,7 @@ function getLayoutComp(comp: string) {
   return comp === 'PAGE_LAYOUT' ? PAGE_LAYOUT_COMPONENT : '';
 }
 
-// 将后台对象转成路由对象
+// __Some-New-Token__
 export function transformObjToRoute<T = any>(routeList: AppRouteModule[]): T[] {
   routeList.forEach((route) => {
     asyncImportRoute(

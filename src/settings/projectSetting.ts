@@ -43,11 +43,11 @@ const setting: ProjectConfig = {
   locale: {
     show: true,
     // Locale
-    lang: 'zh_CN',
+    lang: 'ru',
     // Default locale
-    fallback: 'zh_CN',
+    fallback: 'en',
     // available Locales
-    availableLocales: ['zh_CN', 'en'],
+    availableLocales: ['en', 'ru', 'ua'],
   },
 
   // Header configuration

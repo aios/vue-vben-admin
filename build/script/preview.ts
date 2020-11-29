@@ -1,11 +1,11 @@
-import chalk from 'chalk';
-import Koa from 'koa';
+import chalk from "chalk";
+import Koa from "koa";
 // import inquirer from 'inquirer';
-import staticServer from 'koa-static';
-import portfinder from 'portfinder';
-import { resolve } from 'path';
-import viteConfig from '../../vite.config';
-import { getIPAddress } from '../utils';
+import staticServer from "koa-static";
+import portfinder from "portfinder";
+import { resolve } from "path";
+import viteConfig from "../../vite.config";
+import { getIPAddress } from "../utils";
 // import { runBuild } from './postBuild';
 
 // const BUILD = 1;
@@ -13,8 +13,7 @@ import { getIPAddress } from '../utils';
 
 // start server
 const startApp = () => {
-  const port = 9680;
-  portfinder.basePort = port;
+  portfinder.basePort = 9680;
   const app = new Koa();
 
   app.use(staticServer(resolve(process.cwd(), viteConfig.outDir || 'dist')));

@@ -4,7 +4,7 @@
       <Select
         :options="options"
         v-model:value="value"
-        placeholder="选择动画"
+        placeholder="__Some-New-Token__"
         :style="{ width: '150px' }"
       />
       <a-button type="primary" class="ml-4" @click="start"> start </a-button>

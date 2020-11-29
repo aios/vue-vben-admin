@@ -10,24 +10,24 @@
 
     <a-row>
       <a-col :md="24" :lg="17" class="my-3">
-        <CollapseContainer class="mr-3" title="产品成交额" :canExpan="false">
+        <CollapseContainer class="mr-3" title="__Some-New-Token__" :canExpan="false">
           <AnalysisLine />
         </CollapseContainer>
         <a-row class="mt-3">
           <a-col :md="24" :lg="12" class="product-total">
-            <CollapseContainer class="mr-3" title="产品成交额" :canExpan="false">
+            <CollapseContainer class="mr-3" title="__Some-New-Token__" :canExpan="false">
               <AnalysisPie />
             </CollapseContainer>
           </a-col>
           <a-col :md="24" :lg="12">
-            <CollapseContainer class="mr-3" title="用户来源" :canExpan="false">
+            <CollapseContainer class="mr-3" title="__Some-New-Token__" :canExpan="false">
               <AnalysisBar />
             </CollapseContainer>
           </a-col>
         </a-row>
       </a-col>
       <a-col :md="24" :lg="7">
-        <CollapseContainer class="mt-3" title="项目进度" :canExpan="false">
+        <CollapseContainer class="mt-3" title="__Some-New-Token__" :canExpan="false">
           <template v-for="item in taskList" :key="item.title">
             <TaskCard :info="item" />
           </template>

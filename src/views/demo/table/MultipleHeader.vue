@@ -13,7 +13,7 @@
     components: { BasicTable },
     setup() {
       const [registerTable] = useTable({
-        title: '多级表头示例',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: getMultipleHeaderColumns(),
       });

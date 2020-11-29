@@ -1,18 +1,18 @@
 <template>
   <div class="p-4 m-4 demo">
     <Alert
-      message="由于刷新的时候会请求用户信息接口，会根据接口重置角色信息，所以刷新后界面会恢复原样，如果不需要，可以注释 src/layout/default/index内的获取用户信息接口"
+      message="__Some-New-Token__，__Some-New-Token__，__Some-New-Token__，__Some-New-Token__，__Some-New-Token__ src/layout/default/index__Some-New-Token__"
       show-icon
     />
     <CurrentPermissionMode />
 
     <p>
-      当前角色: <a> {{ userStore.getRoleListState }} </a>
+      __Some-New-Token__: <a> {{ userStore.getRoleListState }} </a>
     </p>
-    <Alert class="mt-4" type="info" message="点击后请查看左侧菜单变化" show-icon />
+    <Alert class="mt-4" type="info" message="__Some-New-Token__" show-icon />
 
     <div class="mt-4">
-      权限切换(请先切换权限模式为前端角色权限模式):
+      __Some-New-Token__(__Some-New-Token__):
       <a-button-group>
         <a-button @click="changeRole(RoleEnum.SUPER)" :type="isSuper ? 'primary' : 'default'">
           {{ RoleEnum.SUPER }}

@@ -153,14 +153,14 @@ export function forEach<T = any>(
 }
 
 /**
- * @description: 提取tree指定结构
+ * @description: __Some-New-Token__tree__Some-New-Token__
  */
 export function treeMap(treeData: any[], opt: { children?: string; conversion: Fn }) {
   return treeData.map((item) => treeMapEach(item, opt));
 }
 
 /**
- * @description: 提取tree指定结构
+ * @description: __Some-New-Token__tree__Some-New-Token__
  */
 export function treeMapEach(
   data: any,

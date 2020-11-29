@@ -39,7 +39,7 @@ export function useFullscreen(
     EFS_METHOD_NAME = 'mozCancelFullScreen';
     FSE_PROP_NAME = 'mozFullScreenElement';
   } else if (!('requestFullscreen' in el)) {
-    throw new Error('当前浏览器不支持Fullscreen API !');
+    throw new Error('__Some-New-Token__Fullscreen API !');
   }
   function enterFullscreen(): Promise<void> {
     isFullscreenRef.value = true;

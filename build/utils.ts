@@ -50,12 +50,14 @@ export function readAllFile(root: string, reg: RegExp) {
 export function getIPAddress() {
   let interfaces = networkInterfaces();
   for (let devName in interfaces) {
-    let iFace = interfaces[devName];
-    if (!iFace) return;
-    for (let i = 0; i < iFace.length; i++) {
-      let alias = iFace[i];
-      if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
-        return alias.address;
+    if(interfaces.hasOwnProperty(devName)) {
+      let iFace = interfaces[devName];
+      if (!iFace) return;
+      for (let i = 0; i < iFace.length; i++) {
+        let alias = iFace[i];
+        if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal) {
+          return alias.address;
+        }
       }
     }
   }

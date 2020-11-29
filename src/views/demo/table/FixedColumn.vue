@@ -5,13 +5,13 @@
         <TableAction
           :actions="[
             {
-              label: '删除',
+              label: '__Some-New-Token__',
               onClick: handleDelete.bind(null, record),
             },
           ]"
           :dropDownActions="[
             {
-              label: '启用',
+              label: '__Some-New-Token__',
               onClick: handleOpen.bind(null, record),
             },
           ]"
@@ -33,27 +33,27 @@
       width: 280,
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 260,
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
       width: 260,
     },
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       width: 300,
     },
     {
-      title: '开始时间',
+      title: '__Some-New-Token__',
       width: 200,
       dataIndex: 'beginTime',
     },
     {
-      title: '结束时间',
+      title: '__Some-New-Token__',
       dataIndex: 'endTime',
       width: 200,
     },
@@ -62,7 +62,7 @@
     components: { BasicTable, TableAction },
     setup() {
       const [registerTable] = useTable({
-        title: 'TableAction组件及固定列示例',
+        title: 'TableAction__Some-New-Token__',
         api: demoListApi,
         columns: columns,
         rowSelection: { type: 'radio' },
@@ -74,10 +74,10 @@
         },
       });
       function handleDelete(record: any) {
-        console.log('点击了删除', record);
+        console.log('__Some-New-Token__', record);
       }
       function handleOpen(record: any) {
-        console.log('点击了启用', record);
+        console.log('__Some-New-Token__', record);
       }
       return {
         registerTable,

@@ -28,7 +28,7 @@ interface MapValue {
 export default defineComponent({
   name: 'ErrorPage',
   props: {
-    // 状态码
+    // __Some-New-Token__
     status: {
       type: Number as PropType<number>,
       default: ExceptionEnum.PAGE_NOT_FOUND,

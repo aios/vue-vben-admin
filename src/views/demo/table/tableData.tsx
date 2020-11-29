@@ -9,25 +9,25 @@ export function getBasicColumns(): BasicColumn[] {
       dataIndex: 'id',
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 120,
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
     },
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       width: 80,
     },
     {
-      title: '开始时间',
+      title: '__Some-New-Token__',
       dataIndex: 'beginTime',
     },
     {
-      title: '结束时间',
+      title: '__Some-New-Token__',
       sorter: true,
       dataIndex: 'endTime',
     },
@@ -42,16 +42,16 @@ export function getBasicShortColumns(): BasicColumn[] {
       dataIndex: 'id',
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 120,
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
     },
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       width: 80,
     },
@@ -66,17 +66,17 @@ export function getMultipleHeaderColumns(): BasicColumn[] {
       width: 200,
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 120,
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
       sorter: true,
       children: [
         {
-          title: '编号',
+          title: '__Some-New-Token__',
           dataIndex: 'no',
           width: 120,
           filters: [
@@ -86,12 +86,12 @@ export function getMultipleHeaderColumns(): BasicColumn[] {
         },
 
         {
-          title: '开始时间',
+          title: '__Some-New-Token__',
           dataIndex: 'beginTime',
           width: 120,
         },
         {
-          title: '结束时间',
+          title: '__Some-New-Token__',
           dataIndex: 'endTime',
           width: 120,
         },
@@ -108,20 +108,20 @@ export function getCustomHeaderColumns(): BasicColumn[] {
       width: 200,
     },
     {
-      // title: '姓名',
+      // title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 120,
       slots: { title: 'customTitle' },
     },
     {
-      // title: '地址',
+      // title: '__Some-New-Token__',
       dataIndex: 'address',
       slots: { title: 'customAddress' },
       sorter: true,
     },
 
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       width: 120,
       filters: [
@@ -130,12 +130,12 @@ export function getCustomHeaderColumns(): BasicColumn[] {
       ],
     },
     {
-      title: '开始时间',
+      title: '__Some-New-Token__',
       dataIndex: 'beginTime',
       width: 120,
     },
     {
-      title: '结束时间',
+      title: '__Some-New-Token__',
       dataIndex: 'endTime',
       width: 120,
     },
@@ -160,13 +160,13 @@ export function getMergeHeaderColumns(): BasicColumn[] {
       customRender: renderContent,
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 300,
       customRender: renderContent,
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
       colSpan: 2,
       width: 120,
@@ -186,7 +186,7 @@ export function getMergeHeaderColumns(): BasicColumn[] {
       },
     },
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       colSpan: 0,
       filters: [
@@ -196,13 +196,13 @@ export function getMergeHeaderColumns(): BasicColumn[] {
       customRender: renderContent,
     },
     {
-      title: '开始时间',
+      title: '__Some-New-Token__',
       dataIndex: 'beginTime',
       width: 200,
       customRender: renderContent,
     },
     {
-      title: '结束时间',
+      title: '__Some-New-Token__',
       dataIndex: 'endTime',
       width: 200,
       customRender: renderContent,
@@ -214,7 +214,7 @@ export const getAdvanceSchema = (itemNumber = 6): FormSchema[] => {
   for (let index = 0; index < itemNumber; index++) {
     arr.push({
       field: `field${index}`,
-      label: `字段${index}`,
+      label: `__Some-New-Token__${index}`,
       component: 'Input',
       colProps: {
         xl: 12,
@@ -231,17 +231,17 @@ export function getFormConfig(): Partial<FormProps> {
       ...getAdvanceSchema(5),
       {
         field: `field11`,
-        label: `字段33`,
+        label: `__Some-New-Token__33`,
         component: 'Select',
         defaultValue: '1',
         componentProps: {
           options: [
             {
-              label: '选项1',
+              label: '__Some-New-Token__1',
               value: '1',
             },
             {
-              label: '选项2',
+              label: '__Some-New-Token__2',
               value: '2',
             },
           ],

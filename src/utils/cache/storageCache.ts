@@ -30,11 +30,7 @@ export const createStorage = ({
     private storage: Storage;
     private prefixKey?: string;
     private encryption: Encryption;
-    private hasEncrypt: boolean;
-    /**
-     *
-     * @param {*} storage
-     */
+    private readonly hasEncrypt: boolean;
     constructor() {
       this.storage = storage;
       this.prefixKey = prefixKey;
@@ -51,6 +47,7 @@ export const createStorage = ({
      *  Set cache
      * @param {string} key
      * @param {*} value
+     * @param expire
      * @expire Expiration time in seconds
      * @memberof Cache
      */
@@ -68,6 +65,7 @@ export const createStorage = ({
     /**
      *Read cache
      * @param {string} key
+     * @param def
      * @memberof Cache
      */
     get(key: string, def: any = null): any {

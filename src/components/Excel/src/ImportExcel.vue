@@ -23,7 +23,7 @@
       const loadingRef = ref<Boolean>(false);
 
       /**
-       * @description: 第一行作为头部
+       * @description: __Some-New-Token__
        */
       function getHeaderRow(sheet: XLSX.WorkSheet) {
         if (!sheet || !sheet['!ref']) return [];
@@ -45,7 +45,7 @@
       }
 
       /**
-       * @description: 获得excel数据
+       * @description: __Some-New-Token__excel__Some-New-Token__
        */
       function getExcelData(workbook: XLSX.WorkBook) {
         const excelData: ExcelData[] = [];
@@ -65,7 +65,7 @@
       }
 
       /**
-       * @description: 读取excel数据
+       * @description: __Some-New-Token__excel__Some-New-Token__
        */
       function readerData(rawFile: File) {
         loadingRef.value = true;
@@ -100,7 +100,7 @@
       }
 
       /**
-       * @description: 触发选择文件管理器
+       * @description: __Some-New-Token__
        */
       function handleInputClick(e: Event) {
         const files = e && (e.target as HTMLInputElement).files;
@@ -110,7 +110,7 @@
       }
 
       /**
-       * @description: 点击上传按钮
+       * @description: __Some-New-Token__
        */
       function handleUpload() {
         const inputRefDom = unref(inputRef);

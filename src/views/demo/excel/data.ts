@@ -7,30 +7,30 @@ export const columns: BasicColumn[] = [
     width: 80,
   },
   {
-    title: '姓名',
+    title: '__Some-New-Token__',
     dataIndex: 'name',
     width: 120,
   },
   {
-    title: '年龄',
+    title: '__Some-New-Token__',
     dataIndex: 'age',
     width: 80,
   },
   {
-    title: '编号',
+    title: '__Some-New-Token__',
     dataIndex: 'no',
     width: 80,
   },
   {
-    title: '地址',
+    title: '__Some-New-Token__',
     dataIndex: 'address',
   },
   {
-    title: '开始时间',
+    title: '__Some-New-Token__',
     dataIndex: 'beginTime',
   },
   {
-    title: '结束时间',
+    title: '__Some-New-Token__',
     dataIndex: 'endTime',
   },
 ];
@@ -51,9 +51,9 @@ export const data: any[] = (() => {
   return arr;
 })();
 
-// ["ID", "姓名", "年龄", "编号", "地址", "开始时间", "结束时间"]
+// ["ID", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__"]
 export const arrHeader = columns.map((column) => column.title);
-// [["ID", "姓名", "年龄", "编号", "地址", "开始时间", "结束时间"],["0", "0 John Brown", "10", "098678"]]
+// [["ID", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__", "__Some-New-Token__"],["0", "0 John Brown", "10", "098678"]]
 export const arrData = data.map((item) => {
   return Object.keys(item).map((key) => item[key]);
 });

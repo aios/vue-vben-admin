@@ -1,8 +1,8 @@
 <template>
   <div class="p-4">
     <BasicTable
-      title="基础示例"
-      titleHelpMessage="温馨提醒"
+      title="__Some-New-Token__"
+      titleHelpMessage="__Some-New-Token__"
       :columns="columns"
       :dataSource="data"
       :canResize="canResize"
@@ -13,14 +13,14 @@
     >
       <template #toolbar>
         <a-button type="primary" @click="toggleCanResize">
-          {{ !canResize ? '自适应高度' : '取消自适应' }}
+          {{ !canResize ? '__Some-New-Token__' : '__Some-New-Token__' }}
         </a-button>
         <a-button type="primary" @click="toggleBorder">
-          {{ !border ? '显示边框' : '隐藏边框' }}
+          {{ !border ? '__Some-New-Token__' : '__Some-New-Token__' }}
         </a-button>
-        <a-button type="primary" @click="toggleLoading"> 开启loading </a-button>
+        <a-button type="primary" @click="toggleLoading"> __Some-New-Token__loading </a-button>
         <a-button type="primary" @click="toggleStriped">
-          {{ !striped ? '显示斑马纹' : '隐藏斑马纹' }}
+          {{ !striped ? '__Some-New-Token__' : '__Some-New-Token__' }}
         </a-button>
       </template>
     </BasicTable>

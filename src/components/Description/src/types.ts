@@ -26,7 +26,7 @@ export interface DescOptions {
    */
   schema: DescItem[];
   /**
-   * 数据
+   * __Some-New-Token__
    * @type object
    */
   data: any;
@@ -88,6 +88,7 @@ export interface DescInstance {
 }
 
 export type Register = (descInstance: DescInstance) => void;
+
 /**
  * @description:
  */

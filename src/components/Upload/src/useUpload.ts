@@ -14,7 +14,7 @@ export function useUploadType({
   maxNumberRef: Ref<number>;
   maxSizeRef: Ref<number>;
 }) {
-  // 文件类型限制
+  // __Some-New-Token__
   const getAccept = computed(() => {
     // const uploadType = unref(uploadTypeRef);
     const accept = unref(acceptRef);
@@ -28,7 +28,7 @@ export function useUploadType({
       .map((item) => `.${item}`)
       .join(',');
   });
-  // 支持jpg、jpeg、png格式，不超过2M，最多可选择10张图片，。
+  // __Some-New-Token__jpg、jpeg、png__Some-New-Token__，__Some-New-Token__2M，__Some-New-Token__10__Some-New-Token__，。
   const getHelpText = computed(() => {
     const helpText = unref(helpTextRef);
     if (helpText) {

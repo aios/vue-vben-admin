@@ -1,8 +1,8 @@
 <template>
   <div class="m-4">
-    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
+    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
       <template #toolbar>
-        <a-button @click="aoaToExcel">导出</a-button>
+        <a-button @click="aoaToExcel">__Some-New-Token__</a-button>
       </template>
     </BasicTable>
   </div>
@@ -18,11 +18,11 @@
     components: { BasicTable, ExportExcelModel },
     setup() {
       function aoaToExcel() {
-        // 保证data顺序与header一致
+        // __Some-New-Token__data__Some-New-Token__header__Some-New-Token__
         aoaToSheetXlsx({
           data: arrData,
           header: arrHeader,
-          filename: '二维数组方式导出excel.xlsx',
+          filename: '__Some-New-Token__excel.xlsx',
         });
       }
 

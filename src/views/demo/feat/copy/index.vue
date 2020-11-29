@@ -2,7 +2,7 @@
   <div class="p-4">
     <CollapseContainer class="px-20 bg-white w-full h-32 rounded-md" title="Copy Example">
       <div class="flex justify-center">
-        <a-input placeholder="请输入" v-model:value="value" />
+        <a-input placeholder="__Some-New-Token__" v-model:value="value" />
         <a-button type="primary" @click="handleCopy">Copy</a-button>
       </div>
     </CollapseContainer>
@@ -24,7 +24,7 @@
       function handleCopy() {
         const value = unref(valueRef);
         if (!value) {
-          createMessage.warning('请输入要拷贝的内容！');
+          createMessage.warning('__Some-New-Token__！');
           return;
         }
         clipboardRef.value = value;

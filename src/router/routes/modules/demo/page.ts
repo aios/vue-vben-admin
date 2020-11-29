@@ -219,6 +219,14 @@ const page: AppRouteModule = {
       },
       children: [
         {
+          path: 'basic',
+          name: 'ListBasicPage',
+          component: () => import('/@/views/demo/page/list/basic/index.vue'),
+          meta: {
+            title: 'routes.demo.page.basic',
+          },
+        },
+        {
           path: 'card',
           name: 'ListCardPage',
           component: () => import('/@/views/demo/page/list/card/index.vue'),

@@ -1,8 +1,8 @@
 /**
- * 判断是否 十六进制颜色值.
- * 输入形式可为 #fff000 #f00
+ * __Some-New-Token__ __Some-New-Token__.
+ * __Some-New-Token__ #fff000 #f00
  *
- * @param   String  color   十六进制颜色值
+ * @param   String  color   __Some-New-Token__
  * @return  Boolean
  */
 export const isHexColor = function (color: string) {
@@ -11,10 +11,10 @@ export const isHexColor = function (color: string) {
 };
 
 /**
- * RGB 颜色值转换为 十六进制颜色值.
- * r, g, 和 b 需要在 [0, 255] 范围内
+ * RGB __Some-New-Token__ __Some-New-Token__.
+ * r, g, __Some-New-Token__ b __Some-New-Token__ [0, 255] __Some-New-Token__
  *
- * @return  String          类似#ff00ff
+ * @return  String          __Some-New-Token__#ff00ff
  * @param r
  * @param g
  * @param b

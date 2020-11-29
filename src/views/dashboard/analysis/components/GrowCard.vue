@@ -66,7 +66,7 @@
     }
 
     &__title {
-      font-family: PingFangSC-Regular;
+      font-family: 'Open Sans Condensed', sans-serif;
       font-size: 16px;
       letter-spacing: 0;
       color: @text-color-base;
@@ -75,7 +75,7 @@
 
     &__info {
       span {
-        font-family: NeoSans;
+        font-family: 'Roboto', sans-serif;
         font-size: 26px;
         line-height: 38px;
       }
@@ -106,7 +106,7 @@
     &__mom {
       display: inline-block;
       padding-left: 10px;
-      font-family: PingFangSC-Regular;
+      font-family: 'Open Sans Condensed', sans-serif;
       font-size: 12px;
       line-height: 22px;
       letter-spacing: 0;

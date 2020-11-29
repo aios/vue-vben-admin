@@ -1,6 +1,9 @@
 <template>
   <div class="p-4">
-    <Alert message="抽取el-scrollbar，并对其进行扩展,滚动条美化,适用于各个浏览器" type="info" />
+    <Alert
+      message="__Some-New-Token__el-scrollbar，__Some-New-Token__,__Some-New-Token__,__Some-New-Token__"
+      type="info"
+    />
     <div class="scroll-wrap">
       <ScrollContainer class="mt-4">
         <ul class="p-3">

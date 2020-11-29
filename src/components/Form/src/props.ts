@@ -8,7 +8,7 @@ export const basicProps = {
     type: Object as PropType<any>,
     default: {},
   },
-  // 标签宽度  固定宽度
+  // __Some-New-Token__  __Some-New-Token__
   labelWidth: {
     type: [Number, String] as PropType<number | string>,
     default: 0,
@@ -18,7 +18,7 @@ export const basicProps = {
     default: () => [],
   },
   compact: Boolean as PropType<boolean>,
-  // 表单配置规则
+  // __Some-New-Token__
   schemas: {
     type: [Array] as PropType<FormSchema[]>,
     default: () => [],
@@ -46,15 +46,15 @@ export const basicProps = {
     type: String as PropType<'default' | 'small' | 'large'>,
     default: 'default',
   },
-  // 禁用表单
+  // __Some-New-Token__
   disabled: Boolean as PropType<boolean>,
   emptySpan: {
     type: [Number, Object] as PropType<number>,
     default: 0,
   },
-  // 是否显示收起展开按钮
+  // __Some-New-Token__
   showAdvancedButton: { type: Boolean as PropType<boolean>, default: false },
-  // 转化时间
+  // __Some-New-Token__
   transformDateFunc: {
     type: Function as PropType<Fn>,
     default: (date: any) => {
@@ -65,40 +65,40 @@ export const basicProps = {
     type: Boolean,
     default: true,
   },
-  // 超过3行自动折叠
+  // __Some-New-Token__3__Some-New-Token__
   autoAdvancedLine: {
     type: Number as PropType<number>,
     default: 3,
   },
 
-  // 是否显示操作按钮
+  // __Some-New-Token__
   showActionButtonGroup: {
     type: Boolean as PropType<boolean>,
     default: true,
   },
-  // 操作列Col配置
+  // __Some-New-Token__Col__Some-New-Token__
   actionColOptions: Object as PropType<ColEx>,
-  // 显示重置按钮
+  // __Some-New-Token__
   showResetButton: {
     type: Boolean as PropType<boolean>,
     default: true,
   },
-  // 重置按钮配置
+  // __Some-New-Token__
   resetButtonOptions: Object as PropType<any>,
 
-  // 显示确认按钮
+  // __Some-New-Token__
   showSubmitButton: {
     type: Boolean as PropType<boolean>,
     default: true,
   },
-  // 确认按钮配置
+  // __Some-New-Token__
   submitButtonOptions: Object as PropType<any>,
 
-  // 自定义重置函数
+  // __Some-New-Token__
   resetFunc: Function as PropType<Fn>,
   submitFunc: Function as PropType<Fn>,
 
-  // 以下为默认props
+  // __Some-New-Token__props
   hideRequiredMark: Boolean as PropType<boolean>,
 
   labelCol: Object as PropType<ColEx>,

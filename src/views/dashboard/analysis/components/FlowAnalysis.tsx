@@ -15,32 +15,32 @@ export default defineComponent({
               <Col md={24} lg={8}>
                 {() => (
                   <CollapseContainer
-                    title="整体流量评分"
+                    title="__Some-New-Token__"
                     canExpan={false}
                     class={`${prefixCls}__left`}
                   >
                     {() => (
                       <div>
                         <div class={`${prefixCls}__score`}>
-                          86.2<span>分</span>
+                          86.2<span>__Some-New-Token__</span>
                         </div>
                         <div class={`${prefixCls}__rank`}>
-                          排名<span>前20%</span>
+                          __Some-New-Token__<span>__Some-New-Token__20%</span>
                         </div>
                         <Progress percent={70} showInfo={false} status="active" />
                         <Divider />
 
                         <ul class={`${prefixCls}__rs`}>
                           <li>
-                            <span>平均分</span>
+                            <span>__Some-New-Token__</span>
                             <span>77.5</span>
                           </li>
                           <li>
-                            <span>最高分</span>
+                            <span>__Some-New-Token__</span>
                             <span>99.5</span>
                           </li>
                           <li>
-                            <span>最低分</span>
+                            <span>__Some-New-Token__</span>
                             <span>56.5</span>
                           </li>
                         </ul>
@@ -51,7 +51,7 @@ export default defineComponent({
               </Col>
               <Col md={24} lg={16}>
                 {() => (
-                  <CollapseContainer title="整体流量趋势" canExpan={false}>
+                  <CollapseContainer title="__Some-New-Token__" canExpan={false}>
                     {() => <TrendLine />}
                   </CollapseContainer>
                 )}
@@ -64,13 +64,13 @@ export default defineComponent({
     return () => (
       <Tabs class={prefixCls} default-active-key="1">
         {() => [
-          <Tabs.TabPane key="1" tab="产品一">
+          <Tabs.TabPane key="1" tab="__Some-New-Token__">
             {() => renderContent()}
           </Tabs.TabPane>,
-          <Tabs.TabPane key="2" tab="产品二">
+          <Tabs.TabPane key="2" tab="__Some-New-Token__">
             {() => renderContent()}
           </Tabs.TabPane>,
-          <Tabs.TabPane key="3" tab="产品三">
+          <Tabs.TabPane key="3" tab="__Some-New-Token__">
             {() => renderContent()}
           </Tabs.TabPane>,
         ]}

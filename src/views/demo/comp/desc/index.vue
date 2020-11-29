@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <Description
-      title="基础示例"
+      title="__Some-New-Token__"
       :collapseOptions="{ canExpand: true, helpMessage: 'help me' }"
       :column="3"
       :data="mockData"
@@ -10,7 +10,7 @@
 
     <Description
       class="mt-4"
-      title="垂直示例"
+      title="__Some-New-Token__"
       layout="vertical"
       :collapseOptions="{ canExpand: true, helpMessage: 'help me' }"
       :column="2"
@@ -32,34 +32,34 @@
     age: 25,
     phone: '15695909xxx',
     email: '190848757@qq.com',
-    addr: '厦门市思明区',
-    sex: '男',
+    addr: '__Some-New-Token__',
+    sex: '__Some-New-Token__',
     certy: '3504256199xxxxxxxxx',
     tag: 'orange',
   };
   const schema: DescItem[] = [
     {
       field: 'username',
-      label: '用户名',
+      label: '__Some-New-Token__',
     },
     {
       field: 'nickName',
-      label: '昵称',
+      label: '__Some-New-Token__',
       render: (curVal, data) => {
         return `${data.username}-${curVal}`;
       },
     },
     {
       field: 'phone',
-      label: '联系电话',
+      label: '__Some-New-Token__',
     },
     {
       field: 'email',
-      label: '邮箱',
+      label: '__Some-New-Token__',
     },
     {
       field: 'addr',
-      label: '地址',
+      label: '__Some-New-Token__',
     },
   ];
   export default defineComponent({
@@ -72,7 +72,7 @@
       });
 
       const [register1] = useDescription({
-        title: '无边框',
+        title: '__Some-New-Token__',
         bordered: false,
         data: mockData,
         schema: schema,

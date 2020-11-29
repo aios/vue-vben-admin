@@ -20,7 +20,7 @@ export function useSearchInput({
   emit,
 }: UseSearchInputOptions) {
   /**
-   * @description: 输入框搜索
+   * @description: __Some-New-Token__
    */
   function handleInputChange(value?: string): void {
     if (!isString(value)) {
@@ -49,7 +49,7 @@ export function useSearchInput({
     menuState.openKeys = openKeys;
   }
 
-  // 搜索框点击
+  // __Some-New-Token__
   function handleInputClick(e: any): void {
     emit('clickSearchInput', e);
   }

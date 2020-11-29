@@ -1,7 +1,7 @@
 import type { ButtonProps } from 'ant-design-vue/lib/button/buttonTypes';
 import type { CSSProperties, VNodeChild } from 'vue';
 /**
- * @description: 弹窗对外暴露的方法
+ * @description: __Some-New-Token__
  */
 export interface ModalMethods {
   setModalProps: (props: Partial<ModalProps>) => void;
@@ -21,17 +21,17 @@ export interface ReturnInnerMethods extends ModalMethods {
 export type UseModalInnerReturnType = [RegisterFn, ReturnInnerMethods];
 
 export interface ModalProps {
-  // 启用wrapper后 底部可以适当增加高度
+  // __Some-New-Token__wrapper__Some-New-Token__ __Some-New-Token__
   wrapperFooterOffset?: number;
   draggable?: boolean;
 
-  // 是否可以进行全屏
+  // __Some-New-Token__
   canFullscreen?: boolean;
   visible?: boolean;
-  // 温馨提醒信息
+  // __Some-New-Token__
   helpMessage: string | string[];
 
-  // 是否使用modalWrapper
+  // __Some-New-Token__modalWrapper
   useWrapper: boolean;
 
   loading: boolean;

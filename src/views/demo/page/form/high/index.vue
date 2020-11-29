@@ -1,38 +1,36 @@
 <template>
   <div class="high-form">
-    <a-page-header title="高级表单" :ghost="false">
-      高级表单常见于一次性输入和提交大批量数据的场景。
-    </a-page-header>
+    <a-page-header title="__Some-New-Token__" :ghost="false"> __Some-New-Token__。 </a-page-header>
 
     <div class="m-5">
-      <a-card title="仓库管理" :bordered="false">
+      <a-card title="__Some-New-Token__" :bordered="false">
         <BasicForm @register="register" layout="vertical" />
       </a-card>
-      <a-card title="任务管理" :bordered="false" class="mt-5">
+      <a-card title="__Some-New-Token__" :bordered="false" class="mt-5">
         <BasicForm @register="registerTask" layout="vertical" />
       </a-card>
-      <a-card title="成员管理" :bordered="false" class="mt-5">
+      <a-card title="__Some-New-Token__" :bordered="false" class="mt-5">
         <PersonTable ref="tableRef" />
       </a-card>
     </div>
 
-    <AppPageFooter>
+    <PageFooter>
       <template #right>
-        <a-button type="primary" @click="submitAll">提交</a-button>
+        <a-button type="primary" @click="submitAll">__Some-New-Token__</a-button>
       </template>
-    </AppPageFooter>
+    </PageFooter>
   </div>
 </template>
 <script lang="ts">
   import { BasicForm, useForm } from '/@/components/Form';
   import { defineComponent, ref } from 'vue';
   import PersonTable from './PersonTable.vue';
-  import { AppPageFooter } from '/@/components/Application';
+  import { PageFooter } from '/@/components/Page';
 
   import { schemas, taskSchemas } from './data';
 
   export default defineComponent({
-    components: { BasicForm, PersonTable, AppPageFooter },
+    components: { BasicForm, PersonTable, PageFooter },
     setup() {
       const tableRef = ref<{ getDataSource: () => any } | null>(null);
 

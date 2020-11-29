@@ -1,6 +1,6 @@
 <template>
   <div class="p-10">
-    <Alert message="点内外部触发事件" show-icon></Alert>
+    <Alert message="__Some-New-Token__" show-icon></Alert>
     <ClickOutSide @clickOutside="handleClickOutside" class="flex justify-center mt-10">
       <div @click="innerClick" class="demo-box">
         {{ text }}
@@ -11,7 +11,7 @@
 <script lang="ts">
   import { defineComponent, ref } from 'vue';
   import { Alert } from 'ant-design-vue';
-  import ClickOutSide from '/@/components/ClickOutSide/index.vue';
+  import { ClickOutSide } from '/@/components/ClickOutSide';
   export default defineComponent({
     components: { ClickOutSide, Alert },
     setup() {

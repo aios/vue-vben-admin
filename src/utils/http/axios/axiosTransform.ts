@@ -1,43 +1,43 @@
 /**
- * 数据处理类，可以根据项目自行配置
+ * __Some-New-Token__，__Some-New-Token__
  */
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import type { RequestOptions, Result } from './types';
 
 export abstract class AxiosTransform {
   /**
-   * @description: 请求之前处理配置
+   * @description: __Some-New-Token__
    * @description: Process configuration before request
    */
   beforeRequestHook?: (config: AxiosRequestConfig, options: RequestOptions) => AxiosRequestConfig;
 
   /**
-   * @description: 请求成功处理
+   * @description: __Some-New-Token__
    */
   transformRequestData?: (res: AxiosResponse<Result>, options: RequestOptions) => any;
 
   /**
-   * @description: 请求失败处理
+   * @description: __Some-New-Token__
    */
   requestCatch?: (e: Error) => Promise<any>;
 
   /**
-   * @description: 请求之前的拦截器
+   * @description: __Some-New-Token__
    */
   requestInterceptors?: (config: AxiosRequestConfig) => AxiosRequestConfig;
 
   /**
-   * @description: 请求之后的拦截器
+   * @description: __Some-New-Token__
    */
   responseInterceptors?: (res: AxiosResponse<any>) => AxiosResponse<any>;
 
   /**
-   * @description: 请求之前的拦截器错误处理
+   * @description: __Some-New-Token__
    */
   requestInterceptorsCatch?: (error: Error) => void;
 
   /**
-   * @description: 请求之后的拦截器错误处理
+   * @description: __Some-New-Token__
    */
   responseInterceptorsCatch?: (error: Error) => void;
 }

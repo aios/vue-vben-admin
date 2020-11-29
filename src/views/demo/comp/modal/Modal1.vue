@@ -1,5 +1,9 @@
 <template>
-  <BasicModal v-bind="$attrs" title="Modal Title" :helpMessage="['提示1', '提示2']">
+  <BasicModal
+    v-bind="$attrs"
+    title="Modal Title"
+    :helpMessage="['__Some-New-Token__1', '__Some-New-Token__2']"
+  >
     Modal Info.
   </BasicModal>
 </template>

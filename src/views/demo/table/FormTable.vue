@@ -12,7 +12,7 @@
     components: { BasicTable },
     setup() {
       const [registerTable] = useTable({
-        title: '开启搜索区域',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: getBasicColumns(),
         useSearchForm: true,

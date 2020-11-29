@@ -17,7 +17,7 @@ module.exports = {
         'resolved',
       ],
       issuePrefixes: ['#'],
-      noteKeywords: ['BREAKING CHANGE', '不兼容变更'],
+      noteKeywords: ['BREAKING CHANGE', '__Some-New-Token__'],
       fieldPattern: /^-(.*?)-$/,
       revertPattern: /^Revert\s"([\s\S]*)"\s*This reverts commit (\w*)\./,
       revertCorrespondence: ['header', 'hash'],

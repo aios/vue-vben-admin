@@ -1,10 +1,10 @@
 <template>
   <div class="flex p-4">
-    <CollapseContainer title="右侧操作按钮" class="mr-4" :style="{ width: '33%' }">
+    <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
       <BasicTree :treeData="treeData" :actionList="actionList" />
     </CollapseContainer>
 
-    <CollapseContainer title="右键菜单" class="mr-4" :style="{ width: '33%' }">
+    <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
       <BasicTree :treeData="treeData" :beforeRightClick="getRightMenuList" />
     </CollapseContainer>
   </div>
@@ -25,16 +25,16 @@
       function getRightMenuList(node: any): ContextMenuItem[] {
         return [
           {
-            label: '新增',
+            label: '__Some-New-Token__',
             handler: () => {
-              console.log('点击了新增', node);
+              console.log('__Some-New-Token__', node);
             },
             icon: 'ant-design:plus-outlined',
           },
           {
-            label: '删除',
+            label: '__Some-New-Token__',
             handler: () => {
-              console.log('点击了删除', node);
+              console.log('__Some-New-Token__', node);
             },
             icon: 'ant-design:folder-open-filled',
           },

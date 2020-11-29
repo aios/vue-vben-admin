@@ -105,7 +105,7 @@ export default function ({
     if (isLastAction) {
       advanceState.hideAdvanceBtn = false;
       if (itemColSum <= BASIC_COL_LEN * 2) {
-        // 小于等于2行时，不显示收起展开按钮
+        // __Some-New-Token__2__Some-New-Token__，__Some-New-Token__
         advanceState.hideAdvanceBtn = true;
         advanceState.isAdvanced = true;
       } else if (

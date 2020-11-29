@@ -2,7 +2,7 @@ import { toCanvas } from 'qrcode';
 import type { QRCodeRenderersOptions } from 'qrcode';
 import { RenderQrCodeParams, ContentType } from './types';
 export const renderQrCode = ({ canvas, content, width = 0, options = {} }: RenderQrCodeParams) => {
-  // 容错率，默认对内容少的二维码采用高容错率，内容多的二维码采用低容错率
+  // __Some-New-Token__，__Some-New-Token__，__Some-New-Token__
   options.errorCorrectionLevel = options.errorCorrectionLevel || getErrorCorrectionLevel(content);
 
   return getOriginWidth(content, options).then((_width: number) => {
@@ -11,13 +11,13 @@ export const renderQrCode = ({ canvas, content, width = 0, options = {} }: Rende
   });
 };
 
-// 得到原QrCode的大小，以便缩放得到正确的QrCode大小
+// __Some-New-Token__QrCode__Some-New-Token__，__Some-New-Token__QrCode__Some-New-Token__
 function getOriginWidth(content: ContentType, options: QRCodeRenderersOptions) {
   const _canvas = document.createElement('canvas');
   return toCanvas(_canvas, content, options).then(() => _canvas.width);
 }
 
-// 对于内容少的QrCode，增大容错率
+// __Some-New-Token__QrCode，__Some-New-Token__
 function getErrorCorrectionLevel(content: ContentType) {
   if (content.length > 36) {
     return 'M';

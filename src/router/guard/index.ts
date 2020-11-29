@@ -26,8 +26,7 @@ export function createGuard(router: Router) {
   createPageLoadingGuard(router);
   router.beforeEach(async (to) => {
     // Determine whether the tab has been opened
-    const isOpen = getIsOpenTab(to.fullPath);
-    to.meta.inTab = isOpen;
+    to.meta.inTab = getIsOpenTab(to.fullPath);
 
     // Notify routing changes
     const { fullPath, path, query, params, name, meta } = to;
@@ -57,7 +56,7 @@ export function createGuard(router: Router) {
   router.afterEach((to) => {
     const { t } = useI18n();
     // change html title
-    setTitle(t(to.meta.title), globSetting.title);
+    to.name !== 'Redirect' && setTitle(t(to.meta.title), globSetting.title);
   });
   createProgressGuard(router);
   createPermissionGuard(router);

@@ -79,7 +79,7 @@ const setDocumentTitle = (title: string) => {
   document.title = title;
   const ua = navigator.userAgent;
   const regex = /\bMicroMessenger\/([\d.]+)/;
-  // 兼容
+  // __Some-New-Token__
   if (regex.test(ua) && /ip(hone|od|ad)/i.test(ua)) {
     const i = document.createElement('iframe');
     i.src = '/favicon.ico';

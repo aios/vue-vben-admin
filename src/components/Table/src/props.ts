@@ -11,7 +11,7 @@ import type {
 import type { FormProps } from '/@/components/Form';
 import { DEFAULT_SORT_FN, FETCH_SETTING } from './const';
 
-// 注释看 types/table
+// __Some-New-Token__ types/table
 export const basicProps = {
   tableSetting: {
     type: Object as PropType<TableSetting>,
@@ -77,24 +77,24 @@ export const basicProps = {
       return FETCH_SETTING;
     },
   },
-  // 立即请求接口
+  // __Some-New-Token__
   immediate: { type: Boolean as PropType<boolean>, default: true },
 
   emptyDataIsShowTable: {
     type: Boolean as PropType<boolean>,
     default: true,
   },
-  // 额外的请求参数
+  // __Some-New-Token__
   searchInfo: {
     type: Object as PropType<any>,
     default: null,
   },
-  // 使用搜索表单
+  // __Some-New-Token__
   useSearchForm: {
     type: Boolean as PropType<boolean>,
     default: false,
   },
-  // 表单配置
+  // __Some-New-Token__
   formConfig: {
     type: Object as PropType<Partial<FormProps>>,
     default: null,

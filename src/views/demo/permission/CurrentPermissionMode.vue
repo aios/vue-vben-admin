@@ -1,10 +1,12 @@
 <template>
   <div class="mt-2">
-    当前权限模式：
+    __Some-New-Token__：
     <a-button type="link">
-      {{ permissionMode === PermissionModeEnum.BACK ? '后台权限模式' : '前端角色权限模式' }}
+      {{ permissionMode === PermissionModeEnum.BACK ? '__Some-New-Token__' : '__Some-New-Token__' }}
     </a-button>
-    <a-button class="ml-4" @click="togglePermissionMode" type="primary"> 切换权限模式 </a-button>
+    <a-button class="ml-4" @click="togglePermissionMode" type="primary">
+      __Some-New-Token__
+    </a-button>
     <Divider />
   </div>
 </template>

@@ -30,7 +30,7 @@
             max: 1000,
             left: 'left',
             top: 'bottom',
-            text: ['高', '低'],
+            text: ['__Some-New-Token__', '__Some-New-Token__'],
             calculable: false,
             orient: 'horizontal',
             inRange: {

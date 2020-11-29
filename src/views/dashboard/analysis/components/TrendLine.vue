@@ -17,7 +17,7 @@
       onMounted(() => {
         setOptions({
           // title: {
-          //   text: '产品成交额',
+          //   text: '__Some-New-Token__',
           // },
           tooltip: {
             trigger: 'axis',
@@ -39,38 +39,38 @@
             type: 'category',
             boundaryGap: false,
             axisTick: {
-              inside: true, // 刻度朝内
+              inside: true, // __Some-New-Token__
             },
             data: [
-              '一月',
-              '二月',
-              '三月',
-              '四月',
-              '五月',
-              '六月',
-              '七月',
-              '八月',
-              '九月',
-              '十月',
-              '十一月',
-              '十二月',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
             ],
           },
           yAxis: {
             type: 'value',
             axisTick: {
-              inside: true, // 刻度朝内
+              inside: true, // __Some-New-Token__
             },
           },
           series: [
             {
-              name: '产品一',
+              name: '__Some-New-Token__',
               type: 'line',
               itemStyle: {
                 color: '#5B8FF9',
               },
               areaStyle: {
-                // 线性渐变，前4个参数分别是x0,y0,x2,y2(范围0~1);相当于图形包围盒中的百分比。如果最后一个参数是‘true’，则该四个值是绝对像素位置。
+                // __Some-New-Token__，__Some-New-Token__4__Some-New-Token__x0,y0,x2,y2(__Some-New-Token__0~1);__Some-New-Token__。__Some-New-Token__‘true’，__Some-New-Token__。
                 // @ts-ignore
                 color: new echarts.graphic.LinearGradient(
                   0,
@@ -89,8 +89,8 @@
                   ],
                   false
                 ),
-                shadowColor: 'rgba(118,168,248, 0.9)', // 阴影颜色
-                shadowBlur: 20, // shadowBlur设图形阴影的模糊大小。配合shadowColor,shadowOffsetX/Y, 设置图形的阴影效果。
+                shadowColor: 'rgba(118,168,248, 0.9)', // __Some-New-Token__
+                shadowBlur: 20, // shadowBlur__Some-New-Token__。__Some-New-Token__shadowColor,shadowOffsetX/Y, __Some-New-Token__。
               },
               // areaStyle: {},
               data: [134, 330, 132, 101, 90, 230, 210, 150, 230, 400, 232, 234],

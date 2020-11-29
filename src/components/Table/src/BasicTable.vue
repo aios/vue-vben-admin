@@ -8,27 +8,27 @@
     }"
   >
     <BasicForm
-      :submitOnReset="true"
-      v-bind="getFormProps"
       v-if="getBindValues.useSearchForm"
-      :submitButtonOptions="{ loading }"
-      :tableAction="tableAction"
+      :submit-on-reset="true"
+      v-bind="getFormProps"
+      :submit-button-options="{ loading }"
+      :table-action="tableAction"
       @register="registerForm"
       @submit="handleSearchInfoChange"
       @advanced-change="redoHeight"
     >
-      <template #[item]="data" v-for="item in Object.keys($slots)">
+      <template v-for="item in Object.keys($slots)" #[item]="data">
         <slot :name="`form-${item}`" v-bind="data" />
       </template>
     </BasicForm>
     <Table
+      v-show="getEmptyDataIsShowTable"
       ref="tableElRef"
       v-bind="getBindValues"
-      :rowClassName="getRowClassName"
-      v-show="getEmptyDataIsShowTable"
+      :row-class-name="getRowClassName"
       @change="handleTableChange"
     >
-      <template #[item]="data" v-for="item in Object.keys($slots)">
+      <template v-for="item in Object.keys($slots)" #[item]="data">
         <slot :name="item" v-bind="data" />
       </template>
     </Table>
@@ -70,8 +70,8 @@
   import { ROW_KEY } from './const';
   import './style/index.less';
   export default defineComponent({
-    props: basicProps,
     components: { Table, BasicForm },
+    props: basicProps,
     emits: ['fetch-success', 'fetch-error', 'selection-change', 'register'],
     setup(props, { attrs, emit, slots }) {
       const tableElRef = ref<ComponentRef>(null);

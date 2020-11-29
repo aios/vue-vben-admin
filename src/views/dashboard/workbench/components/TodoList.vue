@@ -1,7 +1,7 @@
 <template>
-  <CollapseContainer class="todo-list" title="待办事项" :canExpan="false">
+  <CollapseContainer class="todo-list" title="__Some-New-Token__" :canExpan="false">
     <template #title>
-      <span> 待办事项 <span class="todo-list__total">30</span> </span>
+      <span> __Some-New-Token__ <span class="todo-list__total">30</span> </span>
     </template>
 
     <List>
@@ -16,21 +16,21 @@
             </template>
             <template #description>
               <div class="todo-list__item-desc">
-                提交人：{{ item.sbmter }}
+                __Some-New-Token__：{{ item.sbmter }}
                 <br />
-                提交时间：{{ item.sbmtTime }}
+                __Some-New-Token__：{{ item.sbmtTime }}
               </div>
             </template>
           </ListItemMeta>
           <a-button type="link">
-            <Tag color="blue">待审批</Tag>
+            <Tag color="blue">__Some-New-Token__</Tag>
           </a-button>
         </ListItem>
       </template>
     </List>
     <div class="todo-list__all">
       <Tooltip placement="topRight">
-        <template #title>查看更多</template>
+        <template #title>__Some-New-Token__</template>
         <EllipsisOutlined />
       </Tooltip>
     </div>

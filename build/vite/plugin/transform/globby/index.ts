@@ -81,7 +81,7 @@ function varTemplate(data: string[][], name: string) {
   });
 
   if (hasDeepData) {
-    return `const ${name} = ` + JSON.stringify(deepData).replace(/\"|\'/g, '');
+    return `const ${name} = ` + JSON.stringify(deepData).replace(/["']/g, '');
   }
 
   return `const ${name} = { ${data.map((v) => v[0]).join(',')} }`;
@@ -165,7 +165,7 @@ const globTransform = function (config: SharedConfig): Transform {
               const file = bareExporter + filePath + bareExporter;
 
               if (isLocale) {
-                const globrexRes = globrex(globPath, { extended: true, globstar: true });
+                const globrexRes = globrex(globPath, { globstar: true });
 
                 // Get segments for files like an en/system ch/modules for:
                 // ['en', 'system'] ['ch', 'modules']
@@ -174,6 +174,9 @@ const globTransform = function (config: SharedConfig): Transform {
                 const fileNameWithAlias = filePath.replace(/^(\/src\/)/, '/@/');
                 const matchedGroups = globrexRes.regex.exec(fileNameWithAlias);
 
+                //TODO: Resolve Alias
+                //const fileNameReplacedAlias = fileNameWithAlias.replace('/src/', '/@/');
+                //const matchedGroups = globrexRes.regex.exec(fileNameReplacedAlias);
                 if (matchedGroups && matchedGroups.length) {
                   const matchedSegments = matchedGroups[1]; //first everytime "Full Match"
                   const matchList = matchedSegments.split('/').filter(Boolean);
@@ -187,6 +190,7 @@ const globTransform = function (config: SharedConfig): Transform {
 
                   //send deep way like an (en/modules/system/dashboard) into groups
                   groups.push([matchedSegments + name, file]);
+
                   return templateRender({
                     name,
                     file,

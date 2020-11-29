@@ -1,20 +1,20 @@
 {
   "version": "0.2.0",
   "configurations": [
-    // node环境调试当前激活编辑器ts/js代码
+    // node__Some-New-Token__ts/js__Some-New-Token__
     {
       "type": "node",
       "request": "launch",
       "name": "file",
       "cwd": "${workspaceFolder}",
       "program": "${file}",
-      // .vscode 目录又不认识了？？？
-      "preLaunchTask": "tsc: 监视 - build/tsconfig.json", // cn
+      // .vscode __Some-New-Token__？？？
+      "preLaunchTask": "tsc: __Some-New-Token__ - build/tsconfig.json", // cn
       // "preLaunchTask": "tsc: watch - build/tsconfig.json", // en
       "outFiles": ["${workspaceFolder}/compile/**/*.js"]
       // "args": ["--experimental-modules", "--loader", "./loader.mjs"]
     },
-    // 调试开发环境脚本
+    // __Some-New-Token__
     {
       "type": "node",
       "request": "launch",
@@ -24,7 +24,7 @@
       "program": "${workspaceFolder}/node_modules/@vue/cli-service/bin/vue-cli-service.js",
       "args": ["serve", "--open"]
     },
-    // 调试生产环境脚本
+    // __Some-New-Token__
     {
       "type": "node",
       "request": "launch",
@@ -34,7 +34,7 @@
       "program": "${workspaceFolder}/node_modules/@vue/cli-service/bin/vue-cli-service.js",
       "args": ["build"]
     },
-    // 调试单元测试脚本
+    // __Some-New-Token__
     {
       "type": "node",
       "request": "launch",

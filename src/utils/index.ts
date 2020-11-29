@@ -49,7 +49,7 @@ export function deepMerge<T = any>(src: any, target: any): T {
 }
 
 /**
- * @description: 根据数组中某个对象值去重
+ * @description: __Some-New-Token__
  */
 export function unique<T = any>(arr: T[], key: string): T[] {
   const map = new Map();
@@ -60,7 +60,7 @@ export function unique<T = any>(arr: T[], key: string): T[] {
 }
 
 /**
- * @description: es6数组去重复
+ * @description: es6__Some-New-Token__
  */
 export function es6Unique<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));

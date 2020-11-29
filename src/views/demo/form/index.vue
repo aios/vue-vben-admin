@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <CollapseContainer title="基础示例">
+    <CollapseContainer title="__Some-New-Token__">
       <BasicForm
         :labelWidth="100"
         :schemas="schemas"
@@ -20,7 +20,7 @@
     {
       field: 'field1',
       component: 'Input',
-      label: '字段1',
+      label: '__Some-New-Token__1',
       colProps: {
         span: 8,
       },
@@ -30,7 +30,7 @@
         console.log('form:', schema);
         console.log('formModel:', formModel);
         return {
-          placeholder: '自定义placeholder',
+          placeholder: '__Some-New-Token__placeholder',
           onChange: (e: any) => {
             console.log(e);
           },
@@ -46,7 +46,7 @@
     {
       field: 'field2',
       component: 'Input',
-      label: '字段2',
+      label: '__Some-New-Token__2',
       defaultValue: '111',
       colProps: {
         span: 8,
@@ -60,7 +60,7 @@
     {
       field: 'field3',
       component: 'DatePicker',
-      label: '字段3',
+      label: '__Some-New-Token__3',
       colProps: {
         span: 8,
       },
@@ -68,19 +68,19 @@
     {
       field: 'field4',
       component: 'Select',
-      label: '字段4',
+      label: '__Some-New-Token__4',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
             key: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
             key: '2',
           },
@@ -90,18 +90,18 @@
     {
       field: 'field5',
       component: 'CheckboxGroup',
-      label: '字段5',
+      label: '__Some-New-Token__5',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
           },
         ],
@@ -110,18 +110,18 @@
     {
       field: 'field7',
       component: 'RadioGroup',
-      label: '字段7',
+      label: '__Some-New-Token__7',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
           },
         ],
@@ -130,7 +130,7 @@
     {
       field: 'field8',
       component: 'Checkbox',
-      label: '字段8',
+      label: '__Some-New-Token__8',
       colProps: {
         span: 8,
       },
@@ -139,7 +139,7 @@
     {
       field: 'field9',
       component: 'Switch',
-      label: '字段9',
+      label: '__Some-New-Token__9',
       colProps: {
         span: 8,
       },
@@ -147,18 +147,18 @@
     {
       field: 'field10',
       component: 'RadioButtonGroup',
-      label: '字段10',
+      label: '__Some-New-Token__10',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
           },
         ],
@@ -167,7 +167,7 @@
     {
       field: 'field11',
       component: 'Cascader',
-      label: '字段11',
+      label: '__Some-New-Token__11',
       colProps: {
         span: 8,
       },
@@ -211,7 +211,7 @@
     {
       field: 'field20',
       component: 'InputNumber',
-      label: '字段20',
+      label: '__Some-New-Token__20',
       required: true,
       colProps: {
         span: 8,

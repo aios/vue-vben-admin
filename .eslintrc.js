@@ -23,7 +23,8 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'vue/custom-event-name-casing': 'off',
     'no-use-before-define': 'off',
-    // 'no-setting-before-define': [
+    '@vue/html-self-closing': 'off',
+    // 'no-use-before-define': [
     //   'error',
     //   {
     //     functions: false,
@@ -54,6 +55,16 @@ module.exports = {
       {
         argsIgnorePattern: '^h$',
         varsIgnorePattern: '^h$',
+      },
+    ],
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 5,
+        multiline: {
+          max: 1,
+          allowFirstLine: false,
+        },
       },
     ],
     'space-before-function-paren': 'off',

@@ -45,13 +45,13 @@ export function useTableScroll(refProps: ComputedRef<BasicTableProps>, tableElRe
     const headEl = tableEl.querySelector('.ant-table-thead ');
     if (!headEl) return;
 
-    // 表格距离底部高度
+    // __Some-New-Token__
     const { bottomIncludeBody } = getViewportOffset(headEl);
-    // 表格高度+距离底部高度-自定义偏移量
+    // __Some-New-Token__+__Some-New-Token__-__Some-New-Token__
 
     const paddingHeight = 32;
     const borderHeight = 2 * 2;
-    // 分页器高度
+    // __Some-New-Token__
 
     let paginationHeight = 2;
     if (!isBoolean(pagination)) {
@@ -62,7 +62,7 @@ export function useTableScroll(refProps: ComputedRef<BasicTableProps>, tableElRe
         const offsetHeight = paginationEl.offsetHeight;
         paginationHeight += offsetHeight || 0;
       } else {
-        // TODO 先固定24
+        // TODO __Some-New-Token__24
         paginationHeight += 24;
       }
     }
@@ -92,7 +92,7 @@ export function useTableScroll(refProps: ComputedRef<BasicTableProps>, tableElRe
     setTimeout(() => {
       tableHeightRef.value =
         tableHeightRef.value! > maxHeight! ? (maxHeight as number) : tableHeightRef.value;
-      //  解决表格放modal内的时候，modal自适应高度计算问题
+      //  __Some-New-Token__modal__Some-New-Token__，modal__Some-New-Token__
       redoModalHeight && redoModalHeight();
     }, 16);
   }

@@ -51,7 +51,7 @@
         { immediate: true }
       );
 
-      // 删除
+      // __Some-New-Token__
       function handleRemove(record: PreviewFileItem) {
         const index = fileListRef.value.findIndex((item) => item.url === record.url);
         if (index !== -1) {
@@ -63,7 +63,7 @@
         }
       }
 
-      // 预览
+      // __Some-New-Token__
       function handlePreview(record: PreviewFileItem) {
         const { url = '' } = record;
         createImgPreview({
@@ -71,7 +71,7 @@
         });
       }
 
-      // 下载
+      // __Some-New-Token__
       function handleDownload(record: PreviewFileItem) {
         const { url = '' } = record;
         downloadByUrl({ url });

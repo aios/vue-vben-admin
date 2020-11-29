@@ -10,7 +10,7 @@ export type RouteLocationRawEx = Omit<RouteLocationRaw, 'path'> & { path: PageEn
 
 function handleError(e: Error) {
   console.error(e);
-  // 101是为了 大于 打开时候设置的100延时防止闪动
+  // 101__Some-New-Token__ __Some-New-Token__ __Some-New-Token__100__Some-New-Token__
   setTimeout(() => {
     appStore.commitPageLoadingState(false);
   }, 101);
@@ -36,9 +36,12 @@ export function useGo() {
  */
 export const useRedo = () => {
   const { push, currentRoute } = useRouter();
+  const { query, params } = currentRoute.value;
   function redo() {
     push({
       path: '/redirect' + unref(currentRoute).fullPath,
+      query,
+      params,
     });
   }
   return redo;

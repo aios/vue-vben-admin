@@ -100,7 +100,12 @@ class Permission extends VuexModule {
         if (!roles) return true;
         return roleList.some((role) => roles.includes(role));
       });
-      //  如果确定不需要做后台动态权限,请将下面整个判断注释
+      // this.commitRoutesState(routes);
+      // Background permissions
+      // warn(
+      //   `__Some-New-Token__:${PermissionModeEnum.ROLE},__Some-New-Token__src/store/modules/permission.ts__Some-New-Token__,__Some-New-Token__!`
+      // );
+      //  __Some-New-Token__,__Some-New-Token__
     } else if (permissionMode === PermissionModeEnum.BACK) {
       const messageKey = 'loadMenu';
       createMessage.loading({
@@ -108,18 +113,18 @@ class Permission extends VuexModule {
         key: messageKey,
         duration: 1,
       });
-      // 这里获取后台路由菜单逻辑自行修改
+      // __Some-New-Token__
       const paramId = id || userStore.getUserInfoState.userId;
       if (!paramId) {
         throw new Error('paramId is undefined!');
       }
       let routeList: any[] = await getMenuListById({ id: paramId });
-      // 动态引入组件
+      // __Some-New-Token__
       routeList = transformObjToRoute(routeList);
-      //  后台路由转菜单结构
+      //  __Some-New-Token__
       const backMenuList = transformRouteToMenu(routeList);
       this.commitBackMenuListState(backMenuList);
-      // 生成路由
+      // __Some-New-Token__
       routes = genRouteModule(routeList) as AppRouteRecordRaw[];
       routes.push(REDIRECT_ROUTE);
     }

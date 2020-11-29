@@ -15,27 +15,27 @@ export function formatToDate(date: moment.MomentInput = null): string {
 export const formatAgo = (str: string | number) => {
   if (!str) return '';
   const date = new Date(Number(str));
-  const time = new Date().getTime() - date.getTime(); // 现在的时间-传入的时间 = 相差的时间（单位 = 毫秒）
+  const time = new Date().getTime() - date.getTime(); // __Some-New-Token__-__Some-New-Token__ = __Some-New-Token__（__Some-New-Token__ = __Some-New-Token__）
   if (time < 0) {
     return '';
   } else if (time / 1000 < 30) {
-    return '刚刚';
+    return '__Some-New-Token__';
   } else if (time / 1000 < 60) {
-    return parseInt(String(time / 1000)) + '秒前';
+    return parseInt(String(time / 1000)) + '__Some-New-Token__';
   } else if (time / 60000 < 60) {
-    return parseInt(String(time / 60000)) + '分钟前';
+    return parseInt(String(time / 60000)) + '__Some-New-Token__';
   } else if (time / 3600000 < 24) {
-    return parseInt(String(time / 3600000)) + '小时前';
+    return parseInt(String(time / 3600000)) + '__Some-New-Token__';
   } else if (time / 86400000 < 31) {
-    return parseInt(String(time / 86400000)) + '天前';
+    return parseInt(String(time / 86400000)) + '__Some-New-Token__';
   } else if (time / 2592000000 < 12) {
-    return parseInt(String(time / 2592000000)) + '月前';
+    return parseInt(String(time / 2592000000)) + '__Some-New-Token__';
   } else {
-    return parseInt(String(time / 31536000000)) + '年前';
+    return parseInt(String(time / 31536000000)) + '__Some-New-Token__';
   }
 };
 /**
- * @description: 格式化请求参数时间
+ * @description: __Some-New-Token__
  */
 export function formatRequestDate(params: any) {
   for (const key in params) {

@@ -28,7 +28,7 @@
       customRender: renderEditableRow({ dataIndex: 'id' }),
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       customRender: renderEditableRow({
         dataIndex: 'name',
@@ -41,7 +41,7 @@
       const currentEditKeyRef = ref('');
 
       const [registerTable] = useTable({
-        title: '可编辑行示例',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: columns,
         showIndexColumn: false,
@@ -74,7 +74,7 @@
         if (!record.editable) {
           return [
             {
-              label: '编辑',
+              label: '__Some-New-Token__',
               disabled: currentEditKeyRef.value ? currentEditKeyRef.value !== record.key : false,
               onClick: handleEdit.bind(null, record),
             },
@@ -82,13 +82,13 @@
         }
         return [
           {
-            label: '保存',
+            label: '__Some-New-Token__',
             onClick: handleSave.bind(null, record, column),
           },
           {
-            label: '取消',
+            label: '__Some-New-Token__',
             popConfirm: {
-              title: '是否取消编辑',
+              title: '__Some-New-Token__',
               confirm: handleCancel.bind(null, record, column),
             },
           },

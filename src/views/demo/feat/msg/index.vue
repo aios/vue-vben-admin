@@ -28,7 +28,7 @@
 
     <CollapseContainer
       class="px-20 bg-white w-full h-32 rounded-md mt-5"
-      title="Notification 用法与上面一致"
+      title="Notification __Some-New-Token__"
     >
       <a-button @click="handleNotify" color="success" class="mr-2">Success</a-button>
     </CollapseContainer>

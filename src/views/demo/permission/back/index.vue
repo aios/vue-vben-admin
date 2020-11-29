@@ -1,18 +1,22 @@
 <template>
   <div class="p-4 m-4 demo">
     <Alert
-      message="目前mock了两组数据， id为1 和 2 具体返回的菜单可以在mock/sys/menu.ts内查看"
+      message="__Some-New-Token__mock__Some-New-Token__， id__Some-New-Token__1 __Some-New-Token__ 2 __Some-New-Token__mock/sys/menu.ts__Some-New-Token__"
       show-icon
     />
     <CurrentPermissionMode />
 
-    <Alert class="mt-4" type="info" message="点击后请查看左侧菜单变化" show-icon />
+    <Alert class="mt-4" type="info" message="__Some-New-Token__" show-icon />
 
     <div class="mt-4">
-      权限切换(请先切换权限模式为后台权限模式):
+      __Some-New-Token__(__Some-New-Token__):
       <a-button-group>
-        <a-button @click="changeMenu('1')"> 获取用户id为1的菜单 </a-button>
-        <a-button @click="changeMenu('2')"> 获取用户id为2的菜单 </a-button>
+        <a-button @click="changeMenu('1')">
+          __Some-New-Token__id__Some-New-Token__1__Some-New-Token__
+        </a-button>
+        <a-button @click="changeMenu('2')">
+          __Some-New-Token__id__Some-New-Token__2__Some-New-Token__
+        </a-button>
       </a-button-group>
     </div>
   </div>

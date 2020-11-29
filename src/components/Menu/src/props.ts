@@ -25,12 +25,12 @@ export const basicProps = {
     type: Boolean as PropType<boolean>,
     default: true,
   },
-  // 最好是4 倍数
+  // __Some-New-Token__4 __Some-New-Token__
   inlineIndent: {
     type: Number as PropType<number>,
     default: 20,
   },
-  // 菜单组件的mode属性
+  // __Some-New-Token__mode__Some-New-Token__
   mode: {
     type: String as PropType<MenuModeEnum>,
     default: MenuModeEnum.INLINE,

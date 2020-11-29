@@ -11,44 +11,44 @@ export interface TabItem {
 }
 
 export const tags: string[] = [
-  '很有想法的',
-  '专注设计',
-  '川妹子',
-  '大长腿',
-  '海纳百川',
-  '前端开发',
+  '__Some-New-Token__',
+  '__Some-New-Token__',
+  '__Some-New-Token__',
+  '__Some-New-Token__',
+  '__Some-New-Token__',
+  '__Some-New-Token__',
   'vue3',
 ];
 
 export const teams: ListItem[] = [
   {
     icon: 'ant-design:alipay-circle-outlined',
-    title: '科学搬砖组',
+    title: '__Some-New-Token__',
     color: '#ff4000',
   },
   {
     icon: 'emojione-monotone:letter-a',
-    title: '中二少年团',
+    title: '__Some-New-Token__',
     color: '#7c51b8',
   },
   {
     icon: 'ant-design:alipay-circle-outlined',
-    title: '高逼格设计',
+    title: '__Some-New-Token__',
     color: '#00adf7',
   },
   {
     icon: 'ant-design:codepen-circle-filled',
-    title: '程序员日常',
+    title: '__Some-New-Token__',
     color: '#00adf7',
   },
   {
     icon: 'ant-design:behance-square-filled',
-    title: '科学搬砖组',
+    title: '__Some-New-Token__',
     color: '#7c51b8',
   },
   {
     icon: 'ant-design:dribbble-circle-filled',
-    title: '程序员日常',
+    title: '__Some-New-Token__',
     color: '#ff4000',
   },
 ];
@@ -56,32 +56,32 @@ export const teams: ListItem[] = [
 export const details: ListItem[] = [
   {
     icon: 'ant-design:contacts-outlined',
-    title: '交互专家',
+    title: '__Some-New-Token__',
   },
   {
     icon: 'ant-design:cluster-outlined',
-    title: '某某某事业群',
+    title: '__Some-New-Token__',
   },
   {
     icon: 'ant-design:home-outlined',
-    title: '福建省厦门市',
+    title: '__Some-New-Token__',
   },
 ];
 
 export const achieveList: TabItem[] = [
   {
     key: '1',
-    name: '文章',
+    name: '__Some-New-Token__',
     component: 'Article',
   },
   {
     key: '2',
-    name: '应用',
+    name: '__Some-New-Token__',
     component: 'Application',
   },
   {
     key: '3',
-    name: '项目',
+    name: '__Some-New-Token__',
     component: 'Project',
   },
 ];
@@ -97,8 +97,8 @@ export const articleList = (() => {
   for (let i = 0; i < 4; i++) {
     result.push({
       title: 'Vben Admin',
-      description: ['Vben', '设计语言', 'Typescript'],
-      content: '基于Vue Next, TypeScript, Ant Design实现的一套完整的企业级后台管理系统。',
+      description: ['Vben', '__Some-New-Token__', 'Typescript'],
+      content: '__Some-New-Token__Vue Next, TypeScript, Ant Design__Some-New-Token__。',
       time: '2020-11-14 11:20',
     });
   }
@@ -125,7 +125,7 @@ export const projectList = (() => {
   for (let i = 0; i < 8; i++) {
     result.push({
       title: 'Vben Admin',
-      content: '基于Vue Next, TypeScript, Ant Design实现的一套完整的企业级后台管理系统。',
+      content: '__Some-New-Token__Vue Next, TypeScript, Ant Design__Some-New-Token__。',
     });
   }
   return result;

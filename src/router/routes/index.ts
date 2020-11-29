@@ -16,7 +16,7 @@ export const asyncRoutes = [
   ...genRouteModule(routeModuleList),
 ];
 
-// 主框架根路由
+// __Some-New-Token__
 export const RootRoute: AppRouteRecordRaw = {
   path: '/',
   name: 'Root',
@@ -37,5 +37,5 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
-// 基础路由 不用权限
+// __Some-New-Token__ __Some-New-Token__
 export const basicRoutes = [LoginRoute, RootRoute];

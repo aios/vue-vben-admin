@@ -17,22 +17,22 @@
         type: [String, Array] as PropType<string | any[]>,
         default: null,
       },
-      // 参数
+      // __Some-New-Token__
       options: {
         type: Object as PropType<QRCodeRenderersOptions>,
         default: null,
       },
-      // 宽度
+      // __Some-New-Token__
       width: {
         type: Number as PropType<number>,
         default: 200,
       },
-      // 中间logo图标
+      // __Some-New-Token__logo__Some-New-Token__
       logo: {
         type: [String, Object] as PropType<Partial<LogoType> | string>,
         default: '',
       },
-      // img 不支持内嵌logo
+      // img __Some-New-Token__logo
       tag: {
         type: String as PropType<'canvas' | 'img'>,
         default: 'canvas',

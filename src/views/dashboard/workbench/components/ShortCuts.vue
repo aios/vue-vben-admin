@@ -1,7 +1,7 @@
 <template>
-  <CollapseContainer class="shortcuts" title="快捷入口" :canExpan="false">
+  <CollapseContainer class="shortcuts" title="__Some-New-Token__" :canExpan="false">
     <template #action>
-      <a-button size="small" type="link"> 新建 </a-button>
+      <a-button size="small" type="link"> __Some-New-Token__ </a-button>
     </template>
     <Row>
       <template v-for="item in shortCuts" :key="item.img">
@@ -17,7 +17,7 @@
           <RightOutlined />
         </span>
         <br />
-        <span>查看全部</span>
+        <span>__Some-New-Token__</span>
       </Col>
     </Row>
   </CollapseContainer>
@@ -39,35 +39,35 @@
   const shortCuts = [
     {
       img: wokbImg1,
-      name: '考勤记录',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg2,
-      name: '加班申请',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg3,
-      name: '餐补申请',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg4,
-      name: '请假',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg5,
-      name: '用章申请',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg6,
-      name: '差旅报销',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg7,
-      name: '绩效申请',
+      name: '__Some-New-Token__',
     },
     {
       img: wokbImg8,
-      name: '审批',
+      name: '__Some-New-Token__',
     },
   ];
   export default defineComponent({

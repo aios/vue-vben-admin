@@ -1,11 +1,11 @@
 <template>
   <div class="step2">
-    <a-alert message="确认转账后，资金将直接打入对方账户，无法退回。" show-icon />
+    <a-alert message="__Some-New-Token__，__Some-New-Token__，__Some-New-Token__。" show-icon />
     <a-descriptions :column="1" class="mt-5">
-      <a-descriptions-item label="付款账户"> ant-design@alipay.com </a-descriptions-item>
-      <a-descriptions-item label="收款账户"> test@example.com </a-descriptions-item>
-      <a-descriptions-item label="收款人姓名"> Vben </a-descriptions-item>
-      <a-descriptions-item label="转账金额"> 500元 </a-descriptions-item>
+      <a-descriptions-item label="__Some-New-Token__"> ant-design@alipay.com </a-descriptions-item>
+      <a-descriptions-item label="__Some-New-Token__"> test@example.com </a-descriptions-item>
+      <a-descriptions-item label="__Some-New-Token__"> Vben </a-descriptions-item>
+      <a-descriptions-item label="__Some-New-Token__"> 500__Some-New-Token__ </a-descriptions-item>
     </a-descriptions>
     <a-divider />
     <BasicForm @register="register" />
@@ -27,10 +27,10 @@
           span: 14,
         },
         resetButtonOptions: {
-          text: '上一步',
+          text: '__Some-New-Token__',
         },
         submitButtonOptions: {
-          text: '提交',
+          text: '__Some-New-Token__',
         },
         resetFunc: customResetFunc,
         submitFunc: customSubmitFunc,

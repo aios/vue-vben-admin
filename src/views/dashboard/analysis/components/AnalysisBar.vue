@@ -20,14 +20,14 @@
             trigger: 'axis',
             backgroundColor: 'rgba(0, 0, 0, .6)',
             axisPointer: {
-              // 坐标轴指示器，坐标轴触发有效
-              type: 'shadow', // 默认为直线，可选为：'line' | 'shadow'
+              // __Some-New-Token__，__Some-New-Token__
+              type: 'shadow', // __Some-New-Token__，__Some-New-Token__：'line' | 'shadow'
             },
           },
           legend: {
             itemWidth: 15,
             right: 10,
-            data: ['产品一', '产品二', '产品三'],
+            data: ['__Some-New-Token__', '__Some-New-Token__', '__Some-New-Token__'],
           },
           grid: {
             left: '3%',
@@ -39,22 +39,22 @@
             {
               type: 'category',
               axisTick: {
-                inside: true, // 刻度朝内
+                inside: true, // __Some-New-Token__
               },
-              data: ['付费用户', '免费用户', '自主'],
+              data: ['__Some-New-Token__', '__Some-New-Token__', '__Some-New-Token__'],
             },
           ],
           yAxis: [
             {
               type: 'value',
               axisTick: {
-                inside: true, // 刻度朝内
+                inside: true, // __Some-New-Token__
               },
             },
           ],
           series: [
             {
-              name: '产品一',
+              name: '__Some-New-Token__',
               type: 'bar',
               itemStyle: {
                 color: '#3ca0f6',
@@ -63,7 +63,7 @@
               animationDuration: 4000,
             },
             {
-              name: '产品二',
+              name: '__Some-New-Token__',
               type: 'bar',
               itemStyle: {
                 color: '#7dd9b9',
@@ -73,7 +73,7 @@
             },
 
             {
-              name: '产品三',
+              name: '__Some-New-Token__',
               type: 'bar',
               itemStyle: {
                 color: '#e6a23c',

@@ -1,15 +1,20 @@
 import { onMounted, ref } from 'vue';
+import { camelize } from '/@/components/util';
 
 interface ScriptOptions {
   src: string;
 }
 
-export function useScript(opts: ScriptOptions) {
+interface ScriptData {
+  [key: string]: any;
+}
+
+export function useScript(opts: ScriptOptions, data?: ScriptData) {
   const isLoading = ref(false);
   const error = ref(false);
   const success = ref(false);
 
-  const promise = new Promise((resolve, reject) => {
+  const promise = new Promise<void>((resolve, reject) => {
     onMounted(() => {
       const script = document.createElement('script');
       script.onload = function () {
@@ -27,7 +32,21 @@ export function useScript(opts: ScriptOptions) {
       };
 
       script.src = opts.src;
-      document.head.appendChild(script);
+
+      for (const dataKey in data) {
+        if (data.hasOwnProperty(dataKey)) {
+          const camelDataKey = camelize(dataKey);
+          script.dataset[camelDataKey] = data[dataKey];
+        }
+      }
+
+      const elem = document.getElementById('telegram_auth');
+      console.log(elem);
+      if (!data) {
+        document.head.appendChild(script);
+      } else {
+        elem?.appendChild(script);
+      }
     });
   });
 

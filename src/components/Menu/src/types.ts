@@ -2,27 +2,27 @@ import { ComputedRef } from 'vue';
 import { ThemeEnum } from '/@/enums/appEnum';
 import { MenuModeEnum } from '/@/enums/menuEnum';
 export interface MenuState {
-  // 默认选中的列表
+  // __Some-New-Token__
   defaultSelectedKeys: string[];
 
-  // 模式
+  // __Some-New-Token__
   mode: MenuModeEnum;
 
-  // 主题
+  // __Some-New-Token__
   theme: ComputedRef<ThemeEnum> | ThemeEnum;
 
-  // 缩进
+  // __Some-New-Token__
   inlineIndent?: number;
 
-  // 展开数组
+  // __Some-New-Token__
   openKeys: string[];
 
-  // 搜索值
+  // __Some-New-Token__
   searchValue: string;
 
-  // 当前选中的菜单项 key 数组
+  // __Some-New-Token__ key __Some-New-Token__
   selectedKeys: string[];
 
-  // 收缩状态下展开的数组
+  // __Some-New-Token__
   collapsedOpenKeys: string[];
 }

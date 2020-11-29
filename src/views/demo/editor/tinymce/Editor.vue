@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <CollapseContainer title="富文本表单">
+    <CollapseContainer title="__Some-New-Token__">
       <BasicForm
         :labelWidth="100"
         :schemas="schemas"

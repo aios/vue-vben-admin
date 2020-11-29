@@ -1,4 +1,4 @@
-// 参考 qr-code-with-logo 进行ts版本修改
+// __Some-New-Token__ qr-code-with-logo __Some-New-Token__ts__Some-New-Token__
 import { toCanvas } from './toCanvas';
 export * from './types';
 

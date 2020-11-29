@@ -20,19 +20,19 @@
         }, 0);
         return [
           {
-            _row: '合计',
-            _index: '平均值',
+            _row: '__Some-New-Token__',
+            _index: '__Some-New-Token__',
             no: totalNo,
           },
           {
-            _row: '合计',
-            _index: '平均值',
+            _row: '__Some-New-Token__',
+            _index: '__Some-New-Token__',
             no: totalNo,
           },
         ];
       }
       const [registerTable] = useTable({
-        title: '表尾行合计示例',
+        title: '__Some-New-Token__',
         api: demoListApi,
         rowSelection: { type: 'checkbox' },
         columns: getBasicColumns(),

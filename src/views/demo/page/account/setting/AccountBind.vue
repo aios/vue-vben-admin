@@ -1,5 +1,5 @@
 <template>
-  <CollapseContainer title="账号绑定" :canExpan="false">
+  <CollapseContainer title="__Some-New-Token__" :canExpan="false">
     <List>
       <template v-for="item in list" :key="item.key">
         <ListItem>

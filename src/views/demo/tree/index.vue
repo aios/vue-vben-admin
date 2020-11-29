@@ -1,14 +1,14 @@
 <template>
   <div class="flex p-4">
-    <CollapseContainer title="基础示例" :style="{ width: '33%' }" class="mr-4">
+    <CollapseContainer title="__Some-New-Token__" :style="{ width: '33%' }" class="mr-4">
       <BasicTree :treeData="treeData" />
     </CollapseContainer>
 
-    <CollapseContainer title="可勾选" class="mr-4" :style="{ width: '33%' }">
+    <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
       <BasicTree :treeData="treeData" :checkable="true" />
     </CollapseContainer>
 
-    <CollapseContainer title="默认展开/勾选示例" :style="{ width: '33%' }">
+    <CollapseContainer title="__Some-New-Token__/__Some-New-Token__" :style="{ width: '33%' }">
       <BasicTree
         :treeData="treeData"
         :checkable="true"

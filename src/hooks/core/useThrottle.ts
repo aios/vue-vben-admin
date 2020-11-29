@@ -1,10 +1,10 @@
 export interface DebounceAndThrottleOptions {
-  // 立即执行
+  // __Some-New-Token__
   immediate?: boolean;
 
-  // 是否为debounce
+  // __Some-New-Token__debounce
   debounce?: boolean;
-  // 只执行一次
+  // __Some-New-Token__
   once?: boolean;
 }
 export type CancelFn = () => void;

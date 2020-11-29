@@ -1,12 +1,12 @@
 <template>
   <div class="m-4">
     <div class="mb-4">
-      <a-button @click="validateForm" class="mr-2">手动校验表单</a-button>
-      <a-button @click="resetValidate" class="mr-2">清空校验信息</a-button>
-      <a-button @click="getFormValues" class="mr-2">获取表单值</a-button>
-      <a-button @click="setFormValues" class="mr-2">设置表单值</a-button>
+      <a-button @click="validateForm" class="mr-2">__Some-New-Token__</a-button>
+      <a-button @click="resetValidate" class="mr-2">__Some-New-Token__</a-button>
+      <a-button @click="getFormValues" class="mr-2">__Some-New-Token__</a-button>
+      <a-button @click="setFormValues" class="mr-2">__Some-New-Token__</a-button>
     </div>
-    <CollapseContainer title="表单校验">
+    <CollapseContainer title="__Some-New-Token__">
       <BasicForm @register="register" @submit="handleSubmit" />
     </CollapseContainer>
   </div>
@@ -20,7 +20,7 @@
     {
       field: 'field1',
       component: 'Input',
-      label: '字段1',
+      label: '__Some-New-Token__1',
       colProps: {
         span: 8,
       },
@@ -29,7 +29,7 @@
     {
       field: 'field2',
       component: 'Input',
-      label: '字段2',
+      label: '__Some-New-Token__2',
       colProps: {
         span: 8,
       },
@@ -38,7 +38,7 @@
     {
       field: 'field3',
       component: 'DatePicker',
-      label: '字段3',
+      label: '__Some-New-Token__3',
       colProps: {
         span: 8,
       },
@@ -47,19 +47,19 @@
     {
       field: 'field4',
       component: 'Select',
-      label: '字段4',
+      label: '__Some-New-Token__4',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
             key: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
             key: '2',
           },
@@ -68,14 +68,14 @@
       rules: [
         {
           required: true,
-          message: '请输入aa',
+          message: '__Some-New-Token__aa',
         },
       ],
     },
     {
       field: 'field44',
       component: 'Input',
-      label: '自定义校验',
+      label: '__Some-New-Token__',
       colProps: {
         span: 8,
       },
@@ -85,7 +85,7 @@
           // @ts-ignore
           validator: async (rule, value) => {
             if (value === '1') {
-              return Promise.reject('值不能为1');
+              return Promise.reject('__Some-New-Token__1');
             }
             return Promise.resolve();
           },
@@ -96,18 +96,18 @@
     {
       field: 'field5',
       component: 'CheckboxGroup',
-      label: '字段5',
+      label: '__Some-New-Token__5',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
           },
         ],
@@ -117,23 +117,23 @@
     {
       field: 'field7',
       component: 'RadioGroup',
-      label: '字段7',
+      label: '__Some-New-Token__7',
       colProps: {
         span: 8,
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
           },
         ],
       },
-      rules: [{ required: true, message: '覆盖默认生成的校验信息' }],
+      rules: [{ required: true, message: '__Some-New-Token__' }],
     },
   ];
 

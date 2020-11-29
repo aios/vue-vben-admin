@@ -1,7 +1,7 @@
 <template>
   <div>
-    <a-page-header title="基础表单" :ghost="false">
-      表单页用于向用户收集或验证信息，基础表单常见于数据项较少的表单场景。
+    <a-page-header title="__Some-New-Token__" :ghost="false">
+      __Some-New-Token__，__Some-New-Token__。
     </a-page-header>
 
     <div class="m-5 form-wrap">
@@ -30,7 +30,7 @@
           offset: 8,
         },
         submitButtonOptions: {
-          text: '提交',
+          text: '__Some-New-Token__',
         },
         submitFunc: customSubmitFunc,
       });
@@ -49,7 +49,7 @@
                 loading: false,
               },
             });
-            createMessage.success('提交成功！');
+            createMessage.success('__Some-New-Token__！');
           }, 2000);
         } catch (error) {}
       }

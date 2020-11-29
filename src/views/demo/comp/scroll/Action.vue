@@ -1,12 +1,19 @@
 <template>
   <div class="p-4">
-    <Alert message="抽取el-scrollbar，并对其进行扩展,滚动条美化,适用于各个浏览器" type="info" />
+    <Alert
+      message="__Some-New-Token__el-scrollbar，__Some-New-Token__,__Some-New-Token__,__Some-New-Token__"
+      type="info"
+    />
 
     <div class="my-4">
-      <a-button @click="scrollTo(100)" class="mr-2">滚动到100px位置</a-button>
-      <a-button @click="scrollTo(800)" class="mr-2">滚动到800px位置</a-button>
-      <a-button @click="scrollTo(0)" class="mr-2">滚动到顶部</a-button>
-      <a-button @click="scrollBottom()" class="mr-2">滚动到底部</a-button>
+      <a-button @click="scrollTo(100)" class="mr-2"
+        >__Some-New-Token__100px__Some-New-Token__</a-button
+      >
+      <a-button @click="scrollTo(800)" class="mr-2"
+        >__Some-New-Token__800px__Some-New-Token__</a-button
+      >
+      <a-button @click="scrollTo(0)" class="mr-2">__Some-New-Token__</a-button>
+      <a-button @click="scrollBottom()" class="mr-2">__Some-New-Token__</a-button>
     </div>
     <div class="scroll-wrap">
       <ScrollContainer class="mt-4" ref="scrollRef">

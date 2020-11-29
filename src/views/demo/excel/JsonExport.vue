@@ -1,9 +1,9 @@
 <template>
   <div class="m-4">
-    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
+    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
       <template #toolbar>
-        <a-button @click="defaultHeader">导出：默认头部</a-button>
-        <a-button @click="customHeader">导出：自定义头部</a-button>
+        <a-button @click="defaultHeader">__Some-New-Token__：__Some-New-Token__</a-button>
+        <a-button @click="customHeader">__Some-New-Token__：__Some-New-Token__</a-button>
       </template>
     </BasicTable>
   </div>
@@ -19,10 +19,10 @@
     components: { BasicTable, ExportExcelModel },
     setup() {
       function defaultHeader() {
-        // 默认Object.keys(data[0])作为header
+        // __Some-New-Token__Object.keys(data[0])__Some-New-Token__header
         jsonToSheetXlsx({
           data,
-          filename: '使用key作为默认头部.xlsx',
+          filename: '__Some-New-Token__key__Some-New-Token__.xlsx',
         });
       }
       function customHeader() {
@@ -30,16 +30,16 @@
           data,
           header: {
             id: 'ID',
-            name: '姓名',
-            age: '年龄',
-            no: '编号',
-            address: '地址',
-            beginTime: '开始时间',
-            endTime: '结束时间',
+            name: '__Some-New-Token__',
+            age: '__Some-New-Token__',
+            no: '__Some-New-Token__',
+            address: '__Some-New-Token__',
+            beginTime: '__Some-New-Token__',
+            endTime: '__Some-New-Token__',
           },
-          filename: '自定义头部.xlsx',
+          filename: '__Some-New-Token__.xlsx',
           json2sheetOpts: {
-            // 指定顺序
+            // __Some-New-Token__
             header: ['name', 'id'],
           },
         });

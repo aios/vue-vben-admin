@@ -49,8 +49,8 @@ export function createVitePlugins(viteEnv: ViteEnv) {
     vitePlugins.push(
       VitePWA({
         manifest: {
-          name: 'Vben Admin',
-          short_name: 'vben_admin',
+          name: 'Proseller Admin',
+          short_name: 'proseller_admin',
           icons: [
             {
               src: './resource/img/pwa-192x192.png',

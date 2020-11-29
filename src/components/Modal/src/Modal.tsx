@@ -24,27 +24,27 @@ export default defineComponent({
 
       dialogHeaderEl.onmousedown = (e: any) => {
         if (!e) return;
-        // 鼠标按下，计算当前元素距离可视区的距离
+        // __Some-New-Token__，__Some-New-Token__
         const disX = e.clientX;
         const disY = e.clientY;
-        const screenWidth = document.body.clientWidth; // body当前宽度
-        const screenHeight = document.documentElement.clientHeight; // 可见区域高度(应为body高度，可某些环境下无法获取)
+        const screenWidth = document.body.clientWidth; // body__Some-New-Token__
+        const screenHeight = document.documentElement.clientHeight; // __Some-New-Token__(__Some-New-Token__body__Some-New-Token__，__Some-New-Token__)
 
-        const dragDomWidth = dragDom.offsetWidth; // 对话框宽度
-        const dragDomheight = dragDom.offsetHeight; // 对话框高度
+        const dragDomWidth = dragDom.offsetWidth; // __Some-New-Token__
+        const dragDomheight = dragDom.offsetHeight; // __Some-New-Token__
 
         const minDragDomLeft = dragDom.offsetLeft;
 
         const maxDragDomLeft = screenWidth - dragDom.offsetLeft - dragDomWidth;
         const minDragDomTop = dragDom.offsetTop;
         const maxDragDomTop = screenHeight - dragDom.offsetTop - dragDomheight;
-        // 获取到的值带px 正则匹配替换
+        // __Some-New-Token__px __Some-New-Token__
         const domLeft = getStyle(dragDom, 'left');
         const domTop = getStyle(dragDom, 'top');
         let styL = +domLeft;
         let styT = +domTop;
 
-        // 注意在ie中 第一次获取到的值为组件自带50% 移动之后赋值为px
+        // __Some-New-Token__ie__Some-New-Token__ __Some-New-Token__50% __Some-New-Token__px
         if (domLeft.includes('%')) {
           styL = +document.body.clientWidth * (+domLeft.replace(/%/g, '') / 100);
           styT = +document.body.clientHeight * (+domTop.replace(/%/g, '') / 100);
@@ -54,11 +54,11 @@ export default defineComponent({
         }
 
         document.onmousemove = function (e) {
-          // 通过事件委托，计算移动的距离
+          // __Some-New-Token__，__Some-New-Token__
           let left = e.clientX - disX;
           let top = e.clientY - disY;
 
-          // 边界处理
+          // __Some-New-Token__
           if (-left > minDragDomLeft) {
             left = -minDragDomLeft;
           } else if (left > maxDragDomLeft) {
@@ -71,7 +71,7 @@ export default defineComponent({
             top = maxDragDomTop;
           }
 
-          // 移动当前元素
+          // __Some-New-Token__
           dragDom.style.cssText += `;left:${left + styL}px;top:${top + styT}px;`;
         };
 
@@ -89,7 +89,7 @@ export default defineComponent({
         const display = getStyle(wrap, 'display');
         const draggable = wrap.getAttribute('data-drag');
         if (display !== 'none') {
-          // 拖拽位置
+          // __Some-New-Token__
           (draggable === null || props.destroyOnClose) && drag(wrap);
         }
       }

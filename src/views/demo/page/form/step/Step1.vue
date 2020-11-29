@@ -5,8 +5,8 @@
         <template #fac="{ model, field }">
           <a-input-group compact>
             <a-select v-model:value="model['pay']" class="pay-select">
-              <a-select-option value="zfb"> 支付宝 </a-select-option>
-              <a-select-option value="yl"> 银联 </a-select-option>
+              <a-select-option value="zfb"> __Some-New-Token__ </a-select-option>
+              <a-select-option value="yl"> __Some-New-Token__ </a-select-option>
             </a-select>
             <a-input class="pay-input" v-model:value="model[field]" />
           </a-input-group>
@@ -14,15 +14,15 @@
       </BasicForm>
     </div>
     <a-divider />
-    <h3>说明</h3>
-    <h4>转账到支付宝账户</h4>
+    <h3>__Some-New-Token__</h3>
+    <h4>__Some-New-Token__</h4>
     <p>
-      如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+      __Some-New-Token__，__Some-New-Token__。__Some-New-Token__，__Some-New-Token__。__Some-New-Token__，__Some-New-Token__。
     </p>
 
-    <h4>转账到银行卡</h4>
+    <h4>__Some-New-Token__</h4>
     <p>
-      如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
+      __Some-New-Token__，__Some-New-Token__。__Some-New-Token__，__Some-New-Token__。__Some-New-Token__，__Some-New-Token__。
     </p>
   </div>
 </template>
@@ -43,7 +43,7 @@
         },
         showResetButton: false,
         submitButtonOptions: {
-          text: '下一步',
+          text: '__Some-New-Token__',
         },
         submitFunc: customSubmitFunc,
       });

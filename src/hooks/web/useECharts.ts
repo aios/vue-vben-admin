@@ -52,7 +52,7 @@ export function useECharts(
 
         chartInstance && chartInstance.setOption(options);
       }, 30);
-    });
+    }).then((r) => console.log(r));
   }
 
   function resize() {

@@ -18,9 +18,9 @@
     components: { BasicTable },
     setup() {
       const [registerTable] = useTable({
-        title: '可展开表格',
+        title: '__Some-New-Token__',
         api: demoListApi,
-        titleHelpMessage: '不能与scroll共用',
+        titleHelpMessage: '__Some-New-Token__scroll__Some-New-Token__',
         columns: getBasicColumns(),
         rowKey: 'id',
         canResize: false,

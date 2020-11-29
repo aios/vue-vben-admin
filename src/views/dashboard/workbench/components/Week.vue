@@ -1,5 +1,5 @@
 <template>
-  <CollapseContainer title="销售统计" :canExpan="false">
+  <CollapseContainer title="__Some-New-Token__" :canExpan="false">
     <div ref="chartRef" :style="{ width: '100%' }" />
   </CollapseContainer>
 </template>

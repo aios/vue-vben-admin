@@ -1,17 +1,23 @@
 <template>
   <div class="m-5 demo-box">
-    <a-alert message="根据后台接口文件流下载" />
-    <a-button type="primary" class="my-4" @click="handleDownByData"> 文件流下载 </a-button>
+    <a-alert message="__Some-New-Token__" />
+    <a-button type="primary" class="my-4" @click="handleDownByData"> __Some-New-Token__ </a-button>
 
-    <a-alert message="根据文件地址下载文件" />
-    <a-button type="primary" class="my-4" @click="handleDownloadByUrl"> 文件地址下载 </a-button>
+    <a-alert message="__Some-New-Token__" />
+    <a-button type="primary" class="my-4" @click="handleDownloadByUrl">
+      __Some-New-Token__
+    </a-button>
 
-    <a-alert message="base64流下载" />
-    <a-button type="primary" class="my-4" @click="handleDownloadByBase64"> base64流下载 </a-button>
+    <a-alert message="base64__Some-New-Token__" />
+    <a-button type="primary" class="my-4" @click="handleDownloadByBase64">
+      base64__Some-New-Token__
+    </a-button>
 
-    <a-alert message="图片Url下载,如果有跨域问题，需要处理图片跨域" />
+    <a-alert
+      message="__Some-New-Token__Url__Some-New-Token__,__Some-New-Token__，__Some-New-Token__"
+    />
     <a-button type="primary" class="my-4" @click="handleDownloadByOnlineUrl">
-      图片Url下载
+      __Some-New-Token__Url__Some-New-Token__
     </a-button>
   </div>
 </template>

@@ -1,10 +1,10 @@
 <template>
   <div class="m-4">
-    <CollapseContainer title="基础收缩示例">
+    <CollapseContainer title="__Some-New-Token__">
       <BasicForm @register="register" />
     </CollapseContainer>
 
-    <CollapseContainer title="超过3行自动收起" class="mt-4">
+    <CollapseContainer title="__Some-New-Token__3__Some-New-Token__" class="mt-4">
       <BasicForm @register="register1" />
     </CollapseContainer>
   </div>
@@ -19,12 +19,12 @@
       {
         field: 'field1',
         component: 'Input',
-        label: '字段1',
+        label: '__Some-New-Token__1',
         colProps: {
           span: 8,
         },
         componentProps: {
-          placeholder: '自定义placeholder',
+          placeholder: '__Some-New-Token__placeholder',
           onChange: (e: any) => {
             console.log(e);
           },
@@ -33,7 +33,7 @@
       {
         field: 'field2',
         component: 'Input',
-        label: '字段2',
+        label: '__Some-New-Token__2',
         colProps: {
           span: 8,
         },
@@ -41,7 +41,7 @@
       {
         field: 'field3',
         component: 'DatePicker',
-        label: '字段3',
+        label: '__Some-New-Token__3',
         colProps: {
           span: 8,
         },
@@ -49,19 +49,19 @@
       {
         field: 'field4',
         component: 'Select',
-        label: '字段4',
+        label: '__Some-New-Token__4',
         colProps: {
           span: 8,
         },
         componentProps: {
           options: [
             {
-              label: '选项1',
+              label: '__Some-New-Token__1',
               value: '1',
               key: '1',
             },
             {
-              label: '选项2',
+              label: '__Some-New-Token__2',
               value: '2',
               key: '2',
             },
@@ -71,18 +71,18 @@
       {
         field: 'field5',
         component: 'CheckboxGroup',
-        label: '字段5',
+        label: '__Some-New-Token__5',
         colProps: {
           span: 8,
         },
         componentProps: {
           options: [
             {
-              label: '选项1',
+              label: '__Some-New-Token__1',
               value: '1',
             },
             {
-              label: '选项2',
+              label: '__Some-New-Token__2',
               value: '2',
             },
           ],
@@ -91,18 +91,18 @@
       // {
       //   field: 'field7',
       //   component: 'RadioGroup',
-      //   label: '字段7',
+      //   label: '__Some-New-Token__7',
       //   colProps: {
       //     span: 8,
       //   },
       //   componentProps: {
       //     options: [
       //       {
-      //         label: '选项1',
+      //         label: '__Some-New-Token__1',
       //         value: '1',
       //       },
       //       {
-      //         label: '选项2',
+      //         label: '__Some-New-Token__2',
       //         value: '2',
       //       },
       //     ],
@@ -116,7 +116,7 @@
       {
         field: 'field10',
         component: 'Input',
-        label: '字段10',
+        label: '__Some-New-Token__10',
         colProps: {
           span: 8,
         },
@@ -124,7 +124,7 @@
       {
         field: 'field11',
         component: 'Input',
-        label: '字段11',
+        label: '__Some-New-Token__11',
         colProps: {
           span: 8,
         },
@@ -132,7 +132,7 @@
       {
         field: 'field12',
         component: 'Input',
-        label: '字段12',
+        label: '__Some-New-Token__12',
         colProps: {
           span: 8,
         },
@@ -140,7 +140,7 @@
       {
         field: 'field13',
         component: 'Input',
-        label: '字段13',
+        label: '__Some-New-Token__13',
         colProps: {
           span: 8,
         },

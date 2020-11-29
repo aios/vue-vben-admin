@@ -1,4 +1,4 @@
-// collapse 展开折叠
+// collapse __Some-New-Token__
 import { defineComponent } from 'vue';
 import { getSlot } from '/@/utils/helper/tsxHelper';
 // import { createJavascriptTransition } from './CreateTransition';

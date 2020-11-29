@@ -19,7 +19,7 @@ export function startGzip(
   });
 }
 
-// 手动压缩css
+// __Some-New-Token__css
 export async function startGzipStyle() {
   if (isBuildGzip() || isSiteMode()) {
     const outDir = viteConfig.outDir || 'dist';

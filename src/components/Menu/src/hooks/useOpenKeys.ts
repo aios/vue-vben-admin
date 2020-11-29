@@ -18,7 +18,7 @@ export function useOpenKeys(
 ) {
   const { getCollapsed } = useMenuSetting();
   /**
-   * @description:设置展开
+   * @description:__Some-New-Token__
    */
   function setOpenKeys(menu: MenuType) {
     const flatMenus = unref(flatMenusRef);
@@ -33,7 +33,7 @@ export function useOpenKeys(
   }
 
   /**
-   * @description:  重置值
+   * @description:  __Some-New-Token__
    */
   function resetKeys() {
     menuState.selectedKeys = [];

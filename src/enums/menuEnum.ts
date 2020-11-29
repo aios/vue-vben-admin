@@ -10,13 +10,13 @@ export enum MenuTypeEnum {
   TOP_MENU = 'top-menu',
 }
 
-// 折叠触发器位置
+// __Some-New-Token__
 export enum TriggerEnum {
-  // 不显示
+  // __Some-New-Token__
   NONE = 'NONE',
-  // 菜单底部
+  // __Some-New-Token__
   FOOTER = 'FOOTER',
-  // 头部
+  // __Some-New-Token__
   HEADER = 'HEADER',
 }
 

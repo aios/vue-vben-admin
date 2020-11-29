@@ -1,15 +1,15 @@
 <template>
   <div>
-    <a-page-header title="分步表单" :ghost="false">
-      将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成。
+    <a-page-header title="__Some-New-Token__" :ghost="false">
+      __Some-New-Token__，__Some-New-Token__。
     </a-page-header>
 
     <div class="m-5 step-form-content">
       <div class="step-form-form">
         <a-steps :current="current">
-          <a-step title="填写转账信息"> </a-step>
-          <a-step title="确认转账信息"> </a-step>
-          <a-step title="完成"> </a-step>
+          <a-step title="__Some-New-Token__"> </a-step>
+          <a-step title="__Some-New-Token__"> </a-step>
+          <a-step title="__Some-New-Token__"> </a-step>
         </a-steps>
       </div>
       <div class="mt-5">

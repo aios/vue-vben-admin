@@ -13,7 +13,7 @@ import { ContentTypeEnum } from '/@/enums/httpEnum';
 export * from './axiosTransform';
 
 /**
- * @description:  axios模块
+ * @description:  axios__Some-New-Token__
  */
 export class VAxios {
   private axiosInstance: AxiosInstance;
@@ -26,7 +26,7 @@ export class VAxios {
   }
 
   /**
-   * @description:  创建axios实例
+   * @description:  __Some-New-Token__axios__Some-New-Token__
    */
   private createAxios(config: CreateAxiosOptions): void {
     this.axiosInstance = axios.create(config);
@@ -42,7 +42,7 @@ export class VAxios {
   }
 
   /**
-   * @description: 重新配置axios
+   * @description: __Some-New-Token__axios
    */
   configAxios(config: CreateAxiosOptions) {
     if (!this.axiosInstance) {
@@ -52,7 +52,7 @@ export class VAxios {
   }
 
   /**
-   * @description: 设置通用header
+   * @description: __Some-New-Token__header
    */
   setHeader(headers: any): void {
     if (!this.axiosInstance) {
@@ -62,7 +62,7 @@ export class VAxios {
   }
 
   /**
-   * @description: 拦截器配置
+   * @description: __Some-New-Token__
    */
   private setupInterceptors() {
     const transform = this.getTransform();
@@ -78,7 +78,7 @@ export class VAxios {
 
     const axiosCanceler = new AxiosCanceler();
 
-    // 请求拦截器配置处理
+    // __Some-New-Token__
     this.axiosInstance.interceptors.request.use((config: AxiosRequestConfig) => {
       const { headers: { ignoreCancelToken } = { ignoreCancelToken: false } } = config;
       !ignoreCancelToken && axiosCanceler.addPending(config);
@@ -88,12 +88,12 @@ export class VAxios {
       return config;
     }, undefined);
 
-    // 请求拦截器错误捕获
+    // __Some-New-Token__
     requestInterceptorsCatch &&
       isFunction(requestInterceptorsCatch) &&
       this.axiosInstance.interceptors.request.use(undefined, requestInterceptorsCatch);
 
-    // 响应结果拦截器处理
+    // __Some-New-Token__
     this.axiosInstance.interceptors.response.use((res: AxiosResponse<any>) => {
       res && axiosCanceler.removePending(res.config);
       if (responseInterceptors && isFunction(responseInterceptors)) {
@@ -102,14 +102,14 @@ export class VAxios {
       return res;
     }, undefined);
 
-    // 响应结果拦截器错误捕获
+    // __Some-New-Token__
     responseInterceptorsCatch &&
       isFunction(responseInterceptorsCatch) &&
       this.axiosInstance.interceptors.response.use(undefined, responseInterceptorsCatch);
   }
 
   /**
-   * @description:  文件上传
+   * @description:  __Some-New-Token__
    */
   uploadFile<T = any>(config: AxiosRequestConfig, params: UploadFileParams) {
     const formData = new window.FormData();
@@ -143,7 +143,7 @@ export class VAxios {
   }
 
   /**
-   * @description:   请求方法
+   * @description:   __Some-New-Token__
    */
   request<T = any>(config: AxiosRequestConfig, options?: RequestOptions): Promise<T> {
     let conf: AxiosRequestConfig = cloneDeep(config);

@@ -6,7 +6,7 @@ import { getShortName } from '../../../build/getShortName';
 import { warn } from '/@/utils/log';
 import { getGlobEnvConfig, isDevMode } from '/@/utils/env';
 
-const reg = /[a-zA-Z\_]*/;
+const reg = /[a-zA-Z_]*/;
 
 const ENV_NAME = getShortName(import.meta.env);
 const ENV = ((isDevMode()
@@ -18,6 +18,8 @@ const {
   VITE_GLOB_API_URL,
   VITE_GLOB_APP_SHORT_NAME,
   VITE_GLOB_API_URL_PREFIX,
+  VITE_GLOB_AUTH_CALLBACK,
+  VITE_GLOB_AUTH_BOT,
 } = ENV;
 
 if (!reg.test(VITE_GLOB_APP_SHORT_NAME)) {
@@ -33,6 +35,8 @@ export const useGlobSetting = (): Readonly<GlobConfig> => {
     apiUrl: VITE_GLOB_API_URL,
     shortName: VITE_GLOB_APP_SHORT_NAME,
     urlPrefix: VITE_GLOB_API_URL_PREFIX,
+    telegramCallback: VITE_GLOB_AUTH_CALLBACK,
+    telegramBotName: VITE_GLOB_AUTH_BOT,
   };
   return glob as Readonly<GlobConfig>;
 };

@@ -17,7 +17,7 @@
       onMounted(() => {
         setOptions({
           // title: {
-          //   text: '产品成交额',
+          //   text: '__Some-New-Token__',
           // },
           tooltip: {
             trigger: 'axis',
@@ -33,7 +33,7 @@
             left: 80,
             top: 0,
             orient: 'horizontal',
-            data: ['产品一', '产品二'],
+            data: ['__Some-New-Token__', '__Some-New-Token__'],
           },
           grid: {
             left: '3%',
@@ -45,32 +45,32 @@
             type: 'category',
             boundaryGap: false,
             axisTick: {
-              inside: true, // 刻度朝内
+              inside: true, // __Some-New-Token__
             },
             data: [
-              '一月',
-              '二月',
-              '三月',
-              '四月',
-              '五月',
-              '六月',
-              '七月',
-              '八月',
-              '九月',
-              '十月',
-              '十一月',
-              '十二月',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
+              '__Some-New-Token__',
             ],
           },
           yAxis: {
             type: 'value',
             axisTick: {
-              inside: true, // 刻度朝内
+              inside: true, // __Some-New-Token__
             },
           },
           series: [
             {
-              name: '产品一',
+              name: '__Some-New-Token__',
               type: 'line',
               itemStyle: {
                 normal: {
@@ -82,7 +82,7 @@
               animationDuration: 4000,
             },
             {
-              name: '产品二',
+              name: '__Some-New-Token__',
               type: 'line',
               itemStyle: {
                 normal: {

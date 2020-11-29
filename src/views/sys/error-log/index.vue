@@ -82,7 +82,7 @@
       if (isDevMode()) {
         createMessage.info(t('enableMessage'));
       }
-      // 查看详情
+      // __Some-New-Token__
       function handleDetail(row: ErrorInfo) {
         rowInfoRef.value = row;
         openModal(true);

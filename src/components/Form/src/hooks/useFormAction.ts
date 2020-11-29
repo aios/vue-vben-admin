@@ -50,7 +50,7 @@ export function useFormAction({
   }
 
   /**
-   * @description: 设置表单值
+   * @description: __Some-New-Token__
    */
   async function setFieldsValue(values: any): Promise<void> {
     const fields = unref(getSchema)
@@ -79,9 +79,7 @@ export function useFormAction({
         validKeys.push(key);
       }
     });
-    // if (formEl) {
-    //   formEl.validateFields(validKeys);
-    // }
+    validateFields(validKeys);
   }
   /**
    * @description: Delete based on field name

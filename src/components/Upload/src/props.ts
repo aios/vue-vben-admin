@@ -6,17 +6,17 @@ export const basicProps = {
     type: String as PropType<string>,
     default: '',
   },
-  // 文件最大多少MB
+  // __Some-New-Token__MB
   maxSize: {
     type: Number as PropType<number>,
     default: 2,
   },
-  // 最大数量的文件，Infinity不限制
+  // __Some-New-Token__，Infinity__Some-New-Token__
   maxNumber: {
     type: Number as PropType<number>,
     default: Infinity,
   },
-  // 根据后缀，或者其他
+  // __Some-New-Token__，__Some-New-Token__
   accept: {
     type: Array as PropType<string[]>,
     default: () => [],

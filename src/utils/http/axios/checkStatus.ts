@@ -3,17 +3,16 @@ import { userStore } from '/@/store/modules/user';
 import { useI18n } from '/@/hooks/web/useI18n';
 const { createMessage } = useMessage();
 
-const { t } = useI18n('sys.api');
-
 const error = createMessage.error!;
 export function checkStatus(status: number, msg: string): void {
+  const { t } = useI18n('sys.api');
   switch (status) {
     case 400:
       error(`${msg}`);
       break;
-    // 401: 未登录
-    // 未登录则跳转登录页面，并携带当前页面的路径
-    // 在登录成功后返回当前页面，这一步需要在登录页操作。
+    // 401: __Some-New-Token__
+    // __Some-New-Token__，__Some-New-Token__
+    // __Some-New-Token__，__Some-New-Token__。
     case 401:
       error(t('errMsg401'));
       userStore.loginOut(true);
@@ -21,7 +20,7 @@ export function checkStatus(status: number, msg: string): void {
     case 403:
       error(t('errMsg403'));
       break;
-    // 404请求不存在
+    // 404__Some-New-Token__
     case 404:
       error(t('errMsg404'));
       break;

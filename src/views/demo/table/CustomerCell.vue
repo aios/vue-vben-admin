@@ -25,31 +25,31 @@
       slots: { customRender: 'id' },
     },
     {
-      title: '姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 120,
     },
     {
-      title: '头像',
+      title: '__Some-New-Token__',
       dataIndex: 'img',
       width: 120,
       slots: { customRender: 'img' },
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
     },
     {
-      title: '编号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
       slots: { customRender: 'no' },
     },
     {
-      title: '开始时间',
+      title: '__Some-New-Token__',
       dataIndex: 'beginTime',
     },
     {
-      title: '结束时间',
+      title: '__Some-New-Token__',
       dataIndex: 'endTime',
     },
   ];
@@ -57,7 +57,7 @@
     components: { BasicTable, TableImg, Tag },
     setup() {
       const [registerTable] = useTable({
-        title: '自定义列内容',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: columns,
       });

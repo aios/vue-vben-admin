@@ -16,7 +16,7 @@ const dashboardRoute = {
       name: 'Welcome',
       component: '/dashboard/welcome/index',
       meta: {
-        title: '欢迎页',
+        title: '__Some-New-Token__',
         affix: true,
       },
     },
@@ -27,35 +27,35 @@ const frontRoute = {
   path: '/front',
   name: 'PermissionFrontDemo',
   meta: {
-    title: '基于前端权限',
+    title: '__Some-New-Token__',
   },
   children: [
     {
       path: 'page',
       component: '/demo/permission/front/index',
       meta: {
-        title: '页面权限',
+        title: '__Some-New-Token__',
       },
     },
     {
       path: 'btn',
       component: '/demo/permission/front/Btn',
       meta: {
-        title: '按钮权限',
+        title: '__Some-New-Token__',
       },
     },
     {
       path: 'auth-pageA',
       component: '/demo/permission/front/AuthPageA',
       meta: {
-        title: '权限测试页A',
+        title: '__Some-New-Token__A',
       },
     },
     {
       path: 'auth-pageB',
       component: '/demo/permission/front/AuthPageB',
       meta: {
-        title: '权限测试页B',
+        title: '__Some-New-Token__B',
       },
     },
   ],
@@ -64,21 +64,21 @@ const backRoute = {
   path: '/back',
   name: 'PermissionBackDemo',
   meta: {
-    title: '基于后台权限',
+    title: '__Some-New-Token__',
   },
   children: [
     {
       path: 'page',
       component: '/demo/permission/back/index',
       meta: {
-        title: '页面权限',
+        title: '__Some-New-Token__',
       },
     },
     {
       path: 'btn',
       component: '/demo/permission/back/Btn',
       meta: {
-        title: '按钮权限',
+        title: '__Some-New-Token__',
       },
     },
   ],
@@ -90,7 +90,7 @@ const authRoute = {
   redirect: '/permission/front/page',
   meta: {
     icon: 'ant-design:home-outlined',
-    title: '权限管理',
+    title: '__Some-New-Token__',
   },
   children: [frontRoute, backRoute],
 };
@@ -102,7 +102,7 @@ const authRoute1 = {
   redirect: '/permission/front/page',
   meta: {
     icon: 'ant-design:home-outlined',
-    title: '权限管理',
+    title: '__Some-New-Token__',
   },
   children: [backRoute],
 };

@@ -12,7 +12,6 @@ lib
 /mock/
 /public
 /docs
-.vscode
 .local
 /bin
 /build

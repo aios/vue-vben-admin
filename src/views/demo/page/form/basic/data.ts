@@ -4,24 +4,24 @@ export const schemas: FormSchema[] = [
   {
     field: 'title',
     component: 'Input',
-    label: '标题',
+    label: '__Some-New-Token__',
     componentProps: {
-      placeholder: '给目标起个名字',
+      placeholder: '__Some-New-Token__',
     },
     required: true,
   },
   {
     field: 'time',
     component: 'RangePicker',
-    label: '起止日期',
+    label: '__Some-New-Token__',
     required: true,
   },
   {
     field: 'target',
     component: 'InputTextArea',
-    label: '目标描述',
+    label: '__Some-New-Token__',
     componentProps: {
-      placeholder: '请输入你的阶段性工作目标',
+      placeholder: '__Some-New-Token__',
       rows: 4,
     },
     required: true,
@@ -29,9 +29,9 @@ export const schemas: FormSchema[] = [
   {
     field: 'metrics',
     component: 'InputTextArea',
-    label: '衡量标准',
+    label: '__Some-New-Token__',
     componentProps: {
-      placeholder: '请输入衡量标准',
+      placeholder: '__Some-New-Token__',
       rows: 4,
     },
     required: true,
@@ -39,52 +39,53 @@ export const schemas: FormSchema[] = [
   {
     field: 'client',
     component: 'Input',
-    label: '客户',
-    helpMessage: '目标的服务对象',
-    subLabel: '( 选填 )',
+    label: '__Some-New-Token__',
+    helpMessage: '__Some-New-Token__',
+    subLabel: '( __Some-New-Token__ )',
     componentProps: {
-      placeholder: '请描述你服务的客户，内部客户直接 @姓名／工号',
+      placeholder: '__Some-New-Token__，__Some-New-Token__ @__Some-New-Token__／__Some-New-Token__',
     },
   },
   {
     field: 'inviteer',
     component: 'Input',
-    label: '邀评人',
-    subLabel: '( 选填 )',
+    label: '__Some-New-Token__',
+    subLabel: '( __Some-New-Token__ )',
     componentProps: {
-      placeholder: '请直接 @姓名／工号，最多可邀请 5 人',
+      placeholder:
+        '__Some-New-Token__ @__Some-New-Token__／__Some-New-Token__，__Some-New-Token__ 5 __Some-New-Token__',
     },
   },
   {
     field: 'weights',
     component: 'InputNumber',
-    label: '权重',
-    subLabel: '( 选填 )',
+    label: '__Some-New-Token__',
+    subLabel: '( __Some-New-Token__ )',
     componentProps: {
       formatter: (value: string) => (value ? `${value}%` : ''),
       parser: (value: string) => value.replace('%', ''),
-      placeholder: '请输入',
+      placeholder: '__Some-New-Token__',
     },
   },
   {
     field: 'disclosure',
     component: 'RadioGroup',
-    label: '目标公开',
+    label: '__Some-New-Token__',
     itemProps: {
-      extra: '客户、邀评人默认被分享',
+      extra: '__Some-New-Token__、__Some-New-Token__',
     },
     componentProps: {
       options: [
         {
-          label: '公开',
+          label: '__Some-New-Token__',
           value: '1',
         },
         {
-          label: '部分公开',
+          label: '__Some-New-Token__',
           value: '2',
         },
         {
-          label: '不公开',
+          label: '__Some-New-Token__',
           value: '3',
         },
       ],
@@ -98,19 +99,19 @@ export const schemas: FormSchema[] = [
       return model.disclosure === '2';
     },
     componentProps: {
-      placeholder: '公开给',
+      placeholder: '__Some-New-Token__',
       mode: 'multiple',
       options: [
         {
-          label: '同事1',
+          label: '__Some-New-Token__1',
           value: '1',
         },
         {
-          label: '同事2',
+          label: '__Some-New-Token__2',
           value: '2',
         },
         {
-          label: '同事3',
+          label: '__Some-New-Token__3',
           value: '3',
         },
       ],

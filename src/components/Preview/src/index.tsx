@@ -51,7 +51,7 @@ export default defineComponent({
     const wrapElRef = ref<HTMLDivElement | null>(null);
     const imgElRef = ref<HTMLImageElement | null>(null);
 
-    // 初始化
+    // __Some-New-Token__
     function init() {
       initMouseWheel();
       const { index, imageList } = props;
@@ -63,7 +63,7 @@ export default defineComponent({
       handleIChangeImage(imageList[index]);
     }
 
-    // 重置
+    // __Some-New-Token__
     function initState() {
       imgState.imgScale = 1;
       imgState.imgRotate = 0;
@@ -71,55 +71,55 @@ export default defineComponent({
       imgState.imgLeft = 0;
     }
 
-    // 初始化鼠标滚轮事件
+    // __Some-New-Token__
     function initMouseWheel() {
       const wrapEl = unref(wrapElRef);
       if (!wrapEl) {
         return;
       }
       (wrapEl as any).onmousewheel = scrollFunc;
-      // 火狐浏览器没有onmousewheel事件，用DOMMouseScroll代替
+      // __Some-New-Token__onmousewheel__Some-New-Token__，__Some-New-Token__DOMMouseScroll__Some-New-Token__
       document.body.addEventListener('DOMMouseScroll', scrollFunc);
-      // 禁止火狐浏览器下拖拽图片的默认事件
+      // __Some-New-Token__
       document.ondragstart = function () {
         return false;
       };
     }
 
-    // 监听鼠标滚轮
+    // __Some-New-Token__
     function scrollFunc(e: any) {
       e = e || window.event;
       e.delta = e.wheelDelta || -e.detail;
 
       e.preventDefault();
       if (e.delta > 0) {
-        // 滑轮向上滚动
+        // __Some-New-Token__
         scaleFunc(0.015);
       }
       if (e.delta < 0) {
-        // 滑轮向下滚动
+        // __Some-New-Token__
         scaleFunc(-0.015);
       }
     }
-    // 缩放函数
+    // __Some-New-Token__
     function scaleFunc(num: number) {
       if (imgState.imgScale <= 0.2 && num < 0) return;
       imgState.imgScale += num;
     }
 
-    // 旋转图片
+    // __Some-New-Token__
     function rotateFunc(deg: number) {
       imgState.imgRotate += deg;
     }
 
-    // 鼠标事件
+    // __Some-New-Token__
     function handleMouseUp() {
       const imgEl = unref(imgElRef);
       if (!imgEl) return;
       imgEl.onmousemove = null;
     }
 
-    // 更换图片
+    // __Some-New-Token__
     function handleIChangeImage(url: string) {
       imgState.status = StatueEnum.LOADING;
       const img = new Image();
@@ -133,22 +133,22 @@ export default defineComponent({
       };
     }
 
-    // 关闭
+    // __Some-New-Token__
     function handleClose(e: MouseEvent) {
       e && e.stopPropagation();
       imgState.show = false;
-      // 移除火狐浏览器下的鼠标滚动事件
+      // __Some-New-Token__
       document.body.removeEventListener('DOMMouseScroll', scrollFunc);
-      // 恢复火狐及Safari浏览器下的图片拖拽
+      // __Some-New-Token__Safari__Some-New-Token__
       document.ondragstart = null;
     }
 
-    // 图片复原
+    // __Some-New-Token__
     function resume() {
       initState();
     }
 
-    // 上一页下一页
+    // __Some-New-Token__
     function handleChange(direction: 'left' | 'right') {
       const { currentIndex } = imgState;
       const { imageList } = props;
@@ -188,7 +188,7 @@ export default defineComponent({
       imgState.moveY = e.clientY;
     }
 
-    // 获取图片样式
+    // __Some-New-Token__
     const getImageStyle = computed(() => {
       const { imgScale, imgRotate, imgTop, imgLeft } = imgState;
       return {

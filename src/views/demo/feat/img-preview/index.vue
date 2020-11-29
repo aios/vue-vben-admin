@@ -1,11 +1,11 @@
 <template>
   <div class="p-4">
-    <Alert message="有预览图" type="info" />
+    <Alert message="__Some-New-Token__" type="info" />
     <div class="flex justify-center mt-4">
       <img :src="img" v-for="img in imgList" :key="img" class="mr-2" @click="handleClick(img)" />
     </div>
-    <Alert message="无预览图" type="info" />
-    <a-button @click="handlePreview" type="primary" class="mt-4">预览图片</a-button>
+    <Alert message="__Some-New-Token__" type="info" />
+    <a-button @click="handlePreview" type="primary" class="mt-4">__Some-New-Token__</a-button>
   </div>
 </template>
 <script lang="ts">

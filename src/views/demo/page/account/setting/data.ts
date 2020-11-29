@@ -9,141 +9,142 @@ export interface ListItem {
   color?: string;
 }
 
-// tab的list
+// tab__Some-New-Token__list
 export const settingList = [
   {
     key: '1',
-    name: '基本设置',
+    name: '__Some-New-Token__',
     component: 'BaseSetting',
   },
   {
     key: '2',
-    name: '安全设置',
+    name: '__Some-New-Token__',
     component: 'SecureSetting',
   },
   {
     key: '3',
-    name: '账号绑定',
+    name: '__Some-New-Token__',
     component: 'AccountBind',
   },
   {
     key: '4',
-    name: '新消息通知',
+    name: '__Some-New-Token__',
     component: 'MsgNotify',
   },
 ];
 
-// 基础设置 form
+// __Some-New-Token__ form
 export const baseSetschemas: FormSchema[] = [
   {
     field: 'email',
     component: 'Input',
-    label: '邮箱',
+    label: '__Some-New-Token__',
     colProps: { span: 18 },
   },
   {
     field: 'name',
     component: 'Input',
-    label: '昵称',
+    label: '__Some-New-Token__',
     colProps: { span: 18 },
   },
   {
     field: 'introduction',
     component: 'InputTextArea',
-    label: '个人简介',
+    label: '__Some-New-Token__',
     colProps: { span: 18 },
   },
   {
     field: 'phone',
     component: 'Input',
-    label: '联系电话',
+    label: '__Some-New-Token__',
     colProps: { span: 18 },
   },
   {
     field: 'address',
     component: 'Input',
-    label: '所在地区',
+    label: '__Some-New-Token__',
     colProps: { span: 18 },
   },
 ];
 
-// 安全设置 list
+// __Some-New-Token__ list
 export const secureSettingList: ListItem[] = [
   {
     key: '1',
-    title: '账户密码',
-    description: '当前密码强度：：强',
-    extra: '修改',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__：：__Some-New-Token__',
+    extra: '__Some-New-Token__',
   },
   {
     key: '2',
-    title: '密保手机',
-    description: '已绑定手机：：138****8293',
-    extra: '修改',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__：：138****8293',
+    extra: '__Some-New-Token__',
   },
   {
     key: '3',
-    title: '密保问题',
-    description: '未设置密保问题，密保问题可有效保护账户安全',
-    extra: '修改',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__，__Some-New-Token__',
+    extra: '__Some-New-Token__',
   },
   {
     key: '4',
-    title: '备用邮箱',
-    description: '已绑定邮箱：：ant***sign.com',
-    extra: '修改',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__：：ant***sign.com',
+    extra: '__Some-New-Token__',
   },
   {
     key: '5',
-    title: 'MFA 设备',
-    description: '未绑定 MFA 设备，绑定后，可以进行二次确认',
-    extra: '修改',
+    title: 'MFA __Some-New-Token__',
+    description:
+      '__Some-New-Token__ MFA __Some-New-Token__，__Some-New-Token__，__Some-New-Token__',
+    extra: '__Some-New-Token__',
   },
 ];
 
-// 账号绑定 list
+// __Some-New-Token__ list
 export const accountBindList: ListItem[] = [
   {
     key: '1',
-    title: '绑定淘宝',
-    description: '当前未绑定淘宝账号',
-    extra: '绑定',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
+    extra: '__Some-New-Token__',
     avatar: 'ant-design:taobao-outlined',
     color: '#ff4000',
   },
   {
     key: '2',
-    title: '绑定支付宝',
-    description: '当前未绑定支付宝账号',
-    extra: '绑定',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
+    extra: '__Some-New-Token__',
     avatar: 'ant-design:alipay-outlined',
     color: '#2eabff',
   },
   {
     key: '3',
-    title: '绑定钉钉',
-    description: '当前未绑定钉钉账号',
-    extra: '绑定',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
+    extra: '__Some-New-Token__',
     avatar: 'ri:dingding-fill',
     color: '#2eabff',
   },
 ];
 
-// 新消息通知 list
+// __Some-New-Token__ list
 export const msgNotifyList: ListItem[] = [
   {
     key: '1',
-    title: '账户密码',
-    description: '其他用户的消息将以站内信的形式通知',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
   },
   {
     key: '2',
-    title: '系统消息',
-    description: '系统消息将以站内信的形式通知',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
   },
   {
     key: '3',
-    title: '待办任务',
-    description: '待办任务将以站内信的形式通知',
+    title: '__Some-New-Token__',
+    description: '__Some-New-Token__',
   },
 ];

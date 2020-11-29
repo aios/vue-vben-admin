@@ -50,7 +50,7 @@
       // 上传modal
       const [registerUploadModal, { openModal: openUploadModal }] = useModal();
 
-      //   预览modal
+      //   __Some-New-Token__modal
       const [registerPreviewModal, { openModal: openPreviewModal }] = useModal();
 
       const fileListRef = ref<string[]>([]);
@@ -74,13 +74,13 @@
         { immediate: true }
       );
 
-      // 上传modal保存操作
+      // __Some-New-Token__modal__Some-New-Token__
       function handleChange(urls: string[]) {
         fileListRef.value = [...unref(fileListRef), ...(urls || [])];
         emit('change', fileListRef.value);
       }
 
-      // 预览modal保存操作
+      // __Some-New-Token__modal__Some-New-Token__
       function handlePreviewChange(urls: string[]) {
         fileListRef.value = [...(urls || [])];
         emit('change', fileListRef.value);

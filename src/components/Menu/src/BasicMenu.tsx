@@ -17,6 +17,7 @@ import {
 import { Menu } from 'ant-design-vue';
 import SearchInput from './SearchInput.vue';
 import MenuContent from './MenuContent';
+// import { ScrollContainer } from '/@/components/Container';
 
 import { MenuModeEnum, MenuTypeEnum } from '/@/enums/menuEnum';
 import { ThemeEnum } from '/@/enums/appEnum';
@@ -79,7 +80,7 @@ export default defineComponent({
       return menuState.openKeys;
     });
 
-    // menu外层样式
+    // menu__Some-New-Token__
     const getMenuWrapStyle = computed((): any => {
       const { showLogo, search } = props;
       let offset = 0;
@@ -96,7 +97,7 @@ export default defineComponent({
       };
     });
 
-    // 是否透明化左侧一级菜单
+    // __Some-New-Token__
     const transparentMenuClass = computed(() => {
       const { type } = props;
       const { mode } = menuState;
@@ -181,7 +182,7 @@ export default defineComponent({
 
         const isAppendActiveCls =
           appendClass && index === 1 && menu.path === unref(currentParentPath);
-        // 没有子节点
+        // __Some-New-Token__
         if (!menuHasChildren(menu)) {
           return (
             <Menu.Item
@@ -272,7 +273,10 @@ export default defineComponent({
             onClick={handleInputClick}
             collapsed={unref(getCollapsed)}
           />
+
+          {/* <section style={unref(getMenuWrapStyle)}> */}
           <section style={unref(getMenuWrapStyle)} class="basic-menu__content">
+            {/* <ScrollContainer>{() => renderMenu()}</ScrollContainer> */}
             {renderMenu()}
           </section>
         </section>

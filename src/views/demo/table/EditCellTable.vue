@@ -5,7 +5,7 @@
         <EditTableHeaderIcon title="Id" />
       </template>
       <template #customName>
-        <EditTableHeaderIcon title="姓名" />
+        <EditTableHeaderIcon title="__Some-New-Token__" />
       </template>
     </BasicTable>
   </div>
@@ -29,7 +29,7 @@
       customRender: renderEditableCell({ dataIndex: 'id' }),
     },
     {
-      // title: '姓名',
+      // title: '__Some-New-Token__',
       dataIndex: 'name',
       slots: { title: 'customName' },
       customRender: renderEditableCell({
@@ -37,7 +37,7 @@
       }),
     },
     {
-      title: '地址',
+      title: '__Some-New-Token__',
       dataIndex: 'address',
       sorter: true,
     },
@@ -46,7 +46,7 @@
     components: { BasicTable, EditTableHeaderIcon },
     setup() {
       const [registerTable] = useTable({
-        title: '可编辑单元格示例',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: columns,
         showIndexColumn: false,

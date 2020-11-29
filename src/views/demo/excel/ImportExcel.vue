@@ -1,7 +1,7 @@
 <template>
   <div class="m-4">
     <ImportExcel @success="loadDataSuccess">
-      <a-button class="m-3">导入Excel</a-button>
+      <a-button class="m-3">__Some-New-Token__Excel</a-button>
     </ImportExcel>
     <BasicTable
       v-for="(table, index) in tableListRef"

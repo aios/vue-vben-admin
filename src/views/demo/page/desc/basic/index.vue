@@ -1,11 +1,11 @@
 <template>
   <div>
-    <a-page-header title="基础详情页" :ghost="false" />
+    <a-page-header title="__Some-New-Token__" :ghost="false" />
 
     <div class="m-5 desc-wrap">
       <Description
         size="middle"
-        title="退款申请"
+        title="__Some-New-Token__"
         :bordered="false"
         :column="3"
         :data="refundData"
@@ -14,7 +14,7 @@
       <a-divider />
       <Description
         size="middle"
-        title="用户信息"
+        title="__Some-New-Token__"
         :bordered="false"
         :column="3"
         :data="personData"
@@ -47,7 +47,7 @@
     components: { Description, BasicTable },
     setup() {
       const [registerRefundTable] = useTable({
-        title: '退货商品',
+        title: '__Some-New-Token__',
         dataSource: refundTableData,
         columns: refundTableSchema,
         pagination: false,
@@ -58,7 +58,7 @@
       });
 
       const [registerTimeTable] = useTable({
-        title: '退货进度',
+        title: '__Some-New-Token__',
         columns: refundTimeTableSchema,
         pagination: false,
         dataSource: refundTimeTableData,
@@ -75,7 +75,7 @@
         });
         return [
           {
-            t1: '总计',
+            t1: '__Some-New-Token__',
             t5: totalT5,
             t6: totalT6,
           },

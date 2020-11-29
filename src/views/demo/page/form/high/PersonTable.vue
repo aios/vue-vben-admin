@@ -5,7 +5,7 @@
         <TableAction :actions="createActions(record, column)" />
       </template>
     </BasicTable>
-    <a-button block class="mt-5" type="dashed" @click="handleAdd">新增成员</a-button>
+    <a-button block class="mt-5" type="dashed" @click="handleAdd">__Some-New-Token__</a-button>
   </div>
 </template>
 <script lang="ts">
@@ -23,19 +23,19 @@
 
   const columns: BasicColumn[] = [
     {
-      title: '成员姓名',
+      title: '__Some-New-Token__',
       dataIndex: 'name',
-      customRender: renderEditableRow({ dataIndex: 'name', placeholder: '请输入成员姓名' }),
+      customRender: renderEditableRow({ dataIndex: 'name', placeholder: '__Some-New-Token__' }),
     },
     {
-      title: '工号',
+      title: '__Some-New-Token__',
       dataIndex: 'no',
-      customRender: renderEditableRow({ dataIndex: 'no', placeholder: '请输入工号' }),
+      customRender: renderEditableRow({ dataIndex: 'no', placeholder: '__Some-New-Token__' }),
     },
     {
-      title: '所属部门',
+      title: '__Some-New-Token__',
       dataIndex: 'dept',
-      customRender: renderEditableRow({ dataIndex: 'dept', placeholder: '请输入所属部门' }),
+      customRender: renderEditableRow({ dataIndex: 'dept', placeholder: '__Some-New-Token__' }),
     },
   ];
 
@@ -65,7 +65,7 @@
         dataSource: data,
         actionColumn: {
           width: 160,
-          title: '操作',
+          title: '__Some-New-Token__',
           dataIndex: 'action',
           slots: { customRender: 'action' },
         },
@@ -107,23 +107,23 @@
         if (!record.editable) {
           return [
             {
-              label: '编辑',
+              label: '__Some-New-Token__',
               onClick: handleEdit.bind(null, record),
             },
             {
-              label: '删除',
+              label: '__Some-New-Token__',
             },
           ];
         }
         return [
           {
-            label: '保存',
+            label: '__Some-New-Token__',
             onClick: handleSave.bind(null, record, column),
           },
           {
-            label: '取消',
+            label: '__Some-New-Token__',
             popConfirm: {
-              title: '是否取消编辑',
+              title: '__Some-New-Token__',
               confirm: handleCancel.bind(null, record, column),
             },
           },

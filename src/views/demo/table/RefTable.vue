@@ -1,24 +1,26 @@
 <template>
   <div class="p-4">
     <div class="mb-4">
-      <a-button class="mr-2" @click="reloadTable">还原</a-button>
-      <a-button class="mr-2" @click="changeLoading">开启loading</a-button>
-      <a-button class="mr-2" @click="changeColumns">更改Columns</a-button>
-      <a-button class="mr-2" @click="getColumn">获取Columns</a-button>
-      <a-button class="mr-2" @click="getTableData">获取表格数据</a-button>
-      <a-button class="mr-2" @click="setPaginationInfo">跳转到第2页</a-button>
+      <a-button class="mr-2" @click="reloadTable">__Some-New-Token__</a-button>
+      <a-button class="mr-2" @click="changeLoading">__Some-New-Token__loading</a-button>
+      <a-button class="mr-2" @click="changeColumns">__Some-New-Token__Columns</a-button>
+      <a-button class="mr-2" @click="getColumn">__Some-New-Token__Columns</a-button>
+      <a-button class="mr-2" @click="getTableData">__Some-New-Token__</a-button>
+      <a-button class="mr-2" @click="setPaginationInfo"
+        >__Some-New-Token__2__Some-New-Token__</a-button
+      >
     </div>
     <div class="mb-4">
-      <a-button class="mr-2" @click="getSelectRowList">获取选中行</a-button>
-      <a-button class="mr-2" @click="getSelectRowKeyList">获取选中行Key</a-button>
-      <a-button class="mr-2" @click="setSelectedRowKeyList">设置选中行</a-button>
-      <a-button class="mr-2" @click="clearSelect">清空选中行</a-button>
-      <a-button class="mr-2" @click="getPagination">获取分页信息</a-button>
+      <a-button class="mr-2" @click="getSelectRowList">__Some-New-Token__</a-button>
+      <a-button class="mr-2" @click="getSelectRowKeyList">__Some-New-Token__Key</a-button>
+      <a-button class="mr-2" @click="setSelectedRowKeyList">__Some-New-Token__</a-button>
+      <a-button class="mr-2" @click="clearSelect">__Some-New-Token__</a-button>
+      <a-button class="mr-2" @click="getPagination">__Some-New-Token__</a-button>
     </div>
     <BasicTable
       :canResize="false"
-      title="RefTable示例"
-      titleHelpMessage="使用Ref调用表格内方法"
+      title="RefTable__Some-New-Token__"
+      titleHelpMessage="__Some-New-Token__Ref__Some-New-Token__"
       ref="tableRef"
       :api="api"
       :columns="columns"
@@ -63,17 +65,17 @@
         });
       }
       function getColumn() {
-        createMessage.info('请在控制台查看！');
+        createMessage.info('__Some-New-Token__！');
         console.log(getTableAction().getColumns());
       }
 
       function getTableData() {
-        createMessage.info('请在控制台查看！');
+        createMessage.info('__Some-New-Token__！');
         console.log(getTableAction().getDataSource());
       }
 
       function getPagination() {
-        createMessage.info('请在控制台查看！');
+        createMessage.info('__Some-New-Token__！');
         console.log(getTableAction().getPaginationRef());
       }
 
@@ -84,11 +86,11 @@
         getTableAction().reload();
       }
       function getSelectRowList() {
-        createMessage.info('请在控制台查看！');
+        createMessage.info('__Some-New-Token__！');
         console.log(getTableAction().getSelectRows());
       }
       function getSelectRowKeyList() {
-        createMessage.info('请在控制台查看！');
+        createMessage.info('__Some-New-Token__！');
         console.log(getTableAction().getSelectRowKeys());
       }
       function setSelectedRowKeyList() {

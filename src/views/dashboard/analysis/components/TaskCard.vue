@@ -10,14 +10,14 @@
 
     <div :class="`${prefixCls}-body mt-5`">
       <div :class="`${prefixCls}__process-nfo`">
-        <span>进度</span>
+        <span>__Some-New-Token__</span>
         <span>{{ info.percent }}%</span>
       </div>
       <Progress :percent="info.percent" :showInfo="false" :status="info.status" />
     </div>
     <div :class="`${prefixCls}-footer`">
       <span :class="`${prefixCls}__date`">
-        更新日期: <span>{{ info.updateTime }}</span>
+        __Some-New-Token__: <span>{{ info.updateTime }}</span>
       </span>
       <div :class="`${prefixCls}__avatar`">
         <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
@@ -48,10 +48,10 @@
         text: computed(() => {
           const { status } = props.info || {};
           return status === 'active'
-            ? '进度正常'
+            ? '__Some-New-Token__'
             : status === 'exception'
-            ? '进度滞后'
-            : '项目完成';
+            ? '__Some-New-Token__'
+            : '__Some-New-Token__';
         }),
       };
     },
@@ -79,7 +79,7 @@
     &__tag {
       display: inline-block;
       padding: 4px 6px;
-      font-family: PingFangSC-Regular;
+      font-family: 'Open Sans Condensed', sans-serif;
       font-size: 12px;
       border-radius: 6px;
 
@@ -105,14 +105,14 @@
     }
 
     &__title {
-      font-family: PingFangSC-Medium;
+      font-family: 'Open Sans Condensed', sans-serif;
       font-size: 16px;
       line-height: 24px;
       color: rgba(0, 0, 0, 0.85);
     }
 
     &__desc {
-      font-family: PingFangSC-Regular;
+      font-family: 'Open Sans Condensed', sans-serif;
       font-size: 12px;
       line-height: 21px;
       color: #8181a5;

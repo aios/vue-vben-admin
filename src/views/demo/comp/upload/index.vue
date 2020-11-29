@@ -1,9 +1,9 @@
 <template>
   <div class="p-4">
-    <a-alert message="基础示例" class="my-5"></a-alert>
+    <a-alert message="__Some-New-Token__" class="my-5"></a-alert>
     <BasicUpload :maxSize="20" :maxNumber="10" @change="handleChange" :api="uploadApi" />
 
-    <a-alert message="嵌入表单,加入表单校验" class="my-5"></a-alert>
+    <a-alert message="__Some-New-Token__,__Some-New-Token__" class="my-5"></a-alert>
 
     <BasicForm @register="register" />
   </div>
@@ -20,11 +20,11 @@
     {
       field: 'field1',
       component: 'Upload',
-      label: '字段1',
+      label: '__Some-New-Token__1',
       colProps: {
         span: 8,
       },
-      rules: [{ required: true, message: '请选择上传文件' }],
+      rules: [{ required: true, message: '__Some-New-Token__' }],
       componentProps: {
         api: uploadApi,
       },
@@ -43,7 +43,7 @@
       });
       return {
         handleChange: (list: string[]) => {
-          createMessage.info(`已上传文件${JSON.stringify(list)}`);
+          createMessage.info(`__Some-New-Token__${JSON.stringify(list)}`);
         },
         uploadApi,
         register,

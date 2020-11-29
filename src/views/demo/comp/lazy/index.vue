@@ -1,8 +1,8 @@
 <template>
   <div class="p-4 lazy-base-demo">
-    <Alert message="基础示例" description="向下滚动到可见区域才会加载组件" type="info" show-icon />
+    <Alert message="__Some-New-Token__" description="__Some-New-Token__" type="info" show-icon />
     <div class="lazy-base-demo-wrap">
-      <h1>向下滚动</h1>
+      <h1>__Some-New-Token__</h1>
 
       <div class="lazy-base-demo-box">
         <LazyContainer>

@@ -24,9 +24,9 @@ export interface MenuSetting {
 }
 
 export interface MultiTabsSetting {
-  // 是否显示
+  // __Some-New-Token__
   show: boolean;
-  // 开启快速操作
+  // __Some-New-Token__
   showQuick: boolean;
   canDrag: boolean;
   // 缓存最大数量
@@ -38,13 +38,13 @@ export interface HeaderSetting {
   fixed: boolean;
   show: boolean;
   theme: ThemeEnum;
-  // 显示刷新按钮
+  // __Some-New-Token__
   showRedo: boolean;
-  // 显示全屏按钮
+  // __Some-New-Token__
   showFullScreen: boolean;
-  // 开启全屏功能
+  // __Some-New-Token__
   useLockPage: boolean;
-  // 显示文档按钮
+  // __Some-New-Token__
   showDoc: boolean;
   // 显示消息中心按钮
   showNotice: boolean;
@@ -81,23 +81,23 @@ export interface ProjectConfig {
 
   // 是否显示配置按钮
   showSettingButton: boolean;
-  // 权限模式
+  // __Some-New-Token__
   permissionMode: PermissionModeEnum;
-  // 网站灰色模式，用于可能悼念的日期开启
+  // __Some-New-Token__，__Some-New-Token__
   grayMode: boolean;
-  // 是否开启色弱模式
+  // __Some-New-Token__
   colorWeak: boolean;
-  // 主题色
+  // __Some-New-Token__
   themeColor: string;
-  // 全屏显示主界面,不显示菜单,及顶部
+  // __Some-New-Token__,__Some-New-Token__,__Some-New-Token__
   fullContent: boolean;
-  // 区域宽度
+  // __Some-New-Token__
   contentMode: ContentEnum;
-  // 是否显示logo
+  // __Some-New-Token__logo
   showLogo: boolean;
   showFooter: boolean;
   headerSetting: HeaderSetting;
-  // 菜单类型
+  // __Some-New-Token__
   // menuType: MenuTypeEnum;
   menuSetting: MenuSetting;
 
@@ -109,39 +109,44 @@ export interface ProjectConfig {
   // pageLayout是否开启keep-alive
   openKeepAlive: boolean;
 
-  // 锁屏时间
+  // __Some-New-Token__
   lockTime: number;
-  // 显示面包屑
+  // __Some-New-Token__
   showBreadCrumb: boolean;
-  // 显示面包屑图标
+  // __Some-New-Token__
   showBreadCrumbIcon: boolean;
-  // 使用error-handler-plugin
+  // __Some-New-Token__error-handler-plugin
   useErrorHandle: boolean;
   // 是否开启回到顶部
   useOpenBackTop: boolean;
   // 是否可以嵌入iframe页面
   canEmbedIFramePage: boolean;
-  // 切换界面的时候是否删除未关闭的message及notify
+  // __Some-New-Token__message__Some-New-Token__notify
   closeMessageOnSwitch: boolean;
-  // 切换界面的时候是否取消已经发送但是未响应的http请求。
+  // __Some-New-Token__http__Some-New-Token__。
   removeAllHttpPending: boolean;
 }
 
 export interface GlobConfig {
-  // 网站标题
+  // __Some-New-Token__
   title: string;
-  // 项目路径
+  // __Some-New-Token__
   apiUrl: string;
   urlPrefix?: string;
   shortName: string;
+  telegramCallback: string;
+  telegramBotName: string;
 }
+
 export interface GlobEnvConfig {
-  // 网站标题
+  // __Some-New-Token__
   VITE_GLOB_APP_TITLE: string;
-  // 项目路径
+  // __Some-New-Token__
   VITE_GLOB_API_URL: string;
   VITE_GLOB_API_URL_PREFIX?: string;
   VITE_GLOB_APP_SHORT_NAME: string;
+  VITE_GLOB_AUTH_BOT: string;
+  VITE_GLOB_AUTH_CALLBACK: string;
 }
 
 interface GlobWrap {

@@ -3,7 +3,7 @@ import type { ModalProps, ModalMethods } from './types';
 import { defineComponent, computed, ref, watch, unref, watchEffect } from 'vue';
 
 import Modal from './Modal';
-import Button from '/@/components/Button/index.vue';
+import { Button } from '/@/components/Button';
 import ModalWrapper from './ModalWrapper';
 import { BasicTitle } from '/@/components/Basic';
 import { FullscreenExitOutlined, FullscreenOutlined, CloseOutlined } from '@ant-design/icons-vue';
@@ -68,7 +68,7 @@ export default defineComponent({
     );
 
     /**
-     * @description: 渲染标题
+     * @description: __Some-New-Token__
      */
     function renderTitle() {
       const { helpMessage } = unref(getProps);
@@ -106,7 +106,7 @@ export default defineComponent({
       );
     }
 
-    // 取消事件
+    // __Some-New-Token__
     async function handleCancel(e: Event) {
       e && e.stopPropagation();
       if (props.closeFunc && isFunction(props.closeFunc)) {
@@ -118,7 +118,7 @@ export default defineComponent({
       emit('cancel');
     }
 
-    // 底部按钮自定义实现,
+    // __Some-New-Token__,
     function renderFooter() {
       const {
         showCancelBtn,
@@ -158,7 +158,7 @@ export default defineComponent({
     }
 
     /**
-     * @description: 关闭按钮
+     * @description: __Some-New-Token__
      */
     function renderClose() {
       const { canFullscreen } = unref(getProps);
@@ -202,7 +202,7 @@ export default defineComponent({
     }
 
     /**
-     * @description: 设置modal参数
+     * @description: __Some-New-Token__modal__Some-New-Token__
      */
     function setModalProps(props: Partial<ModalProps>): void {
       // Keep the last setModalProps

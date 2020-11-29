@@ -1,15 +1,13 @@
-import { DEFAULT_CACHE_TIME } from '../../settings/encryptionSetting';
+import { cacheCipher, DEFAULT_CACHE_TIME } from '/@/settings/encryptionSetting';
 import { getStorageShortName } from '/@/utils/helper/envHelper';
-import { cacheCipher } from '/@/settings/encryptionSetting';
 import Encryption from '/@/utils/encryption/aesEncryption';
 
 export default class WebCookie {
   private encryption: Encryption;
-  private hasEncrypt: boolean;
+  private readonly hasEncrypt: boolean;
 
   constructor(hasEncrypt = true, key = cacheCipher.key, iv = cacheCipher.iv) {
-    const encryption = new Encryption({ key, iv });
-    this.encryption = encryption;
+    this.encryption = new Encryption({ key, iv });
     this.hasEncrypt = hasEncrypt;
   }
 
@@ -19,7 +17,7 @@ export default class WebCookie {
 
   /**
    * Add cookie
-   * @param name cookie key
+   * @param key cookie key
    * @param value cookie value
    * @param expire
    * If the expiration time is not set, the default management browser will automatically delete

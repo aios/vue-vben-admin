@@ -1,22 +1,22 @@
 <template>
-  <CollapseContainer title="基本设置" :canExpan="false">
+  <CollapseContainer title="__Some-New-Token__" :canExpan="false">
     <a-row :gutter="24">
       <a-col :span="14">
         <BasicForm @register="register" />
       </a-col>
       <a-col :span="10">
         <div class="change-avatar">
-          <div class="mb-2">头像</div>
+          <div class="mb-2">__Some-New-Token__</div>
           <img width="140" :src="headerImg" />
           <Upload :showUploadList="false">
             <Button type="ghost" class="ml-5">
-              <Icon icon="ant-design:upload-outlined" />更换头像
+              <Icon icon="ant-design:upload-outlined" />__Some-New-Token__
             </Button>
           </Upload>
         </div>
       </a-col>
     </a-row>
-    <Button type="primary" @click="handleSubmit">更新基本信息</Button>
+    <Button type="primary" @click="handleSubmit">__Some-New-Token__</Button>
   </CollapseContainer>
 </template>
 <script lang="ts">
@@ -52,7 +52,7 @@
         headerImg,
         register,
         handleSubmit: () => {
-          createMessage.success('更新成功！');
+          createMessage.success('__Some-New-Token__！');
         },
       };
     },

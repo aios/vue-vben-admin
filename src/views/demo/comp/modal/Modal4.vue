@@ -11,7 +11,7 @@
     {
       field: 'field1',
       component: 'Input',
-      label: '字段1',
+      label: '__Some-New-Token__1',
       colProps: {
         span: 12,
       },
@@ -20,7 +20,7 @@
     {
       field: 'field2',
       component: 'Input',
-      label: '字段2',
+      label: '__Some-New-Token__2',
       colProps: {
         span: 12,
       },
@@ -46,13 +46,13 @@
       });
 
       const [register] = useModalInner((data) => {
-        // 方式1
+        // __Some-New-Token__1
         // setFieldsValue({
         //   field2: data.data,
         //   field1: data.info,
         // });
 
-        // 方式2
+        // __Some-New-Token__2
         modelRef.value = { field2: data.data, field1: data.info };
 
         // setProps({

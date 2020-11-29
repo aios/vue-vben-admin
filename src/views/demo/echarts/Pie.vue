@@ -22,35 +22,35 @@
       const { setOptions } = useECharts(chartRef as Ref<HTMLDivElement>);
       const dataAll = [389, 259, 262, 324, 232, 176, 196, 214, 133, 370];
       const yAxisData = [
-        '原因1',
-        '原因2',
-        '原因3',
-        '原因4',
-        '原因5',
-        '原因6',
-        '原因7',
-        '原因8',
-        '原因9',
-        '原因10',
+        '__Some-New-Token__1',
+        '__Some-New-Token__2',
+        '__Some-New-Token__3',
+        '__Some-New-Token__4',
+        '__Some-New-Token__5',
+        '__Some-New-Token__6',
+        '__Some-New-Token__7',
+        '__Some-New-Token__8',
+        '__Some-New-Token__9',
+        '__Some-New-Token__10',
       ];
       onMounted(() => {
         setOptions({
           backgroundColor: '#0f375f',
           title: [
             {
-              text: '各渠道投诉占比',
+              text: '__Some-New-Token__',
               x: '2%',
               y: '1%',
               textStyle: { color: '#fff', fontSize: 14 },
             },
             {
-              text: '投诉原因TOP10',
+              text: '__Some-New-Token__TOP10',
               x: '40%',
               y: '1%',
               textStyle: { color: '#fff', fontSize: 14 },
             },
             {
-              text: '各级别投诉占比',
+              text: '__Some-New-Token__',
               x: '2%',
               y: '50%',
               textStyle: { color: '#fff', fontSize: 14 },
@@ -82,17 +82,17 @@
           ],
           series: [
             {
-              name: '各渠道投诉占比',
+              name: '__Some-New-Token__',
               type: 'pie',
               radius: '30%',
               center: ['22%', '25%'],
               color: ['#86c9f4', '#4da8ec', '#3a91d2', '#005fa6', '#315f97'],
               data: [
-                { value: 335, name: '客服电话' },
-                { value: 310, name: '奥迪官网' },
-                { value: 234, name: '媒体曝光' },
-                { value: 135, name: '质检总局' },
-                { value: 105, name: '其他' },
+                { value: 335, name: '__Some-New-Token__' },
+                { value: 310, name: '__Some-New-Token__' },
+                { value: 234, name: '__Some-New-Token__' },
+                { value: 135, name: '__Some-New-Token__' },
+                { value: 105, name: '__Some-New-Token__' },
               ],
               labelLine: { normal: { show: false } },
               itemStyle: {
@@ -106,17 +106,17 @@
               },
             },
             {
-              name: '各级别投诉占比',
+              name: '__Some-New-Token__',
               type: 'pie',
               radius: '30%',
               center: ['22%', '75%'],
               color: ['#86c9f4', '#4da8ec', '#3a91d2', '#005fa6', '#315f97'],
               labelLine: { normal: { show: false } },
               data: [
-                { value: 335, name: 'A级' },
-                { value: 310, name: 'B级' },
-                { value: 234, name: 'C级' },
-                { value: 135, name: 'D级' },
+                { value: 335, name: 'A__Some-New-Token__' },
+                { value: 310, name: 'B__Some-New-Token__' },
+                { value: 234, name: 'C__Some-New-Token__' },
+                { value: 135, name: 'D__Some-New-Token__' },
               ],
               itemStyle: {
                 normal: {
@@ -129,7 +129,7 @@
               },
             },
             {
-              name: '投诉原因TOP10',
+              name: '__Some-New-Token__TOP10',
               type: 'bar',
               xAxisIndex: 0,
               yAxisIndex: 0,

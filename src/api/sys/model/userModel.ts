@@ -32,12 +32,12 @@ export interface LoginResultModel {
  */
 export interface GetUserInfoByUserIdModel {
   role: RoleInfo;
-  // 用户id
+  // __Some-New-Token__id
   userId: string | number;
-  // 用户名
+  // __Some-New-Token__
   username: string;
-  // 真实名字
+  // __Some-New-Token__
   realName: string;
-  // 介绍
+  // __Some-New-Token__
   desc?: string;
 }

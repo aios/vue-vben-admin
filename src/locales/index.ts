@@ -1,17 +1,20 @@
-import messages from 'globby?locale!/@/locales/lang/**/*.@(ts)';
+import messages from 'globby?locale!/@/locales/lang/**/*.ts';
 
 import type { DropMenu } from '/@/components/Dropdown';
 
 // locale list
 export const localeList: DropMenu[] = [
   {
-    text: '简体中文',
-    event: 'zh_CN',
+    text: 'Русский',
+    event: 'ru',
   },
   {
     text: 'English',
     event: 'en',
   },
+  {
+    text: 'Украинский',
+    event: 'ua',
+  },
 ];
-
 export default messages;

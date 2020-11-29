@@ -1,7 +1,7 @@
 import { SizeEnum } from '/@/enums/sizeEnum';
 
 export interface BasicLoadingProps {
-  // 提示语
+  // __Some-New-Token__
   tip: string;
 
   size: SizeEnum;

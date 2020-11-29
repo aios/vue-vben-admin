@@ -106,13 +106,13 @@ export interface TableActionType {
 }
 
 export interface FetchSetting {
-  // 请求接口当前页数
+  // __Some-New-Token__
   pageField: string;
-  // 每页显示多少条
+  // __Some-New-Token__
   sizeField: string;
-  // 请求结果列表字段  支持 a.b.c
+  // __Some-New-Token__  __Some-New-Token__ a.b.c
   listField: string;
-  // 请求结果总数字段  支持 a.b.c
+  // __Some-New-Token__  __Some-New-Token__ a.b.c
   totalField: string;
 }
 
@@ -124,74 +124,74 @@ export interface TableSetting {
 }
 
 export interface BasicTableProps<T = any> {
-  // 自定义排序方法
+  // __Some-New-Token__
   sortFn?: (sortInfo: SorterResult) => any;
-  // 取消表格的默认padding
+  // __Some-New-Token__padding
   inset?: boolean;
-  // 显示表格设置
+  // __Some-New-Token__
   showTableSetting?: boolean;
   tableSetting?: TableSetting;
-  // 斑马纹
+  // __Some-New-Token__
   striped?: boolean;
-  // 是否自动生成key
+  // __Some-New-Token__key
   autoCreateKey?: boolean;
-  // 计算合计行的方法
+  // __Some-New-Token__
   summaryFunc?: (...arg: any) => any[];
-  // 是否显示合计行
+  // __Some-New-Token__
   showSummary?: boolean;
-  // 是否可拖拽列
+  // __Some-New-Token__
   canColDrag?: boolean;
-  // 是否树表
+  // __Some-New-Token__
   isTreeTable?: boolean;
-  // 接口请求对象
+  // __Some-New-Token__
   api?: (...arg: any) => Promise<any>;
-  // 请求之前处理参数
+  // __Some-New-Token__
   beforeFetch?: Fn;
-  // 自定义处理接口返回参数
+  // __Some-New-Token__
   afterFetch?: Fn;
-  // 查询条件请求之前处理
+  // __Some-New-Token__
   handleSearchInfoFn?: Fn;
-  // 请求接口配置
+  // __Some-New-Token__
   fetchSetting?: FetchSetting;
-  // 立即请求接口
+  // __Some-New-Token__
   immediate?: boolean;
-  // 在开起搜索表单的时候，如果没有数据是否显示表格
+  // __Some-New-Token__，__Some-New-Token__
   emptyDataIsShowTable?: boolean;
-  // 额外的请求参数
+  // __Some-New-Token__
   searchInfo?: any;
-  // 使用搜索表单
+  // __Some-New-Token__
   useSearchForm?: boolean;
-  // 表单配置
+  // __Some-New-Token__
   formConfig?: Partial<FormProps>;
-  // 列配置
+  // __Some-New-Token__
   columns: BasicColumn[];
-  // 是否显示序号列
+  // __Some-New-Token__
   showIndexColumn?: boolean;
-  // 序号列配置
+  // __Some-New-Token__
   indexColumnProps?: BasicColumn;
   actionColumn?: BasicColumn;
-  // 文本超过宽度是否显示。。。
+  // __Some-New-Token__。。。
   ellipsis?: boolean;
-  // 是否可以自适应高度
+  // __Some-New-Token__
   canResize?: boolean;
-  // 自适应高度偏移， 计算结果-偏移量
+  // __Some-New-Token__， __Some-New-Token__-__Some-New-Token__
   resizeHeightOffset?: number;
 
-  // 在分页改变的时候清空选项
+  // __Some-New-Token__
   clearSelectOnPageChange?: boolean;
   //
   rowKey?: string | ((record: any) => string);
-  // 数据
+  // __Some-New-Token__
   dataSource?: any[];
-  // 标题右侧提示
+  // __Some-New-Token__
   titleHelpMessage?: string | string[];
-  // 表格滚动最大高度
+  // __Some-New-Token__
   maxHeight?: number;
-  // 是否显示边框
+  // __Some-New-Token__
   bordered?: boolean;
-  // 分页配置
+  // __Some-New-Token__
   pagination?: PaginationProps | boolean;
-  // loading加载
+  // loading__Some-New-Token__
   loading?: boolean;
 
   /**

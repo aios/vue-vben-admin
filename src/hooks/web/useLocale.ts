@@ -30,12 +30,12 @@ export function useLocale() {
     antConfigLocaleRef.value = { a: 1 };
     switch (lang) {
       // Simplified Chinese
-      case 'zh_CN':
-        import('ant-design-vue/es/locale/zh_CN').then((locale) => {
+      case 'ru':
+        import('ant-design-vue/es/locale/ru_RU').then((locale) => {
           antConfigLocaleRef.value = locale.default;
         });
 
-        moment.locale('cn');
+        moment.locale('ru');
         break;
       // English
       case 'en':
@@ -43,6 +43,14 @@ export function useLocale() {
           antConfigLocaleRef.value = locale.default;
         });
         moment.locale('en-us');
+        break;
+
+      // othe
+      case 'ua':
+        import('ant-design-vue/es/locale/uk_UA').then((locale) => {
+          antConfigLocaleRef.value = locale.default;
+        });
+        moment.locale('uk');
         break;
 
       // other

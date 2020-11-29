@@ -4,7 +4,7 @@ import { useI18n } from '/@/hooks/web/useI18n';
 const { t } = useI18n('component.form');
 
 /**
- * @description: 生成placeholder
+ * @description: __Some-New-Token__placeholder
  */
 export function createPlaceholderMessage(component: ComponentType) {
   if (component.includes('Input') || component.includes('Complete')) {
@@ -31,6 +31,6 @@ function genType() {
 }
 
 /**
- * 时间字段
+ * __Some-New-Token__
  */
 export const dateItemType = genType();

@@ -54,7 +54,7 @@ export function useTabs() {
   function canIUseFn(): boolean {
     const { multiTabsSetting: { show } = {} } = appStore.getProjectConfig;
     if (!show) {
-      throw new Error('当前未开启多标签页，请在设置中打开！');
+      throw new Error('__Some-New-Token__，__Some-New-Token__！');
     }
     return !!show;
   }

@@ -6,39 +6,47 @@
         <AppLocalePicker v-if="showLocale" class="login-form__locale" />
         <div class="login-form__content px-2 py-10">
           <header>
-            <img :src="logo" class="mr-4" />
+            <img :src="logo" class="mr-4" alt="" />
             <h1>{{ title }}</h1>
           </header>
-
-          <a-form class="mx-auto mt-10" :model="formData" :rules="formRules" ref="formRef">
+          <a-row>
+            <a-col :span="8" />
+            <a-col :id="'telegram_auth'" :span="8" />
+            <a-col :span="8" />
+          </a-row>
+          <a-form ref="formRef" class="mx-auto mt-10" :model="formData" :rules="formRules">
             <a-form-item name="account">
-              <a-input size="large" v-model:value="formData.account" placeholder="username: vben" />
+              <a-input v-model:value="formData.account" size="large" placeholder="username: vben" />
             </a-form-item>
             <a-form-item name="password">
               <a-input-password
-                size="large"
-                visibilityToggle
                 v-model:value="formData.password"
+                size="large"
+                visibility-toggle
                 placeholder="password: 123456"
               />
             </a-form-item>
 
-            <!-- <a-form-item name="verify" v-if="openLoginVerify">
-              <BasicDragVerify v-model:value="formData.verify" ref="verifyRef" />
-            </a-form-item> -->
+            <!--            &lt;!&ndash;
+            <a-form-item v-if="openLoginVerify" name="verify">
+              <BasicDragVerify ref="verifyRef" v-model:value="formData.verify" />
+            </a-form-item>
+            &ndash;&gt;-->
             <a-row>
               <a-col :span="12">
                 <a-form-item>
-                  <!-- No logic, you need to deal with it yourself -->
-                  <a-checkbox v-model:checked="autoLogin" size="small">{{
-                    t('sys.login.autoLogin')
-                  }}</a-checkbox>
+                  <!--                  &lt;!&ndash; No logic, you need to deal with it yourself &ndash;&gt;-->
+                  <a-checkbox v-model:checked="autoLogin" size="small">
+                    {{ t('sys.login.autoLogin') }}
+                  </a-checkbox>
                 </a-form-item>
               </a-col>
               <a-col :span="12">
                 <a-form-item :style="{ 'text-align': 'right' }">
-                  <!-- No logic, you need to deal with it yourself -->
-                  <a-button type="link" size="small">{{ t('sys.login.forgetPassword') }}</a-button>
+                  <!--                  &lt;!&ndash; No logic, you need to deal with it yourself &ndash;&gt;-->
+                  <a-button type="link" size="small">
+                    {{ t('sys.login.forgetPassword') }}
+                  </a-button>
                 </a-form-item>
               </a-col>
             </a-row>
@@ -48,10 +56,11 @@
                 size="large"
                 class="rounded-sm"
                 :block="true"
-                @click="login"
                 :loading="formState.loading"
-                >{{ t('sys.login.loginButton') }}</a-button
+                @click="login"
               >
+                {{ t('sys.login.loginButton') }}
+              </a-button>
             </a-form-item>
           </a-form>
         </div>
@@ -60,20 +69,18 @@
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent, reactive, ref, unref, toRaw } from 'vue';
+  import { defineComponent, nextTick, onMounted, reactive, ref, toRaw, unref } from 'vue';
   import { Checkbox } from 'ant-design-vue';
-
-  import Button from '/@/components/Button/index.vue';
+  import { Button } from '/@/components/Button';
   import { AppLocalePicker } from '/@/components/Application';
   // import { BasicDragVerify, DragVerifyActionType } from '/@/components/Verify/index';
-
   import { userStore } from '/@/store/modules/user';
-
   // import { appStore } from '/@/store/modules/app';
   import { useMessage } from '/@/hooks/web/useMessage';
   import { useGlobSetting, useProjectSetting } from '/@/hooks/setting';
   import logo from '/@/assets/images/logo.png';
   import { useI18n } from '/@/hooks/web/useI18n';
+  import { useScript } from '/@/hooks/web/useScript';
 
   export default defineComponent({
     components: {
@@ -86,14 +93,11 @@
       const formRef = ref<any>(null);
       const autoLoginRef = ref(false);
       // const verifyRef = ref<RefInstanceType<DragVerifyActionType>>(null);
-
       const globSetting = useGlobSetting();
       const { locale } = useProjectSetting();
       const { notification } = useMessage();
       const { t } = useI18n('sys.login');
-
       // const openLoginVerifyRef = computed(() => appStore.getProjectConfig.openLoginVerify);
-
       const formData = reactive({
         account: 'vben',
         password: '123456',
@@ -103,18 +107,37 @@
         loading: false,
       });
 
+      const { toPromise } = useScript(
+        {
+          src: 'https://telegram.org/js/telegram-widget.js?14',
+        },
+        {
+          'telegram-login': globSetting.telegramBotName,
+          size: 'large',
+          userpic: 'true',
+          'auth-url': globSetting.telegramCallback,
+          'request-access': 'write',
+        }
+      );
+
+      onMounted(() => {
+        nextTick(() => {
+          init();
+        });
+      });
+
+      function init() {
+        toPromise().then(() => {
+          setTimeout(() => {
+            //alert(1);
+          }, 0);
+        });
+      }
+
       const formRules = reactive({
         account: [{ required: true, message: t('accountPlaceholder'), trigger: 'blur' }],
         password: [{ required: true, message: t('passwordPlaceholder'), trigger: 'blur' }],
-        // verify: unref(openLoginVerifyRef) ? [{ required: true, message: '请通过验证码校验' }] : [],
       });
-
-      // function resetVerify() {
-      //   const verify = unref(verifyRef);
-      //   if (!verify) return;
-      //   formData.verify && verify.$.resume();
-      //   formData.verify = undefined;
-      // }
 
       async function handleLogin() {
         const form = unref(formRef);
@@ -141,6 +164,7 @@
           formState.loading = false;
         }
       }
+
       return {
         formRef,
         // verifyRef,
@@ -177,11 +201,12 @@
     &-mask {
       display: none;
       height: 100%;
-      background: url(../../../assets/images/login/login-in.png) no-repeat;
-      background-position: 30% 30%;
+      background: url(../../../assets/images/login/login-in.png) no-repeat 30% 30%;
       background-size: 80% 80%;
 
-      .respond-to(xlarge, { display: block;});
+      .respond-to(xlarge, {
+      display: block;
+    });
     }
 
     &-form {
@@ -189,11 +214,12 @@
       bottom: 60px;
       width: 400px;
       background: @white;
-      border: 10px solid rgba(255, 255, 255, 0.5);
-      border-width: 8px;
+      border: 8px solid rgba(255, 255, 255, 0.5);
       border-radius: 4px;
       background-clip: padding-box;
-      .respond-to(xlarge, { margin: 0 120px 0 50px});
+      .respond-to(xlarge, {
+      margin: 0 120px 0 50px
+    });
 
       &-wrap {
         position: absolute;
@@ -207,7 +233,7 @@
         align-items: center;
         .respond-to(xlarge, {
         justify-content: flex-end;
-          });
+      });
       }
 
       &__content {

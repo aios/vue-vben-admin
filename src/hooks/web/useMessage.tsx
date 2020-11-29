@@ -63,7 +63,7 @@ function createConfirm(options: ModalOptionsEx): ConfirmOptions {
 }
 
 const baseOptions = {
-  okText: '确定',
+  okText: '__Some-New-Token__',
   centered: true,
 };
 

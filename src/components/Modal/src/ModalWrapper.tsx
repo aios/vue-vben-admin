@@ -57,7 +57,7 @@ export default defineComponent({
     const wrapperRef = ref<HTMLElement | null>(null);
     const spinRef = ref<ComponentRef>(null);
     const realHeightRef = ref(0);
-    // 重试次数
+    // __Some-New-Token__
     // let tryCount = 0;
     let stopElResizeFn: Fn = () => {};
 
@@ -95,8 +95,8 @@ export default defineComponent({
     useWindowSizeFn(setModalHeight);
 
     async function setModalHeight() {
-      // 解决在弹窗关闭的时候监听还存在,导致再次打开弹窗没有高度
-      // 加上这个,就必须在使用的时候传递父级的visible
+      // __Some-New-Token__,__Some-New-Token__
+      // __Some-New-Token__,__Some-New-Token__visible
       if (!props.visible) return;
       const wrapperRefDom = unref(wrapperRef);
       if (!wrapperRefDom) return;
@@ -119,7 +119,7 @@ export default defineComponent({
           props.modalFooterHeight -
           props.modalHeaderHeight;
 
-        // 距离顶部过进会出现滚动条
+        // __Some-New-Token__
         if (modalTop < 40) {
           maxHeight -= 26;
         }

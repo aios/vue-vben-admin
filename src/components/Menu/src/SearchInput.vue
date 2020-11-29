@@ -60,7 +60,7 @@
 </script>
 <style lang="less">
   @import (reference) '../../../design/index.less';
-  // 输入框背景颜色 深
+  // __Some-New-Token__ __Some-New-Token__
   @input-dark-bg-color: #516085;
 
   @icon-color: #c0c4cc;

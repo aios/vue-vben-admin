@@ -55,7 +55,7 @@ export function createTableColumns(): BasicColumn[] {
     },
     // {
     //   dataIndex: 'type',
-    //   title: '文件类型',
+    //   title: '__Some-New-Token__',
     //   width: 100,
     // },
     {
@@ -100,7 +100,7 @@ export function createActionColumn(handleRemove: Function, handlePreview: Functi
     },
   };
 }
-// 文件预览列表
+// __Some-New-Token__
 export function createPreviewColumns(): BasicColumn[] {
   return [
     {

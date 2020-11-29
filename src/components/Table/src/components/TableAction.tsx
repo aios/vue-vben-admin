@@ -3,7 +3,7 @@ import { Dropdown, Menu, Popconfirm } from 'ant-design-vue';
 import Icon from '/@/components/Icon/index';
 import { DownOutlined } from '@ant-design/icons-vue';
 import { ActionItem } from '/@/components/Table';
-import Button from '/@/components/Button/index.vue';
+import { Button } from '/@/components/Button';
 const prefixCls = 'basic-table-action';
 export default defineComponent({
   name: 'TableAction',
@@ -19,7 +19,7 @@ export default defineComponent({
 
     moreText: {
       type: String as PropType<string>,
-      default: '更多',
+      default: '__Some-New-Token__',
     },
   },
   setup(props) {
@@ -52,8 +52,8 @@ export default defineComponent({
       }
       const {
         title,
-        okText = '确定',
-        cancelText = '取消',
+        okText = '__Some-New-Token__',
+        cancelText = '__Some-New-Token__',
         confirm = () => {},
         cancel = () => {},
         icon = '',
@@ -86,7 +86,7 @@ export default defineComponent({
       </Button>
     );
 
-    // 增加按钮的TYPE和COLOR
+    // __Some-New-Token__TYPE__Some-New-Token__COLOR
     return () => {
       const { dropDownActions = [], actions } = props;
       return (

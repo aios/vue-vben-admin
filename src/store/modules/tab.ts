@@ -17,7 +17,7 @@ import { getCurrentTo } from '/@/utils/helper/routeHelper';
 type CacheName = string | symbol | null | undefined;
 
 /**
- * @description:  vuex Tab模块
+ * @description:  vuex Tab__Some-New-Token__
  */
 // declare namespace TabsStore {
 export interface TabItem {
@@ -101,7 +101,7 @@ class Tab extends VuexModule {
   @Mutation
   commitAddTab(route: AppRouteRecordRaw | TabItem): void {
     const { path, name, meta, fullPath, params, query } = route as TabItem;
-    // 404  页面不需要添加tab
+    // 404  __Some-New-Token__tab
     if (path === PageEnum.ERROR_PAGE || !name) {
       return;
     } else if ([REDIRECT_ROUTE.name, PAGE_NOT_FOUND_ROUTE.name].includes(name as string)) {
@@ -109,7 +109,7 @@ class Tab extends VuexModule {
     }
 
     let updateIndex = -1;
-    // 已经存在的页面，不重复添加tab
+    // __Some-New-Token__，__Some-New-Token__tab
     const hasTab = this.tabsState.some((tab, index) => {
       updateIndex = index;
       return (tab.fullPath || tab.path) === (fullPath || path);

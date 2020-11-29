@@ -8,7 +8,6 @@
   import {
     defineComponent,
     computed,
-    onMounted,
     nextTick,
     ref,
     unref,
@@ -24,6 +23,7 @@
   import { snowUuid } from '/@/utils/uuid';
   import { bindHandlers } from './helper';
   import lineHeight from './lineHeight';
+  import { onMountedOrActivated } from '/@/hooks/core/onMountedOrActivated';
 
   const CDN_URL = 'https://cdn.bootcdn.net/ajax/libs/tinymce/5.5.1';
 
@@ -60,10 +60,10 @@
           toolbar: toolbar,
           menubar: 'file edit insert view format table',
           plugins: plugins,
-          // 语言包
-          language_url: 'resource/tinymce/langs/zh_CN.js',
-          // 中文
-          language: 'zh_CN',
+          // __Some-New-Token__
+          language_url: 'resource/tinymce/langs/ru_RU.js',
+          // __Some-New-Token__
+          language: 'ru_RU',
           default_link_target: '_blank',
           link_title: false,
           advlist_bullet_styles: 'square',
@@ -91,8 +91,7 @@
           editor.setMode(attrs.disabled ? 'readonly' : 'design');
         }
       );
-
-      onMounted(() => {
+      onMountedOrActivated(() => {
         nextTick(() => {
           init();
         });
@@ -142,7 +141,6 @@
       function setValue(editor: any, val: string, prevVal: string) {
         if (
           editor &&
-          typeof val === 'string' &&
           val !== prevVal &&
           val !== editor.getContent({ format: attrs.outputFormat })
         ) {

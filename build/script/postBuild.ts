@@ -23,6 +23,7 @@ export const runBuild = async (preview = false) => {
     if (!argvList.includes('no-conf')) {
       await runBuildConfig();
     }
+
     // await runUpdateHtml();
     if (!preview) {
       await startGzipStyle();
@@ -33,4 +34,4 @@ export const runBuild = async (preview = false) => {
     process.exit(1);
   }
 };
-runBuild();
+runBuild().then(r => console.log(r));

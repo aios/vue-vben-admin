@@ -7,7 +7,7 @@
             <div :class="`${prefixCls}-top__avatar`">
               <img width="70" :src="headerImg" />
               <span>Serati Ma</span>
-              <div>海纳百川，有容乃大</div>
+              <div>__Some-New-Token__，__Some-New-Token__</div>
             </div>
           </a-col>
           <a-col :span="16">
@@ -23,14 +23,18 @@
         </a-row>
       </a-col>
       <a-col :span="7" :class="`${prefixCls}-col`">
-        <CollapseContainer title="标签" :canExpan="false">
+        <CollapseContainer title="__Some-New-Token__" :canExpan="false">
           <template v-for="(tag, index) in tags" :key="index">
             <Tag class="mb-2">{{ tag }}</Tag>
           </template>
         </CollapseContainer>
       </a-col>
       <a-col :span="8" :class="`${prefixCls}-col`">
-        <CollapseContainer :class="`${prefixCls}-top__team`" title="团队" :canExpan="false">
+        <CollapseContainer
+          :class="`${prefixCls}-top__team`"
+          title="__Some-New-Token__"
+          :canExpan="false"
+        >
           <div v-for="(team, index) in teams" :key="index" :class="`${prefixCls}-top__team-item`">
             <Icon :icon="team.icon" :color="team.color" />
             <span>{{ team.title }}</span>

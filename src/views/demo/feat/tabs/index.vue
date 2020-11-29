@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
-    <CollapseContainer title="在下面输入框输入文本,切换后回来内容会保存">
-      <a-input placeholder="请输入" />
+    <CollapseContainer title="__Some-New-Token__,__Some-New-Token__">
+      <a-input placeholder="__Some-New-Token__" />
     </CollapseContainer>
 
     <CollapseContainer class="mt-4 px-4" title="标签页操作">

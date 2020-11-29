@@ -2,25 +2,31 @@
   <div class="p-10">
     <div class="flex justify-center p-4 items-center bg-gray-700">
       <BasicDragVerify ref="el1" @success="handleSuccess" />
-      <a-button color="primary" class="ml-2" @click="handleBtnClick(el1)">还原</a-button>
+      <a-button color="primary" class="ml-2" @click="handleBtnClick(el1)"
+        >__Some-New-Token__</a-button
+      >
     </div>
 
     <div class="flex justify-center p-4 items-center bg-gray-700">
       <BasicDragVerify ref="el2" @success="handleSuccess" circle />
-      <a-button color="primary" class="ml-2" @click="handleBtnClick(el2)">还原</a-button>
+      <a-button color="primary" class="ml-2" @click="handleBtnClick(el2)"
+        >__Some-New-Token__</a-button
+      >
     </div>
 
     <div class="flex justify-center p-4 items-center bg-gray-700">
       <BasicDragVerify
         ref="el3"
         @success="handleSuccess"
-        text="拖动以进行校验"
-        successText="校验成功"
+        text="__Some-New-Token__"
+        successText="__Some-New-Token__"
         :barStyle="{
           background: '#018ffb',
         }"
       />
-      <a-button color="primary" class="ml-2" @click="handleBtnClick(el3)">还原</a-button>
+      <a-button color="primary" class="ml-2" @click="handleBtnClick(el3)"
+        >__Some-New-Token__</a-button
+      >
     </div>
 
     <div class="flex justify-center p-4 items-center bg-gray-700">
@@ -30,7 +36,9 @@
           <RightOutlined v-else />
         </template>
       </BasicDragVerify>
-      <a-button color="primary" class="ml-2" @click="handleBtnClick(el4)">还原</a-button>
+      <a-button color="primary" class="ml-2" @click="handleBtnClick(el4)"
+        >__Some-New-Token__</a-button
+      >
     </div>
 
     <div class="flex justify-center p-4 items-center bg-gray-700">
@@ -38,15 +46,17 @@
         <template #text="isPassing">
           <div v-if="isPassing">
             <BugOutlined />
-            成功
+            __Some-New-Token__
           </div>
           <div v-else>
-            拖动
+            __Some-New-Token__
             <RightOutlined />
           </div>
         </template>
       </BasicDragVerify>
-      <a-button color="primary" class="ml-2" @click="handleBtnClick(el5)">还原</a-button>
+      <a-button color="primary" class="ml-2" @click="handleBtnClick(el5)"
+        >__Some-New-Token__</a-button
+      >
     </div>
   </div>
 </template>
@@ -67,7 +77,7 @@
 
       function handleSuccess(data: PassingData) {
         const { time } = data;
-        createMessage.success(`校验成功,耗时${time}秒`);
+        createMessage.success(`__Some-New-Token__,__Some-New-Token__${time}__Some-New-Token__`);
       }
 
       function handleBtnClick(elRef: RefInstanceType<DragVerifyActionType>) {

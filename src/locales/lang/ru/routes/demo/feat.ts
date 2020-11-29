@@ -1,0 +1,17 @@
+export default {
+  feat: 'Страница функции',
+  icon: 'Иконка',
+  tabs: 'Табы',
+  contextMenu: 'Контекстное меню',
+  download: 'Загрузка',
+  clickOutSide: 'ClickOutSide',
+  imgPreview: 'Превью картинки',
+  copy: 'Буффер обмена',
+  msg: 'Сообщение',
+  watermark: 'Водяной знак',
+  fullScreen: 'Полный экран',
+  errorLog: 'Лог ошибок',
+  tab: 'Таб с параметрами',
+  tab1: 'Таб с параметром 1',
+  tab2: 'Таб с параметром 2',
+};

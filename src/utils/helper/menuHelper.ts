@@ -13,7 +13,7 @@ export function flatMenus(menus: Menu[]) {
   return treeToList(menus);
 }
 
-// 拼接父级路径
+// __Some-New-Token__
 function joinParentPath(list: any, node: any) {
   let allPaths = getAllParentPath(list, node.path);
 
@@ -33,7 +33,7 @@ function joinParentPath(list: any, node: any) {
   return node;
 }
 
-// 解析菜单模块
+// __Some-New-Token__
 export function transformMenuModule(menuModule: MenuModule): Menu {
   const { menu } = menuModule;
 

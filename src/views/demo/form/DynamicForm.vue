@@ -1,16 +1,16 @@
 <template>
   <div class="m-4">
     <div class="mb-4">
-      <a-button @click="changeLabel3" class="mr-2">更改字段3label</a-button>
-      <a-button @click="changeLabel34" class="mr-2">同时更改字段3,4label</a-button>
-      <a-button @click="appendField" class="mr-2">往字段3后面插入字段10</a-button>
-      <a-button @click="deleteField" class="mr-2">删除字段11</a-button>
+      <a-button @click="changeLabel3" class="mr-2">__Some-New-Token__3label</a-button>
+      <a-button @click="changeLabel34" class="mr-2">__Some-New-Token__3,4label</a-button>
+      <a-button @click="appendField" class="mr-2">__Some-New-Token__3__Some-New-Token__10</a-button>
+      <a-button @click="deleteField" class="mr-2">__Some-New-Token__11</a-button>
     </div>
-    <CollapseContainer title="动态表单示例,动态根据表单内其他值改变">
+    <CollapseContainer title="__Some-New-Token__,__Some-New-Token__">
       <BasicForm @register="register" />
     </CollapseContainer>
 
-    <CollapseContainer class="mt-5" title="componentProps动态改变">
+    <CollapseContainer class="mt-5" title="componentProps__Some-New-Token__">
       <BasicForm @register="register1" />
     </CollapseContainer>
   </div>
@@ -23,7 +23,7 @@
     {
       field: 'field1',
       component: 'Input',
-      label: '字段1',
+      label: '__Some-New-Token__1',
       colProps: {
         span: 8,
       },
@@ -34,7 +34,7 @@
     {
       field: 'field2',
       component: 'Input',
-      label: '字段2',
+      label: '__Some-New-Token__2',
       colProps: {
         span: 8,
       },
@@ -45,7 +45,7 @@
     {
       field: 'field3',
       component: 'DatePicker',
-      label: '字段3',
+      label: '__Some-New-Token__3',
       colProps: {
         span: 8,
       },
@@ -56,22 +56,24 @@
     {
       field: 'field4',
       component: 'Select',
-      label: '字段4',
+      label: '__Some-New-Token__4',
       colProps: {
         span: 8,
       },
       dynamicRules: ({ values }) => {
-        return values.field8 ? [{ required: true, message: '字段4必填' }] : [];
+        return values.field8
+          ? [{ required: true, message: '__Some-New-Token__4__Some-New-Token__' }]
+          : [];
       },
       componentProps: {
         options: [
           {
-            label: '选项1',
+            label: '__Some-New-Token__1',
             value: '1',
             key: '1',
           },
           {
-            label: '选项2',
+            label: '__Some-New-Token__2',
             value: '2',
             key: '2',
           },
@@ -81,7 +83,7 @@
     {
       field: 'field11',
       component: 'DatePicker',
-      label: '字段11',
+      label: '__Some-New-Token__11',
       colProps: {
         span: 8,
       },
@@ -89,7 +91,7 @@
     {
       field: 'field5',
       component: 'Switch',
-      label: '是否显示字段1(css控制)',
+      label: '__Some-New-Token__1(css__Some-New-Token__)',
       colProps: {
         span: 8,
       },
@@ -98,7 +100,7 @@
     {
       field: 'field6',
       component: 'Switch',
-      label: '是否显示字段2(dom控制)',
+      label: '__Some-New-Token__2(dom__Some-New-Token__)',
       colProps: {
         span: 8,
       },
@@ -107,7 +109,7 @@
     {
       field: 'field7',
       component: 'Switch',
-      label: '是否禁用字段3',
+      label: '__Some-New-Token__3',
       colProps: {
         span: 8,
       },
@@ -116,7 +118,7 @@
     {
       field: 'field8',
       component: 'Switch',
-      label: '字段4是否必填',
+      label: '__Some-New-Token__4__Some-New-Token__',
       colProps: {
         span: 8,
       },
@@ -135,7 +137,7 @@
       labelWidth: 200,
       componentProps: ({ formModel }) => {
         return {
-          placeholder: '同步f2的值为f1',
+          placeholder: '__Some-New-Token__f2__Some-New-Token__f1',
           onChange: (e: ChangeEvent) => {
             formModel.f2 = e.target.value;
           },
@@ -163,10 +165,10 @@
       // @ts-ignore
       componentProps: ({ formActionType, tableAction }) => {
         return {
-          placeholder: '值改变时执行查询,查看控制台',
+          placeholder: '__Some-New-Token__,__Some-New-Token__',
           onChange: async () => {
             const { validate } = formActionType;
-            // tableAction只适用于在表格内开启表单的例子
+            // tableAction__Some-New-Token__
             // const { reload } = tableAction;
             const res = await validate();
             console.log(res);
@@ -199,18 +201,18 @@
       function changeLabel3() {
         updateSchema({
           field: 'field3',
-          label: '字段3 New',
+          label: '__Some-New-Token__3 New',
         });
       }
       function changeLabel34() {
         updateSchema([
           {
             field: 'field3',
-            label: '字段3 New++',
+            label: '__Some-New-Token__3 New++',
           },
           {
             field: 'field4',
-            label: '字段4 New++',
+            label: '__Some-New-Token__4 New++',
           },
         ]);
       }
@@ -219,7 +221,7 @@
         appendSchemaByField(
           {
             field: 'field10',
-            label: '字段10',
+            label: '__Some-New-Token__10',
             component: 'Input',
             colProps: {
               span: 8,

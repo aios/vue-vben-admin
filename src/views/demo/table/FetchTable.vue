@@ -2,8 +2,8 @@
   <div class="p-4">
     <BasicTable @register="registerTable">
       <template #toolbar>
-        <a-button type="primary" @click="handleReloadCurrent"> 刷新当前页 </a-button>
-        <a-button type="primary" @click="handleReload"> 刷新并返回第一页 </a-button>
+        <a-button type="primary" @click="handleReloadCurrent"> __Some-New-Token__ </a-button>
+        <a-button type="primary" @click="handleReload"> __Some-New-Token__ </a-button>
       </template>
     </BasicTable>
   </div>
@@ -18,7 +18,7 @@
     components: { BasicTable },
     setup() {
       const [registerTable, { reload }] = useTable({
-        title: '远程加载示例',
+        title: '__Some-New-Token__',
         api: demoListApi,
         columns: getBasicColumns(),
       });

@@ -1,8 +1,8 @@
 <template>
   <div class="m-4">
-    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
+    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
       <template #toolbar>
-        <a-button @click="openModal">导出</a-button>
+        <a-button @click="openModal">__Some-New-Token__</a-button>
       </template>
     </BasicTable>
     <ExportExcelModel @register="register" @success="defaultHeader" />
@@ -20,7 +20,7 @@
     components: { BasicTable, ExportExcelModel },
     setup() {
       function defaultHeader({ filename, bookType }: ExportModalResult) {
-        // 默认Object.keys(data[0])作为header
+        // __Some-New-Token__Object.keys(data[0])__Some-New-Token__header
         jsonToSheetXlsx({
           data,
           filename,

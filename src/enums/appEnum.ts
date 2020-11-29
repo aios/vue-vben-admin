@@ -23,7 +23,7 @@ export enum ThemeEnum {
 }
 
 /**
- * 权限模式
+ * __Some-New-Token__
  */
 export enum PermissionModeEnum {
   // role

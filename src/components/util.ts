@@ -6,6 +6,7 @@ export function withInstall(...components: Component[]) {
     components.forEach((comp) => {
       comp.name && app.component(comp.name, comp);
     });
+    return app;
   };
 }
 
@@ -49,9 +50,7 @@ function parseStyle(style: string) {
       continue;
     }
     // May be undefined if the `key: value` pair is incomplete.
-    if (typeof val === 'string') {
-      val = val.trim();
-    }
+    val = val.trim();
     styleMap[camelize(key)] = val;
   }
 

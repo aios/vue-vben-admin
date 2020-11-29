@@ -2,17 +2,17 @@ import type { AxiosRequestConfig } from 'axios';
 import { AxiosTransform } from './axiosTransform';
 
 export interface RequestOptions {
-  // 请求参数拼接到url
+  // __Some-New-Token__url
   joinParamsToUrl?: boolean;
-  // 格式化请求参数时间
+  // __Some-New-Token__
   formatDate?: boolean;
-  //  是否处理请求结果
+  //  __Some-New-Token__
   isTransformRequestResult?: boolean;
-  // 是否加入url
+  // __Some-New-Token__url
   joinPrefix?: boolean;
-  // 接口地址， 不填则使用默认apiUrl
+  // __Some-New-Token__， __Some-New-Token__apiUrl
   apiUrl?: string;
-  // 错误消息提示类型
+  // __Some-New-Token__
   errorMessageMode?: 'none' | 'modal';
 }
 
@@ -28,15 +28,15 @@ export interface Result<T = any> {
   message: string;
   result: T;
 }
-// multipart/form-data：上传文件
+// multipart/form-data：__Some-New-Token__
 export interface UploadFileParams {
-  // 其他参数
+  // __Some-New-Token__
   data?: { [key: string]: any };
-  // 文件参数的接口字段名
+  // __Some-New-Token__
   name?: string;
-  // 文件
+  // __Some-New-Token__
   file: File | Blob;
-  // 文件名
+  // __Some-New-Token__
   filename?: string;
   [key: string]: any;
 }
