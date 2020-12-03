@@ -68,7 +68,8 @@
       const globSetting = useGlobSetting();
       const { locale } = useProjectSetting();
       const { notification } = useMessage();
-      const { t } = useI18n('sys.login');
+      const { t } = useI18n();
+
       // const openLoginVerifyRef = computed(() => appStore.getProjectConfig.openLoginVerify);
       const formData = reactive({
         account: 'vben',
@@ -113,8 +114,11 @@
       }
 
       const formRules = reactive({
-        account: [{ required: true, message: t('accountPlaceholder'), trigger: 'blur' }],
-        password: [{ required: true, message: t('passwordPlaceholder'), trigger: 'blur' }],
+        account: [{ required: true, message: t('sys.login.accountPlaceholder'), trigger: 'blur' }],
+        password: [
+          { required: true, message: t('sys.login.passwordPlaceholder'), trigger: 'blur' },
+        ],
+        // verify: unref(openLoginVerifyRef) ? [{ required: true, message: '请通过验证码校验' }] : [],
       });
 
       async function handleTgLogin() {
@@ -157,8 +161,8 @@
           );
           if (userInfo) {
             notification.success({
-              message: t('loginSuccessTitle'),
-              description: t('loginSuccessDesc', { name: userInfo.realName }),
+              message: t('sys.login.loginSuccessTitle'),
+              description: `${t('sys.login.loginSuccessDesc')}: ${userInfo.realName}`,
               duration: 3,
             });
           }

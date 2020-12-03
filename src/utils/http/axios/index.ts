@@ -34,7 +34,7 @@ const transform: AxiosTransform = {
    * @description: __Some-New-Token__
    */
   transformRequestData: (res: AxiosResponse<Result>, options: RequestOptions) => {
-    const { t } = useI18n('sys.api');
+    const { t } = useI18n();
     const { isTransformRequestResult } = options;
 
     if (res.status == 204 || res.config.url?.search('csrf-cookie') !== -1) {
@@ -66,7 +66,7 @@ const transform: AxiosTransform = {
       if (message) {
         // errorMessageMode=‘modal’__Some-New-Token__modal__Some-New-Token__，__Some-New-Token__，__Some-New-Token__
         if (options.errorMessageMode === 'modal') {
-          createErrorModal({ title: t('errorTip'), content: message });
+          createErrorModal({ title: t('sys.api.errorTip'), content: message });
         } else {
           createMessage.error(message);
         }
@@ -86,7 +86,7 @@ const transform: AxiosTransform = {
         createMessage.error(data.message);
         Promise.reject(new Error(message));
       } else {
-        const msg = t('errorMessage');
+        const msg = t('sys.api.errorMessage');
         createMessage.error(msg);
         Promise.reject(new Error(msg));
       }
@@ -94,9 +94,9 @@ const transform: AxiosTransform = {
     }
     // __Some-New-Token__
     if (code === ResultEnum.TIMEOUT) {
-      const timeoutMsg = t('timeoutMessage');
+      const timeoutMsg = t('sys.api.timeoutMessage');
       createErrorModal({
-        title: t('operationFailed'),
+        title: t('sys.api.operationFailed'),
         content: timeoutMsg,
       });
       Promise.reject(new Error(timeoutMsg));
@@ -171,7 +171,7 @@ const transform: AxiosTransform = {
    * @description: __Some-New-Token__
    */
   responseInterceptorsCatch: (error: any) => {
-    const { t } = useI18n('sys.api');
+    const { t } = useI18n();
     errorStore.setupErrorHandle(error);
     const { response, code, message } = error || {};
     const msg: string =
@@ -179,12 +179,12 @@ const transform: AxiosTransform = {
     const err: string = error.toString();
     try {
       if (code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {
-        createMessage.error(t('apiTimeoutMessage'));
+        createMessage.error(t('sys.api.apiTimeoutMessage'));
       }
       if (err && err.includes('Network Error')) {
         createErrorModal({
-          title: t('networkException'),
-          content: t('networkExceptionMsg'),
+          title: t('sys.api.networkException'),
+          content: t('sys.api.networkExceptionMsg'),
         });
       }
     } catch (error) {

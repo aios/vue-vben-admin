@@ -32,6 +32,7 @@ const frontRoute = {
   children: [
     {
       path: 'page',
+      name: 'FrontPageAuth',
       component: '/demo/permission/front/index',
       meta: {
         title: '__Some-New-Token__',
@@ -39,6 +40,7 @@ const frontRoute = {
     },
     {
       path: 'btn',
+      name: 'FrontBtnAuth',
       component: '/demo/permission/front/Btn',
       meta: {
         title: '__Some-New-Token__',
@@ -46,6 +48,7 @@ const frontRoute = {
     },
     {
       path: 'auth-pageA',
+      name: 'FrontAuthPageA',
       component: '/demo/permission/front/AuthPageA',
       meta: {
         title: '__Some-New-Token__A',
@@ -53,6 +56,7 @@ const frontRoute = {
     },
     {
       path: 'auth-pageB',
+      name: 'FrontAuthPageB',
       component: '/demo/permission/front/AuthPageB',
       meta: {
         title: '__Some-New-Token__B',
@@ -69,6 +73,7 @@ const backRoute = {
   children: [
     {
       path: 'page',
+      name: 'BackAuthPage',
       component: '/demo/permission/back/index',
       meta: {
         title: '__Some-New-Token__',
@@ -76,6 +81,7 @@ const backRoute = {
     },
     {
       path: 'btn',
+      name: 'BackAuthBtn',
       component: '/demo/permission/back/Btn',
       meta: {
         title: '__Some-New-Token__',

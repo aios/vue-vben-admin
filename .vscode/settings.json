@@ -10,14 +10,13 @@
   "editor.smoothScrolling": true,
   "editor.cursorBlinking": "phase",
   "editor.cursorSmoothCaretAnimation": true,
-  "editor.detectIndentation": false, // vscode__Some-New-Token__tabsize__Some-New-Token__
+  "editor.detectIndentation": false,
   "diffEditor.ignoreTrimWhitespace": false,
-  "editor.formatOnPaste": true, //__Some-New-Token__
-  "editor.formatOnSave": true, //__Some-New-Token__
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
   "editor.suggestSelection": "first",
   "editor.trimAutoWhitespace": true,
   "editor.quickSuggestions": {
-    //   __Some-New-Token__
     "other": true,
     "comments": true,
     "strings": true
@@ -25,41 +24,33 @@
   //===========================================
   //============= Other =======================
   //===========================================
-  "breadcrumbs.enabled": true, // __Some-New-Token__/__Some-New-Token__
-  "open-in-browser.default": "chrome", // __Some-New-Token__
+  "breadcrumbs.enabled": true,
+  "open-in-browser.default": "chrome",
   //===========================================
   //============= emmet =======================
   //===========================================
-  "emmet.triggerExpansionOnTab": true, // __Some-New-Token__emmet__Some-New-Token__tab__Some-New-Token__
+  "emmet.triggerExpansionOnTab": true,
   "emmet.showAbbreviationSuggestions": true,
   "emmet.showExpandedAbbreviation": "always",
   "emmet.syntaxProfiles": {
-    // __Some-New-Token__emmet__Some-New-Token__，__Some-New-Token__vue__Some-New-Token__html__Some-New-Token__emmet__Some-New-Token__
     "vue-html": "html",
     "vue": "html",
     "javascript": "javascriptreact",
-    // xml__Some-New-Token__，__Some-New-Token__emmet__Some-New-Token__
     "xml": {
       "attr_quotes": "single"
     }
   },
   "emmet.includeLanguages": {
-    // __Some-New-Token__react__Some-New-Token__jsx__Some-New-Token__emmet__Some-New-Token__
     "jsx-sublime-babel-tags": "javascriptreact"
   },
   //===========================================
   //============= files =======================
   //===========================================
-  // "files.autoSave": "onWindowChange", // __Some-New-Token__
-  // "files.autoSaveDelay": 1000, // __Some-New-Token__
-  "files.trimTrailingWhitespace": true, // __Some-New-Token__，__Some-New-Token__。
-  // __Some-New-Token__
+  "files.trimTrailingWhitespace": true,
   "files.insertFinalNewline": true,
-  // __Some-New-Token__
   "files.trimFinalNewlines": true,
   "files.eol": "\n",
   "search.exclude": {
-    // __Some-New-Token__
     "**/node_modules": true,
     "**/*.log": true,
     "**/*.log*": true,
@@ -73,11 +64,16 @@
     "**/.idea": true,
     "**/.vscode": false,
     "**/yarn.lock": true,
-    "**/tmp": true
+    "**/tmp": true,
+    "out": true,
+    "dist": true,
+    "node_modules": true,
+    "CHANGELOG.md": true,
+    "examples": true,
+    "res": true,
+    "screenshots": true
   },
   "files.exclude": {
-    // __Some-New-Token__，__Some-New-Token__node_modules(__Some-New-Token__)
-    // "**/node_modules": true,
     "**/bower_components": true,
     "**/.idea": true,
     "**/yarn.lock": true,
@@ -100,7 +96,6 @@
     "**/yarn.lock": true
   },
   "files.associations": {
-    // __Some-New-Token__，__Some-New-Token__，__Some-New-Token__wxss__Some-New-Token__css
     "*.vue": "vue",
     "*.wxss": "css"
   },
@@ -109,13 +104,11 @@
   "css.validate": true,
   "less.validate": true,
   "scss.validate": true,
-  // ↓↓↓↓↓↓↓↓↓↓↓↓↓ __Some-New-Token__ ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
-  // ↓↓↓↓↓↓↓↓↓↓↓↓↓ __Some-New-Token__ ↓↓↓↓↓↓↓↓↓↓↓↓
   // ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
   // ===========================================
   // ================ Eslint ===================
   // ===========================================
-  "eslint.enable": true, // __Some-New-Token__eslint
+  "eslint.enable": true,
   "eslint.options": {
     // __Some-New-Token__
     "plugins": [
@@ -126,53 +119,41 @@
       "typescript"
     ]
   },
-  "eslint.autoFixOnSave": true, // __Some-New-Token__
+  "eslint.autoFixOnSave": true,
   // ===========================================
   // ================ Vetur ====================
   // ===========================================
   "vetur.experimental.templateInterpolationService": true,
   "vetur.format.options.tabSize": 2,
-  "vetur.format.defaultFormatter.html": "js-beautify-html", // __Some-New-Token__js-beautify-html__Some-New-Token__
-  "vetur.format.defaultFormatter.scss": "prettier", // __Some-New-Token__js-beautify-html__Some-New-Token__
-  "vetur.format.defaultFormatter.css": "prettier", // __Some-New-Token__js-beautify-html__Some-New-Token__
-  //   "vetur.format.defaultFormatter.html": "prettyhtml",
+  "vetur.format.defaultFormatter.html": "js-beautify-html",
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.defaultFormatter.css": "prettier",
   "vetur.format.defaultFormatter.ts": "prettier-tslint",
   "vetur.format.defaultFormatter.js": "prettier",
-    "vetur.languageFeatures.codeActions": false,
-  // "vetur.useWorkspaceDependencies": true,
+  "vetur.languageFeatures.codeActions": false,
   "vetur.format.defaultFormatterOptions": {
     "js-beautify-html": {
-      //   "wrap_attributes": "force-aligned", // __Some-New-Token__
-      "wrap_attributes": "force-expand-multiline" // __Some-New-Token__ __Some-New-Token__
+      "wrap_attributes": "force-expand-multiline"
     },
     "prettier": {
-      "eslintIntegration": true, // __Some-New-Token__perttier__Some-New-Token__eslint__Some-New-Token__
-      "arrowParens": "always", // __Some-New-Token__ __Some-New-Token__avoid __Some-New-Token__ avoid | always
-      "semi": false, // __Some-New-Token__, __Some-New-Token__true
-      "singleQuote": true // __Some-New-Token__, __Some-New-Token__false(__Some-New-Token__jsx__Some-New-Token__, __Some-New-Token__)
+      "eslintIntegration": true,
+      "arrowParens": "always",
+      "semi": false,
+      "singleQuote": true
     }
   },
-  // __Some-New-Token__
-  //===========================================
-  //============= Code Runner =================
-  //===========================================
   "javascript.updateImportsOnFileMove.enabled": "never",
   "liveServer.settings.donotShowInfoMsg": true,
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "terminal.integrated.rendererType": "dom", //__Some-New-Token__liveserver__Some-New-Token__
+  "terminal.integrated.rendererType": "dom",
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "workbench.settings.enableNaturalLanguageSearch": false,
-  // __Some-New-Token__
   "path-intellisense.mappings": {
     "/@/": "${workspaceRoot}/src"
   },
   "prettier.requireConfig": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.sideBar.location": "left",
-
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -183,7 +164,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -203,8 +184,19 @@
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
-  }
+  },
+  "i18n-ally.localesPaths": [
+    "src/locales/lang",
+  ],
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.sortKeys": true,
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{locale}/{namespaces}.{ext}",
+  "i18n-ally.enabledParsers": [
+    "ts"
+  ],
+  "i18n-ally.sourceLanguage": "zh",
+  "i18n-ally.enabledFrameworks":["vue","react"]
 }

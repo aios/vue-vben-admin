@@ -1,5 +1,4 @@
-import type { UserConfig } from 'vite';
-
+import type { UserConfig, Resolver } from 'vite';
 import { resolve } from 'path';
 
 import { modifyVars } from './build/config/lessModifyVars';
@@ -8,7 +7,7 @@ import { createProxy } from './build/vite/proxy';
 import globbyTransform from './build/vite/plugin/transform/globby';
 import dynamicImportTransform from './build/vite/plugin/transform/dynamic-import';
 
-import { isDevFn, loadEnv } from './build/utils';
+import { loadEnv } from './build/utils';
 
 import { createRollupPlugin, createVitePlugins } from './build/vite/plugin';
 
@@ -16,19 +15,23 @@ const pkg = require('./package.json');
 
 const viteEnv = loadEnv();
 
-const {
-  VITE_PORT,
-  VITE_PUBLIC_PATH,
-  VITE_PROXY,
-  VITE_DROP_CONSOLE,
-  // VITE_USE_CDN,
-} = viteEnv;
+const { VITE_PORT, VITE_PUBLIC_PATH, VITE_PROXY, VITE_DROP_CONSOLE, VITE_DYNAMIC_IMPORT } = viteEnv;
 
 function pathResolve(dir: string) {
   return resolve(__dirname, '.', dir);
 }
 
+const alias: Record<string, string> = {
+  '/@/': pathResolve('src'),
+};
+
+const root: string = process.cwd();
+
+const resolvers: Resolver[] = [];
+
 const viteConfig: UserConfig = {
+  root,
+  alias,
   /**
    * Entry. Use this to specify a js entry file in setting cases where an
    * `index.html` does not exist (e.g. serving vite assets from a different host)
@@ -44,21 +47,7 @@ const viteConfig: UserConfig = {
    * @default '3000'
    */
   port: VITE_PORT,
-  /**
-   * @default 'localhost'
-   */
-  hostname: 'localhost',
-  /**
-   * Run to open the browser automatically
-   * @default 'false'
-   */
-  open: false,
-  /**
-   * Set to `false` to disable minification, or specify the minifier to setting.
-   * Available options are 'terser' or 'esbuild'.
-   * @default 'terser'
-   */
-  minify: isDevFn() ? false : 'terser',
+
   /**
    * Base public path when served in production.
    * @default '/'
@@ -138,25 +127,20 @@ const viteConfig: UserConfig = {
     ],
   },
 
-  // Local cross-domain proxy
   proxy: createProxy(VITE_PROXY),
   plugins: createVitePlugins(viteEnv),
   rollupInputOptions: {
-    // TODO
-    // external: VITE_USE_CDN ? externals : [],
     plugins: createRollupPlugin(),
   },
-};
-
-export default {
-  ...viteConfig,
   transforms: [
     globbyTransform({
-      resolvers: viteConfig.resolvers,
-      root: viteConfig.root,
-      alias: viteConfig.alias,
+      resolvers: resolvers,
+      root: root,
+      alias: alias,
       includes: [resolve('src/router'), resolve('src/locales')],
     }),
-    dynamicImportTransform(viteEnv),
+    dynamicImportTransform(VITE_DYNAMIC_IMPORT),
   ],
-} as UserConfig;
+};
+
+export default viteConfig;

@@ -5,7 +5,7 @@ const { createMessage } = useMessage();
 
 const error = createMessage.error!;
 export function checkStatus(status: number, msg: string): void {
-  const { t } = useI18n('sys.api');
+  const { t } = useI18n();
   switch (status) {
     case 400:
       error(`${msg}`);
@@ -14,39 +14,39 @@ export function checkStatus(status: number, msg: string): void {
     // __Some-New-Token__，__Some-New-Token__
     // __Some-New-Token__，__Some-New-Token__。
     case 401:
-      error(t('errMsg401'));
+      error(t('sys.api.errMsg401'));
       userStore.loginOut(true);
       break;
     case 403:
-      error(t('errMsg403'));
+      error(t('sys.api.errMsg403'));
       break;
     // 404__Some-New-Token__
     case 404:
-      error(t('errMsg404'));
+      error(t('sys.api.errMsg404'));
       break;
     case 405:
-      error(t('errMsg405'));
+      error(t('sys.api.errMsg405'));
       break;
     case 408:
-      error(t('errMsg408'));
+      error(t('sys.api.errMsg408'));
       break;
     case 500:
-      error(t('errMsg500'));
+      error(t('sys.api.errMsg500'));
       break;
     case 501:
-      error(t('errMsg501'));
+      error(t('sys.api.errMsg501'));
       break;
     case 502:
-      error(t('errMsg502'));
+      error(t('sys.api.errMsg502'));
       break;
     case 503:
-      error(t('errMsg503'));
+      error(t('sys.api.errMsg503'));
       break;
     case 504:
-      error(t('errMsg504'));
+      error(t('sys.api.errMsg504'));
       break;
     case 505:
-      error(t('errMsg505'));
+      error(t('sys.api.errMsg505'));
       break;
     default:
   }
