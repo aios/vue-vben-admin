@@ -36,6 +36,9 @@ const viteConfig: UserConfig = {
    */
   // TODO build error
   // entry: 'public/index.html',
+
+  cors: true,
+  emitManifest: true,
   /**
    * port
    * @default '3000'
@@ -72,7 +75,7 @@ const viteConfig: UserConfig = {
    * Whether to generate sourcemap
    * @default false
    */
-  sourcemap: false,
+  sourcemap: true,
   /**
    * Directory relative from `outDir` where the built js/css/image assets will
    * be placed.
@@ -89,7 +92,7 @@ const viteConfig: UserConfig = {
    * Transpile target for esbuild.
    * @default 'es2020'
    */
-  esbuildTarget: 'es2019',
+  esbuildTarget: 'es2020',
   /**
    * Whether to log asset info to console
    * @default false

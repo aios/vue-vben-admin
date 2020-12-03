@@ -1,8 +1,10 @@
 export const timestamp = () => +Date.now();
 import { isObject } from '/@/utils/is';
+
 export const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
 export const noop = () => {};
 export const now = () => Date.now();
+
 /**
  * @description:  Set ui mount node
  */
@@ -27,7 +29,7 @@ export function setObjToUrlParams(baseUrl: string, obj: any): string {
   let parameters = '';
   let url = '';
   for (const key in obj) {
-    parameters += key + '=' + encodeURIComponent(obj[key]) + '&';
+    if (obj.hasOwnProperty(key)) parameters += key + '=' + encodeURIComponent(obj[key]) + '&';
   }
   parameters = parameters.replace(/&$/, '');
   if (/\?$/.test(baseUrl)) {
@@ -41,7 +43,8 @@ export function setObjToUrlParams(baseUrl: string, obj: any): string {
 export function deepMerge<T = any>(src: any, target: any): T {
   let key: string;
   for (key in target) {
-    src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key]);
+    if (target.hasOwnProperty(key))
+      src[key] = isObject(src[key]) ? deepMerge(src[key], target[key]) : (src[key] = target[key]);
   }
   return src;
 }

@@ -50,7 +50,7 @@ export function isRegExp(val: unknown): val is RegExp {
   return is(val, 'RegExp');
 }
 
-export function isArray(val: unknown): val is Array<any> {
+export function isArray(val: unknown): val is Array<unknown> {
   return val && Array.isArray(val);
 }
 

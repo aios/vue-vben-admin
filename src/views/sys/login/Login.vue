@@ -9,23 +9,18 @@
             <img :src="logo" class="mr-4" alt="" />
             <h1>{{ title }}</h1>
           </header>
-          <a-row>
-            <a-col :span="8" />
-            <a-col :id="'telegram_auth'" :span="8" />
-            <a-col :span="8" />
-          </a-row>
-          <a-form ref="formRef" class="mx-auto mt-10" :model="formData" :rules="formRules">
-            <a-form-item name="account">
-              <a-input v-model:value="formData.account" size="large" placeholder="username: vben" />
-            </a-form-item>
-            <a-form-item name="password">
-              <a-input-password
-                v-model:value="formData.password"
-                size="large"
-                visibility-toggle
-                placeholder="password: 123456"
-              />
-            </a-form-item>
+          <a-form ref="formRef" class="mx-auto mt-10">
+            <!--<a-form-item name="account">-->
+            <!--<a-input v-model:value="formData.account" size="large" placeholder="username: vben" />-->
+            <!--</a-form-item>-->
+            <!--<a-form-item name="password">-->
+            <!--<a-input-password-->
+            <!--v-model:value="formData.password"-->
+            <!--size="large"-->
+            <!--visibility-toggle-->
+            <!-- placeholder="password: 123456"-->
+            <!-- />-->
+            <!-- </a-form-item>-->
 
             <!--            &lt;!&ndash;
             <a-form-item v-if="openLoginVerify" name="verify">
@@ -33,35 +28,10 @@
             </a-form-item>
             &ndash;&gt;-->
             <a-row>
-              <a-col :span="12">
-                <a-form-item>
-                  <!--                  &lt;!&ndash; No logic, you need to deal with it yourself &ndash;&gt;-->
-                  <a-checkbox v-model:checked="autoLogin" size="small">
-                    {{ t('sys.login.autoLogin') }}
-                  </a-checkbox>
-                </a-form-item>
-              </a-col>
-              <a-col :span="12">
-                <a-form-item :style="{ 'text-align': 'right' }">
-                  <!--                  &lt;!&ndash; No logic, you need to deal with it yourself &ndash;&gt;-->
-                  <a-button type="link" size="small">
-                    {{ t('sys.login.forgetPassword') }}
-                  </a-button>
-                </a-form-item>
-              </a-col>
+              <a-col :span="8" />
+              <a-col :id="'telegram_auth'" :span="8" />
+              <a-col :span="8" />
             </a-row>
-            <a-form-item>
-              <a-button
-                type="primary"
-                size="large"
-                class="rounded-sm"
-                :block="true"
-                :loading="formState.loading"
-                @click="login"
-              >
-                {{ t('sys.login.loginButton') }}
-              </a-button>
-            </a-form-item>
           </a-form>
         </div>
       </div>
@@ -70,30 +40,31 @@
 </template>
 <script lang="ts">
   import { defineComponent, nextTick, onMounted, reactive, ref, toRaw, unref } from 'vue';
-  import { Checkbox } from 'ant-design-vue';
 
-  import { Button } from '/@/components/Button';
+  // import { Checkbox } from 'ant-design-vue';
+
+  // import { Button } from '/@/components/Button';
   import { AppLocalePicker } from '/@/components/Application';
   // import { BasicDragVerify, DragVerifyActionType } from '/@/components/Verify/index';
-  import { userStore } from '/@/store/modules/user';
   // import { appStore } from '/@/store/modules/app';
   import { useMessage } from '/@/hooks/web/useMessage';
+  import queryString from 'query-string';
   import { useGlobSetting, useProjectSetting } from '/@/hooks/setting';
   import logo from '/@/assets/images/logo.png';
   import { useI18n } from '/@/hooks/web/useI18n';
   import { useScript } from '/@/hooks/web/useScript';
+  import { userStore } from '/@/store/modules/user';
 
   export default defineComponent({
     components: {
       //  BasicDragVerify,
-      AButton: Button,
-      ACheckbox: Checkbox,
+      // AButton: Button,
+      // ACheckbox: Checkbox,
       AppLocalePicker,
     },
     setup() {
       const formRef = ref<any>(null);
       const autoLoginRef = ref(false);
-      // const verifyRef = ref<RefInstanceType<DragVerifyActionType>>(null);
       const globSetting = useGlobSetting();
       const { locale } = useProjectSetting();
       const { notification } = useMessage();
@@ -106,6 +77,10 @@
       });
       const formState = reactive({
         loading: false,
+      });
+
+      const urlParams = reactive({
+        location: location,
       });
 
       const { toPromise } = useScript(
@@ -122,6 +97,8 @@
       );
 
       onMounted(() => {
+        handleTgLogin();
+
         nextTick(() => {
           init();
         });
@@ -140,6 +117,32 @@
         password: [{ required: true, message: t('passwordPlaceholder'), trigger: 'blur' }],
       });
 
+      async function handleTgLogin() {
+        const params = queryString.parseUrl(urlParams.location.href);
+        if (Object.keys(params.query).length < 2) {
+          return;
+        }
+        const form = unref(formRef);
+        if (!form) return;
+        formState.loading = true;
+
+        try {
+          const userInfo = await userStore.loginTg(params.query);
+
+          if (userInfo) {
+            notification.success({
+              message: t('loginSuccessTitle'),
+              description: t('loginSuccessDesc', { name: userInfo.realName }),
+              duration: 3,
+            });
+          }
+        } catch (error) {
+        } finally {
+          // resetVerify();
+          formState.loading = false;
+        }
+      }
+
       async function handleLogin() {
         const form = unref(formRef);
         if (!form) return;
@@ -155,7 +158,7 @@
           if (userInfo) {
             notification.success({
               message: t('loginSuccessTitle'),
-              description: `${t('loginSuccessDesc')}: ${userInfo.realName}`,
+              description: t('loginSuccessDesc', { name: userInfo.realName }),
               duration: 3,
             });
           }

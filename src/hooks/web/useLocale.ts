@@ -11,9 +11,9 @@ import { useLocaleSetting } from '/@/hooks/setting/useLocaleSetting';
 
 import moment from 'moment';
 
-import 'moment/dist/locale/zh-cn';
+import 'moment/dist/locale/ru';
 
-moment.locale('zh-cn');
+moment.locale('ru');
 
 const antConfigLocaleRef = ref<any>(null);
 

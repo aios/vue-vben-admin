@@ -23,7 +23,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
     'vue/custom-event-name-casing': 'off',
     'no-use-before-define': 'off',
-    '@vue/html-self-closing': 'off',
+    'vue/html-self-closing': 'off',
     // 'no-use-before-define': [
     //   'error',
     //   {

@@ -30,6 +30,7 @@ export class VAxios {
    */
   private createAxios(config: CreateAxiosOptions): void {
     this.axiosInstance = axios.create(config);
+    this.axiosInstance.defaults.withCredentials = true;
   }
 
   private getTransform() {
@@ -162,7 +163,9 @@ export class VAxios {
         .request<any, AxiosResponse<Result>>(conf)
         .then((res: AxiosResponse<Result>) => {
           if (transformRequestData && isFunction(transformRequestData)) {
+            //console.log(res, opt, transformRequestData);
             const ret = transformRequestData(res, opt);
+            console.log(ret);
             ret !== errorResult ? resolve(ret) : reject(new Error('request error!'));
             return;
           }

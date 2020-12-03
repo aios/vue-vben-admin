@@ -35,8 +35,8 @@ export async function scrollBehavior(to, from, savedPosition) {
 
 // see https://github.com/vuejs/vue-router-next/blob/master/playground/scrollWaiter.ts
 class ScrollQueue {
-  private resolve: (() => void) | null = null;
-  private promise: Promise<any> | null = null;
+  private resolve: ((value: PromiseLike<any> | any) => void) | null | undefined;
+  private promise: Promise<any> | null | undefined;
 
   add() {
     this.promise = new Promise((resolve) => {
@@ -45,7 +45,7 @@ class ScrollQueue {
   }
 
   flush() {
-    this.resolve && this.resolve();
+    this.resolve && this.resolve([]);
     this.resolve = null;
     this.promise = null;
   }

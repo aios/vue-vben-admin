@@ -1,17 +1,17 @@
 <template>
-  <Form v-bind="{ ...$attrs, ...$props }" ref="formElRef" :model="formModel">
+  <Form ref="formElRef" v-bind="{ ...$attrs, ...$props }" :model="formModel">
     <Row :class="getProps.compact ? 'compact-form-row' : ''" :style="getRowWrapStyleRef">
       <slot name="formHeader" />
       <template v-for="schema in getSchema" :key="schema.field">
         <FormItem
-          :tableAction="tableAction"
-          :formActionType="formActionType"
+          :table-action="tableAction"
+          :form-action-type="formActionType"
           :schema="schema"
-          :formProps="getProps"
-          :allDefaultValues="defaultValueRef"
-          :formModel="formModel"
+          :form-props="getProps"
+          :all-default-values="defaultValueRef"
+          :form-model="formModel"
         >
-          <template #[item]="data" v-for="item in Object.keys($slots)">
+          <template v-for="item in Object.keys($slots)" #[item]="data">
             <slot :name="item" v-bind="data" />
           </template>
         </FormItem>
@@ -29,19 +29,8 @@
   import type { FormActionType, FormProps, FormSchema } from './types/form';
   import type { AdvanceState } from './types/hooks';
   import type { Ref, WatchStopHandle } from 'vue';
+  import { computed, defineComponent, onMounted, reactive, ref, toRefs, unref, watch } from 'vue';
   import type { ValidateFields } from 'ant-design-vue/lib/form/interface';
-
-  import {
-    defineComponent,
-    reactive,
-    ref,
-    computed,
-    unref,
-    toRef,
-    onMounted,
-    watch,
-    toRefs,
-  } from 'vue';
   import { Form, Row } from 'ant-design-vue';
   import FormItem from './FormItem';
   import { basicProps } from './props';
@@ -55,6 +44,7 @@
   import { useFormValues } from './hooks/useFormValues';
   import useAdvanced from './hooks/useAdvanced';
   import { useFormAction } from './hooks/useFormAction';
+
   export default defineComponent({
     name: 'BasicForm',
     components: { FormItem, Form, Row, FormAction },
@@ -196,8 +186,7 @@
       );
 
       function setProps(formProps: Partial<FormProps>): void {
-        const mergeProps = deepMerge(unref(propsRef) || {}, formProps);
-        propsRef.value = mergeProps;
+        propsRef.value = deepMerge(unref(propsRef) || {}, formProps);
       }
 
       const formActionType: Partial<FormActionType> = {

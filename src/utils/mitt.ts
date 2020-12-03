@@ -59,7 +59,7 @@ export default class Mitt {
    */
   emit(type: string, evt: any) {
     for (const handler of (this.cache.get(type) || []).slice()) handler(evt);
-    for (const handler of (this.cache.get('*') || []).slice()) handler(type, evt);
+    for (const handler of (this.cache.get('*') || []).slice()) handler(type);
   }
 
   /**

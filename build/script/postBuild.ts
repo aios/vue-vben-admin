@@ -34,4 +34,4 @@ export const runBuild = async (preview = false) => {
     process.exit(1);
   }
 };
-runBuild().then(r => console.log(r));
+runBuild();

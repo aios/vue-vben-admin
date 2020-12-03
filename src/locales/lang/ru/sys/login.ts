@@ -5,7 +5,7 @@ export default {
 
   // notify
   loginSuccessTitle: 'Успех!',
-  loginSuccessDesc: 'Добро пожаловать!',
+  loginSuccessDesc: 'Добро пожаловать! {name}',
 
   // placeholder
   accountPlaceholder: 'Введите имя',

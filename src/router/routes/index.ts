@@ -37,5 +37,5 @@ export const LoginRoute: AppRouteRecordRaw = {
   },
 };
 
-// __Some-New-Token__ __Some-New-Token__
+
 export const basicRoutes = [LoginRoute, RootRoute];

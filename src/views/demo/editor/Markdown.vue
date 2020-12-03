@@ -1,6 +1,6 @@
 <template>
   <div class="p-4">
-    <a-button @click="toggleTheme" class="mb-2" type="primary">__Some-New-Token__</a-button>
+    <a-button @click="toggleTheme" class="mb-2" type="primary">Some new token</a-button>
     <MarkDown v-model:value="value" ref="markDownRef" />
   </div>
 </template>

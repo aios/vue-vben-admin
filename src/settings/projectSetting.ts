@@ -34,7 +34,7 @@ const setting: ProjectConfig = {
   contentMode: ContentEnum.FULL,
 
   // Whether to display the logo
-  showLogo: true,
+  showLogo: false,
 
   // Whether to show footer
   showFooter: true,
@@ -53,21 +53,21 @@ const setting: ProjectConfig = {
   // Header configuration
   headerSetting: {
     // header bg color
-    bgColor: '#ffffff',
+    bgColor: '#24292e',
     // Fixed at the top
     fixed: true,
     // Whether to show top
     show: true,
     // theme
-    theme: ThemeEnum.LIGHT,
+    theme: ThemeEnum.DARK,
     // Whether to enable the lock screen function
     useLockPage: true,
     // Whether to show the refresh button
-    showRedo: true,
+    showRedo: false,
     // Whether to show the full screen button
     showFullScreen: true,
     // Whether to show the document button
-    showDoc: true,
+    showDoc: false,
     // Whether to show the notification button
     showNotice: true,
   },
@@ -75,7 +75,7 @@ const setting: ProjectConfig = {
   // Menu configuration
   menuSetting: {
     // sidebar menu bg color
-    bgColor: '#273352',
+    bgColor: '#191a23',
     //  Whether to fix the left menu
     fixed: true,
     // Menu collapse
@@ -96,7 +96,7 @@ const setting: ProjectConfig = {
     // Menu mode
     mode: MenuModeEnum.INLINE,
     // Menu type
-    type: MenuTypeEnum.SIDEBAR,
+    type: MenuTypeEnum.MIX,
     // Menu theme
     theme: ThemeEnum.DARK,
     // Split menu
@@ -130,14 +130,14 @@ const setting: ProjectConfig = {
     enable: true,
 
     // Route basic switching animation
-    basicTransition: RouterTransitionEnum.FADE_SIDE,
+    basicTransition: RouterTransitionEnum.ZOOM_OUT,
 
     // Whether to open page switching loading
     // Only open when enable=true
     openPageLoading: true,
 
     // Whether to open the top progress bar
-    openNProgress: false,
+    openNProgress: true,
   },
 
   // Whether to enable KeepAlive cache is best to close during development, otherwise the cache needs to be cleared every time
@@ -150,7 +150,7 @@ const setting: ProjectConfig = {
   showBreadCrumb: true,
 
   // Whether to show the breadcrumb icon
-  showBreadCrumbIcon: false,
+  showBreadCrumbIcon: true,
 
   // Use error-handler-plugin
   useErrorHandle: isProdMode(),

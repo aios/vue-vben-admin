@@ -32,6 +32,7 @@ export function useScript(opts: ScriptOptions, data?: ScriptData) {
       };
 
       script.src = opts.src;
+      script.async = true;
 
       for (const dataKey in data) {
         if (data.hasOwnProperty(dataKey)) {
@@ -41,7 +42,7 @@ export function useScript(opts: ScriptOptions, data?: ScriptData) {
       }
 
       const elem = document.getElementById('telegram_auth');
-      console.log(elem);
+
       if (!data) {
         document.head.appendChild(script);
       } else {

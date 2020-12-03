@@ -1,12 +1,12 @@
 import { appStore } from './app';
 import type {
-  LoginParams,
   GetUserInfoByUserIdModel,
   GetUserInfoByUserIdParams,
+  LoginParams,
 } from '/@/api/sys/model/userModel';
 
 import store from '/@/store/index';
-import { VuexModule, Module, getModule, Mutation, Action } from 'vuex-module-decorators';
+import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
 import { hotModuleUnregisterModule } from '/@/utils/helper/vuexHelper';
 
 import { PageEnum } from '/@/enums/pageEnum';
@@ -17,11 +17,12 @@ import { useMessage } from '/@/hooks/web/useMessage';
 
 import router from '/@/router';
 
-import { loginApi, getUserInfoById } from '/@/api/sys/user';
+import { getUserInfoById, loginApi, loginTgApi } from '/@/api/sys/user';
 
-import { setLocal, getLocal, getSession, setSession } from '/@/utils/helper/persistent';
+import { getLocal, getSession, setLocal, setSession } from '/@/utils/helper/persistent';
 import { useProjectSetting } from '/@/hooks/setting';
 import { useI18n } from '/@/hooks/web/useI18n';
+import { ParsedQuery } from 'query-string';
 
 export type UserInfo = Omit<GetUserInfoByUserIdModel, 'roles'>;
 
@@ -95,6 +96,35 @@ class User extends VuexModule {
    * @description: login
    */
   @Action
+  async loginTg(params: ParsedQuery, goHome = true): Promise<GetUserInfoByUserIdModel | null> {
+    try {
+      const data = await loginTgApi(params);
+      console.log(data);
+      const { token, userId } = data;
+
+      // save token
+      this.commitTokenState(token);
+      // get user info
+      const userInfo = await this.getUserInfoAction({ userId });
+      console.log(userInfo);
+      // const name = FULL_PAGE_NOT_FOUND_ROUTE.name;
+      // name && router.removeRoute(name);
+      goHome &&
+        (await router.push(PageEnum.BASE_HOME).then(() => {
+          setTimeout(() => {
+            appStore.commitPageLoadingState(false);
+          }, 30);
+        }));
+      return userInfo;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  /**
+   * @description: login
+   */
+  @Action
   async login(params: LoginParams, goHome = true): Promise<GetUserInfoByUserIdModel | null> {
     try {
       const data = await loginApi(params);
@@ -134,7 +164,7 @@ class User extends VuexModule {
    */
   @Action
   async loginOut(goLogin = false) {
-    goLogin && router.push(PageEnum.BASE_LOGIN);
+    goLogin && (await router.push(PageEnum.BASE_LOGIN));
   }
 
   /**
@@ -154,4 +184,5 @@ class User extends VuexModule {
     });
   }
 }
+
 export const userStore = getModule<User>(User);
