@@ -83,7 +83,7 @@ export default defineComponent({
           {props.showIcon && item.meta.icon && item.meta.icon.trim() !== '' && (
             <Icon
               icon={item.meta.icon}
-              class="icon mr-1 "
+              class='icon mr-1 '
               style={{
                 marginBottom: '2px',
               }}
@@ -115,7 +115,7 @@ export default defineComponent({
 
     function renderBreadcrumbDefault() {
       return (
-        <TransitionGroup name="breadcrumb">{() => renderBreadcrumbItemList()}</TransitionGroup>
+        <TransitionGroup name='breadcrumb'>{() => renderBreadcrumbItemList()}</TransitionGroup>
       );
     }
 

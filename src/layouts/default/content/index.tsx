@@ -18,7 +18,7 @@ export default defineComponent({
       return (
         <div class={['layout-content', unref(getLayoutContentMode)]}>
           {unref(getOpenPageLoading) && (
-            <Loading loading={unref(getPageLoading)} absolute class="layout-content__loading" />
+            <Loading loading={unref(getPageLoading)} absolute class='layout-content__loading' />
           )}
           <RouterView />
         </div>

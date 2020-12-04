@@ -16,15 +16,15 @@ export default defineComponent({
     const { t } = useI18n();
     return () => {
       return (
-        <Layout.Footer class="layout-footer">
+        <Layout.Footer class='layout-footer'>
           {() => (
             <>
-              <div class="layout-footer__links">
+              <div class='layout-footer__links'>
                 <a onClick={() => openWindow(SITE_URL)}>{t('layout.footer.onlinePreview')}</a>
-                <GithubFilled onClick={() => openWindow(GITHUB_URL)} class="github" />
+                <GithubFilled onClick={() => openWindow(GITHUB_URL)} class='github' />
                 <a onClick={() => openWindow(DOC_URL)}>{t('layout.footer.onlineDocument')}</a>
               </div>
-              <div>Copyright &copy;2020 Vben Admin</div>
+              <div>Copyright &copy;2020</div>
             </>
           )}
         </Layout.Footer>

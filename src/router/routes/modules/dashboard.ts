@@ -7,7 +7,7 @@ const dashboard: AppRouteModule = {
     path: '/dashboard',
     name: 'Dashboard',
     component: PAGE_LAYOUT_COMPONENT,
-    redirect: '/dashboard/welcome',
+    redirect: '/dashboard/workbench',
     meta: {
       icon: 'ant-design:home-outlined',
       title: 'routes.dashboard.dashboard',

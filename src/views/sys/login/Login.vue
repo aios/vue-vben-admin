@@ -135,8 +135,8 @@
 
           if (userInfo) {
             notification.success({
-              message: t('loginSuccessTitle'),
-              description: t('loginSuccessDesc', { name: userInfo.realName }),
+              message: t('sys.login.loginSuccessTitle'),
+              description: t('sys.login.loginSuccessDesc', { name: userInfo.realName }),
               duration: 3,
             });
           }

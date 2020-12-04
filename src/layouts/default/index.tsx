@@ -81,7 +81,7 @@ export default defineComponent({
                 {() => (
                   <>
                     {unref(showSideBarRef) && <LayoutSideBar />}
-                    <Layout class="default-layout__main">
+                    <Layout class='default-layout__main'>
                       {() => (
                         <>
                           <LayoutMultipleHeader />

@@ -144,7 +144,7 @@ export default defineComponent({
       );
     }
 
-    // 底部按钮自定义实现,
+    //
     function renderFooter() {
       const {
         showCancelBtn,
@@ -190,9 +190,9 @@ export default defineComponent({
       const { canFullscreen } = unref(getProps);
 
       const fullScreen = unref(fullScreenRef) ? (
-        <FullscreenExitOutlined role="full" onClick={handleFullScreen} />
+        <FullscreenExitOutlined role='full' onClick={handleFullScreen} />
       ) : (
-        <FullscreenOutlined role="close" onClick={handleFullScreen} />
+        <FullscreenOutlined role='close' onClick={handleFullScreen} />
       );
 
       const cls = [

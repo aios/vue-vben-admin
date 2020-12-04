@@ -6,7 +6,7 @@
           <template #title>
             <div class="title">
               {{ item.title }}
-              <div class="extra" v-if="item.extra">
+              <div v-if="item.extra" class="extra">
                 <a-tag class="tag" :color="item.color">
                   {{ item.extra }}
                 </a-tag>

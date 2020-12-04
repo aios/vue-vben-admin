@@ -3,7 +3,7 @@
     <FramePage
       v-if="frame.meta.frameSrc && hasRenderFrame(frame.path)"
       v-show="showIframe(frame)"
-      :frameSrc="frame.meta.frameSrc"
+      :frame-src="frame.meta.frameSrc"
     />
   </template>
 </template>
