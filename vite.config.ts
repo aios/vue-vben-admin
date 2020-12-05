@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 import { modifyVars } from './build/config/lessModifyVars';
 import { createProxy } from './build/vite/proxy';
+import { configManualChunk } from './build/vite/optimizer';
 
 import globbyTransform from './build/vite/plugin/transform/globby';
 import dynamicImportTransform from './build/vite/plugin/transform/dynamic-import';
@@ -99,9 +100,11 @@ const viteConfig: UserConfig = {
   // terser options
   terserOptions: {
     compress: {
+      keep_infinity: true,
       drop_console: VITE_DROP_CONSOLE,
     },
   },
+
   define: {
     __VERSION__: pkg.version,
     // setting vue-i18-next
@@ -110,12 +113,14 @@ const viteConfig: UserConfig = {
     __VUE_I18N_FULL_INSTALL__: false,
     __INTLIFY_PROD_DEVTOOLS__: false,
   },
+
   cssPreprocessOptions: {
     less: {
       modifyVars: modifyVars,
       javascriptEnabled: true,
     },
   },
+
   // The package will be recompiled using rollup, and the new package compiled into the esm module specification will be put into node_modules/.vite_opt_cache
   optimizeDeps: {
     include: [
@@ -127,11 +132,6 @@ const viteConfig: UserConfig = {
     ],
   },
 
-  proxy: createProxy(VITE_PROXY),
-  plugins: createVitePlugins(viteEnv),
-  rollupInputOptions: {
-    plugins: createRollupPlugin(),
-  },
   transforms: [
     globbyTransform({
       resolvers: resolvers,
@@ -141,6 +141,19 @@ const viteConfig: UserConfig = {
     }),
     dynamicImportTransform(VITE_DYNAMIC_IMPORT),
   ],
+
+  proxy: createProxy(VITE_PROXY),
+
+  plugins: createVitePlugins(viteEnv),
+
+  rollupInputOptions: {
+    plugins: createRollupPlugin(),
+  },
+
+  rollupOutputOptions: {
+    compact: true,
+    manualChunks: configManualChunk,
+  },
 };
 
 export default viteConfig;

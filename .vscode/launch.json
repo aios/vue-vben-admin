@@ -1,48 +1,13 @@
 {
   "version": "0.2.0",
   "configurations": [
-    // node__Some-New-Token__ts/js__Some-New-Token__
     {
-      "type": "node",
+      "type": "chrome",
       "request": "launch",
-      "name": "file",
-      "cwd": "${workspaceFolder}",
-      "program": "${file}",
-      // .vscode __Some-New-Token__？？？
-      "preLaunchTask": "tsc: __Some-New-Token__ - build/tsconfig.json", // cn
-      // "preLaunchTask": "tsc: watch - build/tsconfig.json", // en
-      "outFiles": ["${workspaceFolder}/compile/**/*.js"]
-      // "args": ["--experimental-modules", "--loader", "./loader.mjs"]
+      "name": "Launch Chrome",
+      "url": "http://localhost:3100",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMaps": true
     },
-    // __Some-New-Token__
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "dev",
-      // "stopOnEntry": true,
-      "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/node_modules/@vue/cli-service/bin/vue-cli-service.js",
-      "args": ["serve", "--open"]
-    },
-    // __Some-New-Token__
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "build",
-      // "stopOnEntry": true,
-      "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/node_modules/@vue/cli-service/bin/vue-cli-service.js",
-      "args": ["build"]
-    },
-    // __Some-New-Token__
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "test:unit",
-      // "stopOnEntry": true,
-      "cwd": "${workspaceFolder}",
-      "program": "${workspaceFolder}/node_modules/@vue/cli-service/bin/vue-cli-service.js",
-      "args": ["test:unit", "--detectOpenHandles"]
-    }
   ]
 }
