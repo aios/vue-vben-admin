@@ -3,7 +3,7 @@ import type { Router } from 'vue-router';
 import { useTransitionSetting } from '/@/hooks/setting/useTransitionSetting';
 
 import NProgress from 'nprogress';
-import 'nprogress/nprogress.css';
+import 'nprogress/css/nprogress.css';
 import { unref } from 'vue';
 
 const { getOpenNProgress } = useTransitionSetting();

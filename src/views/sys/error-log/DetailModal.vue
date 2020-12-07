@@ -6,7 +6,7 @@
 <script lang="ts">
   import { defineComponent, PropType } from 'vue';
 
-  import { BasicModal } from '/@/components/Modal/index';
+  import { BasicModal } from '/@/components/Modal';
   import { ErrorInfo } from '/@/store/modules/error';
   import { Description, useDescription } from '/@/components/Description/index';
   import { useI18n } from '/@/hooks/web/useI18n';

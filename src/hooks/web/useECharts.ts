@@ -2,7 +2,7 @@ import { useTimeoutFn } from '/@/hooks/core/useTimeout';
 import { tryOnUnmounted } from '/@/utils/helper/vueHelper';
 import { unref, Ref, nextTick } from 'vue';
 import type { EChartOption, ECharts } from 'echarts';
-import echarts from 'echarts';
+import * as echarts from 'echarts';
 import { useDebounce } from '/@/hooks/core/useDebounce';
 import { useEventListener } from '/@/hooks/event/useEventListener';
 import { useBreakpoint } from '/@/hooks/event/useBreakpoint';

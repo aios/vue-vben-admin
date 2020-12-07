@@ -1,18 +1,18 @@
 <template>
   <div class="p-4">
     <template v-for="src in imgListRef" :key="src">
-      <img :src="src" v-show="false" />
+      <img v-show="false" :src="src" />
     </template>
     <DetailModal :info="rowInfoRef" @register="registerModal" />
-    <BasicTable @register="register" class="error-handle-table">
+    <BasicTable class="error-handle-table" @register="register">
       <template #toolbar>
-        <a-button @click="fireVueError" type="primary">
+        <a-button type="primary" @click="fireVueError">
           {{ t('sys.errorLog.fireVueError') }}
         </a-button>
-        <a-button @click="fireResourceError" type="primary">
+        <a-button type="primary" @click="fireResourceError">
           {{ t('sys.errorLog.fireResourceError') }}
         </a-button>
-        <a-button @click="fireAjaxError" type="primary">
+        <a-button type="primary" @click="fireAjaxError">
           {{ t('sys.errorLog.fireAjaxError') }}
         </a-button>
       </template>

@@ -10,7 +10,7 @@
               onClick: handleDelete.bind(null, record),
             },
           ]"
-          :dropDownActions="[
+          :drop-down-actions="[
             {
               label: '__Some-New-Token__',
               onClick: handleOpen.bind(null, record),

@@ -22,6 +22,7 @@ import { getLocal, getSession, setLocal, setSession } from '/@/utils/helper/pers
 import { useProjectSetting } from '/@/hooks/setting';
 import { useI18n } from '/@/hooks/web/useI18n';
 import { ParsedQuery } from 'query-string';
+import { appStore } from '/@/store/modules/app';
 
 export type UserInfo = Omit<GetUserInfoByUserIdModel, 'roles'>;
 
@@ -136,7 +137,7 @@ class User extends VuexModule {
 
       // const name = FULL_PAGE_NOT_FOUND_ROUTE.name;
       // name && router.removeRoute(name);
-      goHome && router.push(PageEnum.BASE_HOME);
+      goHome && (await router.push(PageEnum.BASE_HOME));
       return userInfo;
     } catch (error) {
       return null;

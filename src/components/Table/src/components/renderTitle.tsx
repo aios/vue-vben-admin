@@ -19,7 +19,7 @@ export default (
           <span>&nbsp;</span>
         )}
       {
-        <div class="basic-table-toolbar">
+        <div class='basic-table-toolbar'>
           {slots.toolbar && getSlot(slots, 'toolbar')}
           {showTableSetting && <TableSettingComp setting={tableSetting} />}
         </div>
