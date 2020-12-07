@@ -17,10 +17,7 @@ export interface MenuState {
   // __Some-New-Token__
   openKeys: string[];
 
-  // __Some-New-Token__
-  searchValue: string;
-
-  // __Some-New-Token__ key __Some-New-Token__
+  // 当前选中的菜单项 key 数组
   selectedKeys: string[];
 
   // __Some-New-Token__

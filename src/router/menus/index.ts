@@ -21,6 +21,9 @@ Object.keys(modules).forEach((key) => {
 // ===========================
 // ==========Helper===========
 // ===========================
+const isBackMode = () => {
+  return appStore.getProjectConfig.permissionMode === PermissionModeEnum.BACK;
+};
 
 const staticMenus: Menu[] = [];
 (() => {
@@ -32,10 +35,6 @@ const staticMenus: Menu[] = [];
     staticMenus.push(transformMenuModule(menu));
   }
 })();
-
-const isBackMode = () => {
-  return appStore.getProjectConfig.permissionMode === PermissionModeEnum.BACK;
-};
 
 async function getAsyncMenus() {
   // __Some-New-Token__ __Some-New-Token__
@@ -90,12 +89,17 @@ export async function getFlatChildrenMenus(children: Menu[]) {
 function basicFilter(routes: RouteRecordNormalized[]) {
   return (menu: Menu) => {
     const matchRoute = routes.find((route) => {
+      if (route.meta.externalLink) {
+        return true;
+      }
+
       if (route.meta) {
         if (route.meta.carryParam) {
           return pathToRegexp(route.path).test(menu.path);
         }
-        if (route.meta.ignoreAuth) return false;
+        if (route.meta.ignoreAuth) return true;
       }
+
       return route.path === menu.path;
     });
 
