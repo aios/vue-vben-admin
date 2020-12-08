@@ -2,14 +2,14 @@ import type { AppRouteModule } from '/@/router/types';
 
 import { LAYOUT } from '/@/router/constant';
 
-const table: AppRouteModule = {
+const orders: AppRouteModule = {
   path: '/orders',
-  name: 'OrdersTable',
+  name: 'Orders',
   component: LAYOUT,
-  redirect: '/orders/orders_main',
+  redirect: '/orders/orders_table',
   meta: {
     icon: 'ant-design:table-outlined',
-    title: 'routes.logic.orders.table',
+    title: 'routes.logic.orders.table.main_title',
   },
 
   children: [
@@ -54,11 +54,11 @@ const table: AppRouteModule = {
     //   },
     // },
     {
-      path: 'orders_main',
-      name: 'OrdersTableMain',
+      path: 'orders_table',
+      name: 'OrdersTable',
       component: () => import('/@/views/logic/orders/OrdersTable.vue'),
       meta: {
-        title: 'routes.logic.orders.title',
+        title: 'routes.logic.orders.table.title',
       },
     },
     // {
@@ -136,4 +136,4 @@ const table: AppRouteModule = {
   ],
 };
 
-export default table;
+export default orders;

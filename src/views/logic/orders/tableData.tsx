@@ -4,32 +4,29 @@ import { BasicColumn } from '/@/components/Table/src/types/table';
 export function getBasicColumns(): BasicColumn[] {
   return [
     {
-      title: 'ID',
-      width: 150,
+      title: 'routes.logic.orders.table.id',
+      width: 80,
+      sorter: true,
       dataIndex: 'id',
     },
     {
-      title: '__Some-New-Token__',
-      dataIndex: 'name',
+      title: 'routes.logic.orders.table.created_at',
+      dataIndex: 'created_at',
+      sorter: true,
       width: 120,
     },
     {
-      title: '__Some-New-Token__',
-      dataIndex: 'address',
+      title: 'routes.logic.orders.table.client',
+      dataIndex: 'client',
     },
     {
-      title: '__Some-New-Token__',
-      dataIndex: 'no',
+      title: 'routes.logic.orders.table.product',
+      dataIndex: 'product',
       width: 80,
     },
     {
-      title: '__Some-New-Token__',
-      dataIndex: 'beginTime',
-    },
-    {
-      title: '__Some-New-Token__',
-      sorter: true,
-      dataIndex: 'endTime',
+      title: 'routes.logic.orders.table.status',
+      dataIndex: 'status',
     },
   ];
 }
@@ -255,7 +252,7 @@ export function getFormConfig(): Partial<FormProps> {
   };
 }
 export function getBasicData() {
-  const data: any = (() => {
+  return (() => {
     const arr: any = [];
     for (let index = 0; index < 40; index++) {
       arr.push({
@@ -270,11 +267,10 @@ export function getBasicData() {
     }
     return arr;
   })();
-  return data;
 }
 
 export function getTreeTableData() {
-  const data: any = (() => {
+  return (() => {
     const arr: any = [];
     for (let index = 0; index < 40; index++) {
       arr.push({
@@ -311,6 +307,4 @@ export function getTreeTableData() {
     }
     return arr;
   })();
-
-  return data;
 }

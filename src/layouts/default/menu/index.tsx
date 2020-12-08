@@ -57,7 +57,7 @@ export default defineComponent({
     const appendClass = computed(() => props.splitType === MenuSplitTyeEnum.TOP);
     /**
      * click menu
-     * @param menu
+     * @param path
      */
     function handleMenuClick(path: string) {
       go(path);
@@ -65,7 +65,7 @@ export default defineComponent({
 
     /**
      * before click menu
-     * @param menu
+     * @param path
      */
     async function beforeMenuClickFn(path: string) {
       if (!isUrl(path)) {
