@@ -2,21 +2,21 @@
   <div class="table-settings">
     <Divider type="vertical" />
 
-    <Tooltip placement="top" v-if="getSetting.redo">
+    <Tooltip v-if="getSetting.redo" placement="top">
       <template #title>
         <span>{{ t('component.table.settingRedo') }}</span>
       </template>
       <RedoOutlined @click="redo" />
     </Tooltip>
 
-    <Tooltip placement="top" v-if="getSetting.size">
+    <Tooltip v-if="getSetting.size" placement="top">
       <template #title>
         <span>{{ t('component.table.settingDens') }}</span>
       </template>
       <Dropdown placement="bottomCenter" :trigger="['click']">
         <ColumnHeightOutlined />
         <template #overlay>
-          <Menu @click="handleTitleClick" selectable v-model:selectedKeys="selectedKeysRef">
+          <Menu v-model:selectedKeys="selectedKeysRef" selectable @click="handleTitleClick">
             <MenuItem key="default">
               <span>{{ t('component.table.settingDensDefault') }}</span>
             </MenuItem>
@@ -31,14 +31,14 @@
       </Dropdown>
     </Tooltip>
 
-    <Tooltip placement="top" v-if="getSetting.setting">
+    <Tooltip v-if="getSetting.setting" placement="top">
       <template #title>
         <span>{{ t('component.table.settingColumn') }}</span>
       </template>
       <Popover
         placement="bottomLeft"
         trigger="click"
-        overlayClassName="table-settings__cloumn-list"
+        overlay-class-name="table-settings__cloumn-list"
       >
         <template #content>
           <CheckboxGroup v-model:value="checkedList" @change="onChange">
@@ -54,27 +54,27 @@
         <template #title>
           <div class="table-settings__popover-title">
             <Checkbox
-              :indeterminate="indeterminate"
               v-model:checked="checkAll"
+              :indeterminate="indeterminate"
               @change="onCheckAllChange"
             >
               {{ t('component.table.settingColumnShow') }}
             </Checkbox>
             <a-button size="small" type="link" @click="reset">
-              {{ t('component.table.settingReset') }}</a-button
-            >
+              {{ t('component.table.settingReset') }}
+            </a-button>
           </div>
         </template>
         <SettingOutlined />
       </Popover>
     </Tooltip>
 
-    <Tooltip placement="top" v-if="getSetting.fullScreen">
+    <Tooltip v-if="getSetting.fullScreen" placement="top">
       <template #title>
         <span>{{ t('component.table.settingFullScreen') }}</span>
       </template>
-      <FullscreenOutlined @click="handleFullScreen" v-if="!isFullscreenRef" />
-      <FullscreenExitOutlined @click="handleFullScreen" v-else />
+      <FullscreenOutlined v-if="!isFullscreenRef" @click="handleFullScreen" />
+      <FullscreenExitOutlined v-else @click="handleFullScreen" />
     </Tooltip>
   </div>
 </template>

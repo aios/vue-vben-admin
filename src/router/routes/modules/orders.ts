@@ -9,7 +9,7 @@ const orders: AppRouteModule = {
   redirect: '/orders/orders_table',
   meta: {
     icon: 'ant-design:table-outlined',
-    title: 'routes.logic.orders.table.main_title',
+    title: 'routes.logic.orders.table.title_tag',
   },
 
   children: [

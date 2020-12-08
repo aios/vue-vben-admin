@@ -1,13 +1,13 @@
 <template>
-  <div class="basic-table-img__preview" v-if="imgList && imgList.length">
+  <div v-if="imgList && imgList.length" class="basic-table-img__preview">
     <template v-for="(img, index) in imgList" :key="img">
-      <img :width="size" @click="handlePreview(index)" :src="img" />
+      <img :width="size" :src="img" @click="handlePreview(index)" />
     </template>
   </div>
 </template>
 <script lang="ts">
   import { defineComponent, PropType } from 'vue';
-  import { createImgPreview } from '/@/components/Preview/index';
+  import { createImgPreview } from '/@/components/Preview';
 
   export default defineComponent({
     name: 'TableAction',

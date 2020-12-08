@@ -1,5 +1,5 @@
 <template>
-  <BasicTitle class="basic-table-title" v-if="tableTitle" :helpMessage="helpMessage">
+  <BasicTitle v-if="tableTitle" class="basic-table-title" :help-message="helpMessage">
     {{ tableTitle }}
   </BasicTitle>
 </template>
@@ -14,12 +14,15 @@
     props: {
       title: {
         type: [Function, String] as PropType<string | ((data: any) => string)>,
+        default: '',
       },
       getSelectRows: {
         type: Function as PropType<() => any[]>,
+        default: () => {},
       },
       helpMessage: {
         type: [String, Array] as PropType<string | string[]>,
+        default: '',
       },
     },
     setup(props) {

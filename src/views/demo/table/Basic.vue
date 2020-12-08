@@ -1,11 +1,11 @@
 <template>
   <div class="p-4">
     <BasicTable
-      title="__Some-New-Token__"
-      titleHelpMessage="__Some-New-Token__"
+      :title="t('sys.table.basic.title')"
+      :title-help-message="t('sys.table.basic.help_message')"
       :columns="columns"
-      :dataSource="data"
-      :canResize="canResize"
+      :data-source="data"
+      :can-resize="canResize"
       :loading="loading"
       :striped="striped"
       :bordered="border"
@@ -13,14 +13,16 @@
     >
       <template #toolbar>
         <a-button type="primary" @click="toggleCanResize">
-          {{ !canResize ? '__Some-New-Token__' : '__Some-New-Token__' }}
+          {{ !canResize ? t('sys.table.basic.cannotresize') : t('sys.table.basic.canresize') }}
         </a-button>
         <a-button type="primary" @click="toggleBorder">
-          {{ !border ? '__Some-New-Token__' : '__Some-New-Token__' }}
+          {{ !border ? t('sys.table.basic.noborder') : t('sys.table.basic.border') }}
         </a-button>
-        <a-button type="primary" @click="toggleLoading"> __Some-New-Token__loading </a-button>
+        <a-button type="primary" @click="toggleLoading">
+          {{ t('sys.table.basic.loading') }}
+        </a-button>
         <a-button type="primary" @click="toggleStriped">
-          {{ !striped ? '__Some-New-Token__' : '__Some-New-Token__' }}
+          {{ !striped ? t('sys.table.basic.nostrip') : t('sys.table.basic.strip') }}
         </a-button>
       </template>
     </BasicTable>

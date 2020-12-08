@@ -47,6 +47,7 @@ const EditableCell = defineComponent({
     },
     record: {
       type: Object as PropType<EditRecordRow>,
+      default: {},
     },
     placeholder: {
       type: String as PropType<string>,

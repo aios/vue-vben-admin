@@ -1,7 +1,7 @@
-import type { BasicTableProps, TableActionType, FetchParams, BasicColumn } from '../types/table';
+import type { BasicColumn, BasicTableProps, FetchParams, TableActionType } from '../types/table';
 import type { PaginationProps } from '../types/pagination';
 
-import { ref, getCurrentInstance, onUnmounted, unref } from 'vue';
+import { getCurrentInstance, onUnmounted, ref, unref } from 'vue';
 import { isProdMode } from '/@/utils/env';
 
 export function useTable(
@@ -52,9 +52,7 @@ export function useTable(
       return getTableInstance().getDataSource();
     },
     getColumns: ({ ignoreIndex = false }: { ignoreIndex?: boolean } = {}) => {
-      const columns = getTableInstance().getColumns({ ignoreIndex }) || [];
-
-      return columns;
+      return getTableInstance().getColumns({ ignoreIndex }) || [];
     },
     setColumns: (columns: BasicColumn[]) => {
       getTableInstance().setColumns(columns);

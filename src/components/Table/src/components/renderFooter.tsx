@@ -57,7 +57,7 @@ export default ({
       dataSource={dataSource}
       rowKey={rowKey}
       columns={columns}
-      tableLayout="fixed"
+      tableLayout='fixed'
       scroll={scroll as any}
     />
   );

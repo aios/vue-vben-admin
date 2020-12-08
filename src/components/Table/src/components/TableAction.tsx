@@ -5,6 +5,8 @@ import { DownOutlined } from '@ant-design/icons-vue';
 import { ActionItem } from '/@/components/Table';
 import { Button } from '/@/components/Button';
 import { snowUuid } from '/@/utils/uuid';
+import { useI18n } from '/@/hooks/web/useI18n';
+
 const prefixCls = 'basic-table-action';
 export default defineComponent({
   name: 'TableAction',
@@ -26,10 +28,10 @@ export default defineComponent({
   setup(props) {
     function renderButton(action: ActionItem) {
       const { disabled = false, label, icon, color = '', type = 'link', ...actionProps } = action;
-      const button = (
+      return (
         <Button
           type={type}
-          size="small"
+          size='small'
           disabled={disabled}
           color={color}
           {...actionProps}
@@ -37,24 +39,24 @@ export default defineComponent({
         >
           {() => (
             <>
-              {icon && <Icon icon={icon} class="mr-1" />}
+              {icon && <Icon icon={icon} class='mr-1' />}
               {label}
             </>
           )}
         </Button>
       );
-      return button;
     }
 
     function renderPopConfirm(action: ActionItem) {
       const { popConfirm = null } = action;
+      const { t } = useI18n();
       if (!popConfirm) {
         return renderButton(action);
       }
       const {
         title,
-        okText = '__Some-New-Token__',
-        cancelText = '__Some-New-Token__',
+        okText = t('sys.popconfirm.ok'),
+        cancelText = t('sys.popconfirm.cancel'),
         confirm = () => {},
         cancel = () => {},
         icon = '',
@@ -75,7 +77,7 @@ export default defineComponent({
     }
 
     const dropdownDefaultSLot = () => (
-      <Button type="link" size="small">
+      <Button type='link' size='small'>
         {{
           default: () => (
             <>
@@ -97,7 +99,7 @@ export default defineComponent({
               return renderPopConfirm(action);
             })}
           {dropDownActions && dropDownActions.length && (
-            <Dropdown overlayClassName="basic-tale-action-dropdown">
+            <Dropdown overlayClassName='basic-tale-action-dropdown'>
               {{
                 default: dropdownDefaultSLot,
                 overlay: () => {

@@ -1,31 +1,33 @@
 import { FormProps, FormSchema } from '/@/components/Table';
 import { BasicColumn } from '/@/components/Table/src/types/table';
+import { useI18n } from '/@/hooks/web/useI18n';
 
+const { t } = useI18n();
 export function getBasicColumns(): BasicColumn[] {
   return [
     {
-      title: 'routes.logic.orders.table.id',
+      title: t('routes.logic.orders.table.id'),
       width: 80,
       sorter: true,
       dataIndex: 'id',
     },
     {
-      title: 'routes.logic.orders.table.created_at',
+      title: t('routes.logic.orders.table.created_at'),
       dataIndex: 'created_at',
       sorter: true,
       width: 120,
     },
     {
-      title: 'routes.logic.orders.table.client',
+      title: t('routes.logic.orders.table.client'),
       dataIndex: 'client',
     },
     {
-      title: 'routes.logic.orders.table.product',
+      title: t('routes.logic.orders.table.product'),
       dataIndex: 'product',
       width: 80,
     },
     {
-      title: 'routes.logic.orders.table.status',
+      title: t('routes.logic.orders.table.status'),
       dataIndex: 'status',
     },
   ];

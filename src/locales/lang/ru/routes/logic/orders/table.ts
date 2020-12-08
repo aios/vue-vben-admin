@@ -5,4 +5,6 @@ export default {
   product: 'Тайник',
   client: 'Клиент',
   status: 'Статус',
+  title_tag: 'Супер заказы',
+  title_module: 'Мега заказы',
 };

@@ -1,12 +1,13 @@
 import { BasicColumn, BasicTableProps } from '../types/table';
 import { PaginationProps } from '../types/pagination';
-import { unref, ComputedRef, Ref, computed, watchEffect, ref, toRaw } from 'vue';
-import { isBoolean, isArray, isObject } from '/@/utils/is';
+import { computed, ComputedRef, Ref, ref, toRaw, unref, watchEffect } from 'vue';
+import { isArray, isBoolean, isObject } from '/@/utils/is';
 import { PAGE_SIZE } from '../const';
 import { useProps } from './useProps';
 import { useI18n } from '/@/hooks/web/useI18n';
 
 const { t } = useI18n();
+
 export function useColumns(
   refProps: ComputedRef<BasicTableProps>,
   getPaginationRef: ComputedRef<false | PaginationProps>
@@ -52,8 +53,7 @@ export function useColumns(
             return `${index + 1}`;
           }
           const { current = 1, pageSize = PAGE_SIZE } = getPagination;
-          const currentIndex = (current - 1) * pageSize + index + 1;
-          return currentIndex;
+          return (current - 1) * pageSize + index + 1;
         },
         ...(isFixedLeft
           ? {
@@ -119,10 +119,9 @@ export function useColumns(
     if (isObject(firstColumn)) {
       columnsRef.value = columns as any;
     } else {
-      const newColumns = unref(cacheColumnsRef).filter((item) =>
+      columnsRef.value = unref(cacheColumnsRef).filter((item) =>
         (columns as string[]).includes(`${item.key}`! || item.dataIndex!)
       );
-      columnsRef.value = newColumns;
     }
   }
 

@@ -42,7 +42,7 @@
 <script lang="ts">
   import { defineComponent } from 'vue';
   import GrowCard from './components/GrowCard.vue';
-  import TrendLine from './components/TrendLine.vue';
+  //import TrendLine from './components/TrendLine.vue';
   import AnalysisLine from './components/AnalysisLine.vue';
   import AnalysisPie from './components/AnalysisPie.vue';
   import AnalysisBar from './components/AnalysisBar.vue';
@@ -55,7 +55,7 @@
     components: {
       GrowCard,
       CollapseContainer,
-      TrendLine,
+      // TrendLine,
       AnalysisLine,
       AnalysisPie,
       AnalysisBar,

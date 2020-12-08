@@ -1,14 +1,14 @@
 import type { MenuModule } from '/@/router/types.d';
 
 const menu: MenuModule = {
-  orderNo: 30,
+  orderNo: 1,
   menu: {
     path: '/orders',
     name: 'routes.logic.orders.table.title',
     children: [
       {
-        path: 'orders_main',
-        name: 'routes.logic.orders.table.title',
+        path: 'orders_table',
+        name: 'routes.logic.orders.table.title_module',
       },
       // {
       //   path: 'treeTable',
