@@ -106,18 +106,18 @@ export const secureSettingList: ListItem[] = [
 export const accountBindList: ListItem[] = [
   {
     key: '1',
-    title: '__Some-New-Token__',
-    description: '__Some-New-Token__',
-    extra: '__Some-New-Token__',
-    avatar: 'ant-design:taobao-outlined',
+    title: '绑定淘宝',
+    description: '当前未绑定淘宝账号',
+    extra: '绑定',
+    avatar: 'ri:taobao-fill',
     color: '#ff4000',
   },
   {
     key: '2',
-    title: '__Some-New-Token__',
-    description: '__Some-New-Token__',
-    extra: '__Some-New-Token__',
-    avatar: 'ant-design:alipay-outlined',
+    title: '绑定支付宝',
+    description: '当前未绑定支付宝账号',
+    extra: '绑定',
+    avatar: 'fa-brands:alipay',
     color: '#2eabff',
   },
   {

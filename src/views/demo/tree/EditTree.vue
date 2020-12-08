@@ -29,14 +29,14 @@
             handler: () => {
               console.log('__Some-New-Token__', node);
             },
-            icon: 'ant-design:plus-outlined',
+            icon: 'bi:plus',
           },
           {
             label: '__Some-New-Token__',
             handler: () => {
               console.log('__Some-New-Token__', node);
             },
-            icon: 'ant-design:folder-open-filled',
+            icon: 'bx:bxs-folder-open',
           },
         ];
       }
