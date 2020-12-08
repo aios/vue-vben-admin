@@ -32,7 +32,6 @@ const resolvers: Resolver[] = [];
 
 const viteConfig: UserConfig = {
   root,
-  alias,
   /**
    * Entry. Use this to specify a js entry file in setting cases where an
    * `index.html` does not exist (e.g. serving vite assets from a different host)
@@ -124,7 +123,7 @@ const viteConfig: UserConfig = {
   // The package will be recompiled using rollup, and the new package compiled into the esm module specification will be put into node_modules/.vite_opt_cache
   optimizeDeps: {
     include: [
-      'echarts/map/js/ukraine',
+      'echarts/map/js/Ukraine',
       'ant-design-vue/es/locale/ru_RU',
       'ant-design-vue/es/locale/en_US',
       'ant-design-vue/es/locale/uk_UA',
