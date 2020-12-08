@@ -32,10 +32,12 @@
   import { defineComponent, ref } from 'vue';
   import { BasicTable } from '/@/components/Table';
   import { getBasicColumns, getBasicData } from './tableData';
+  import { useI18n } from '/@/hooks/web/useI18n';
 
   export default defineComponent({
     components: { BasicTable },
     setup() {
+      const { t } = useI18n();
       const canResize = ref(false);
       const loading = ref(false);
       const striped = ref(true);
@@ -66,6 +68,7 @@
         toggleCanResize,
         toggleLoading,
         toggleBorder,
+        t,
       };
     },
   });
