@@ -165,7 +165,6 @@ export class VAxios {
           if (transformRequestData && isFunction(transformRequestData)) {
             //console.log(res, opt, transformRequestData);
             const ret = transformRequestData(res, opt);
-            console.log(ret);
             ret !== errorResult ? resolve(ret) : reject(new Error('request error!'));
             return;
           }
