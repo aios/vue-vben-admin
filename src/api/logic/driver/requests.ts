@@ -2,6 +2,7 @@ import { defHttp } from '/@/utils/http/axios';
 import {
   DriverFetchResult,
   DriverTableItem,
+  DriverSelectItem,
 } from './model';
 
 import { ParsedQuery } from 'query-string';
@@ -26,6 +27,19 @@ export function getDrivers(params: ParsedQuery) {
   return defHttp.request<DriverFetchResult<DriverTableItem>>(
     {
       url: '/drivers',
+      method: 'GET',
+      params,
+    },
+    {
+      errorMessageMode: 'modal',
+    }
+  );
+}
+
+export function getDriversForSelect(params?: ParsedQuery) {
+  return defHttp.request<DriverSelectItem[]>(
+    {
+      url: '/drivers/for_select',
       method: 'GET',
       params,
     },

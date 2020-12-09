@@ -1,7 +1,6 @@
 <template>
   <BasicTable
     @register="registerTable"
-    :actionColumn="actionsColumn"
   >
     <template #action="{ record, column }">
       <TableAction :actions="createActions(record)"/>
@@ -15,6 +14,14 @@
         <span v-else>
           {{t('routes.basic.not_selected')}}
         </span>
+      </a-tag>
+    </template>
+
+    <template #locations="{ record }">
+      <a-tag v-for="location in record.locations" :key="location.id">
+        <a>
+          {{location.name_chain}}
+        </a>
       </a-tag>
     </template>
 
@@ -34,7 +41,10 @@
   import {BasicTable, useTable, TableAction, ActionItem} from '/@/components/Table';
   import { getColumns, getFilters } from '/@/views/logic/drivers/tableData';
 
-  import { getDrivers, deleteDriver } from '/@/api/logic/driver/requests';
+  import { getDrivers } from '/@/api/logic/driver/requests';
+  import {driverStore} from '/@/store/modules/driver';
+  import {clientStore} from '/@/store/modules/client';
+  import {locationStore} from '/@/store/modules/location';
   import { useI18n } from '/@/hooks/web/useI18n';
 
   import { Tag } from 'ant-design-vue';
@@ -48,6 +58,9 @@
       const { t } = useI18n();
 
       const {notification} = useMessage();
+
+      clientStore.loadListForSelect();
+      locationStore.loadListForSelect();
 
       const [registerTable, {reload}] = useTable({
         title: t('routes.logic.staff.drivers.table.header'),
@@ -64,13 +77,14 @@
           totalField: 'total',
         },
         showIndexColumn: false,
+        actionColumn: {
+          title: t('routes.basic.actions'),
+          dataIndex: 'action',
+          slots: { customRender: 'action' },
+          fixed: 'right',
+          width: 100,
+        }
       });
-
-      const actionsColumn = {
-        title: t('routes.basic.actions'),
-        dataIndex: 'action',
-        slots: { customRender: 'action' },
-      };
 
       const createActions = (record: DriverTableItem): ActionItem[] => {
         return [
@@ -88,7 +102,7 @@
               title: t('routes.basic.delete_confirm'),
               confirm: async () => {
                 try {
-                  await deleteDriver(record.id);
+                  await driverStore.delete(record.id);
 
                   await reload();
                 } catch (e) {
@@ -108,7 +122,6 @@
 
       return {
         registerTable,
-        actionsColumn,
         createActions,
         t,
       };

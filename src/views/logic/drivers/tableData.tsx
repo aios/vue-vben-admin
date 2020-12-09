@@ -1,9 +1,13 @@
 import { FormProps } from '/@/components/Table';
 import { BasicColumn } from '/@/components/Table/src/types/table';
 import { useI18n } from '/@/hooks/web/useI18n';
+import { computed } from 'vue';
+import {clientStore} from '/@/store/modules/client';
+import {locationStore} from '/@/store/modules/location';
 
 const { t } = useI18n();
 export function getColumns(): BasicColumn[] {
+
   return [
     {
       title: 'ID',
@@ -15,62 +19,102 @@ export function getColumns(): BasicColumn[] {
       title: t('routes.logic.staff.drivers.fields.name'),
       dataIndex: 'name',
       sorter: true,
+      // width: 220,
     },
     {
       title: t('routes.logic.staff.drivers.fields.client'),
       dataIndex: 'client',
       slots: { customRender: 'client' },
+      // width: 120,
+    },
+    {
+      title: t('routes.logic.staff.drivers.fields.locations'),
+      dataIndex: 'client',
+      slots: { customRender: 'locations' },
+      // width: 120,
     },
     {
       title: t('routes.logic.staff.drivers.fields.salary'),
       dataIndex: 'salary',
       slots: { customRender: 'salary' },
+      // width: 120,
     },
     {
       title: t('routes.logic.staff.drivers.fields.unpaid_salary'),
       dataIndex: 'unpaid_salary',
       slots: { customRender: 'unpaid_salary' },
+      // width: 120,
     },
   ];
 }
 export function getFilters(): Partial<FormProps> {
+  const clientList = computed(() => {
+    return clientStore.getListForSelectFormatted;
+  });
+
+  const locationList = computed(() => {
+    return locationStore.getListForSelectFormatted;
+  });
+
   return {
-    // labelWidth: 80,
+    labelWidth: 20,
     size: 'small',
     schemas: [
       {
         field: `name`,
-        label: t('routes.logic.staff.drivers.fields.name'),
-        // label: '',
+        label:'',
         component: 'Input',
+        componentProps: {
+          placeholder: t('routes.logic.staff.drivers.fields.name'),
+        },
         colProps: {
           lg: 6,
           xl: 4,
-          xxl: 3,
+          xxl: 4,
         },
       },
-      // {
-      //   field: `field11`,
-      //   label: `__Some-New-Token__33`,
-      //   component: 'Select',
-      //   defaultValue: '1',
-      //   componentProps: {
-      //     options: [
-      //       {
-      //         label: '__Some-New-Token__1',
-      //         value: '1',
-      //       },
-      //       {
-      //         label: '__Some-New-Token__2',
-      //         value: '2',
-      //       },
-      //     ],
-      //   },
-      //   colProps: {
-      //     xl: 12,
-      //     xxl: 8,
-      //   },
-      // },
+      {
+        field: `client_id`,
+        label: '',
+        component: 'Select',
+        defaultValue: null,
+        componentProps: {
+          placeholder: t('routes.logic.staff.drivers.fields.client'),
+          options: clientList,
+          showSearch: true,
+          filterOption(input: any, option: any) {
+            return (
+              option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            );
+          },
+        },
+        colProps: {
+          lg: 6,
+          xl: 4,
+          xxl: 4,
+        },
+      },
+      {
+        field: `location_id`,
+        label: '',
+        component: 'Select',
+        defaultValue: null,
+        componentProps: {
+          placeholder: t('routes.logic.staff.drivers.fields.location'),
+          options: locationList,
+          showSearch: true,
+          filterOption(input: any, option: any) {
+            return (
+              option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+            );
+          },
+        },
+        colProps: {
+          lg: 8,
+          xl: 5,
+          xxl: 5,
+        },
+      },
     ],
   };
 }
