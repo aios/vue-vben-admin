@@ -1,15 +1,18 @@
 import type { MenuModule } from '/@/router/types.d';
 import { t } from '/@/hooks/web/useI18n';
-
 const menu: MenuModule = {
-  orderNo: 1,
+  orderNo: 2,
   menu: {
-    path: '/orders',
-    name: t('routes.logic.orders.table.title'),
+    path: '/staff',
+    name: t('routes.logic.staff.table.title'),
     children: [
       {
-        path: 'orders_table',
-        name: t('routes.logic.orders.table.title_module'),
+        path: 'staff_groups_table',
+        name: t('routes.logic.staff.groups.title'),
+      },
+      {
+        path: 'staff_withdraw_table',
+        name: t('routes.logic.staff.withdraw.title'),
       },
       // {
       //   path: 'treeTable',

@@ -73,7 +73,7 @@ export function createVitePlugins(viteEnv: ViteEnv) {
     // open mock
     vitePlugins.push(
       createMockServer({
-        ignore: /^\_/,
+        ignore: /^_/,
         mockPath: 'mock',
         showTime: true,
       })
