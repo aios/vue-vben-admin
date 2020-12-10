@@ -1,6 +1,8 @@
 import type { AxiosRequestConfig } from 'axios';
 import { AxiosTransform } from './axiosTransform';
 
+export type ErrorMessageMode = 'none' | 'modal' | 'message' | undefined;
+
 export interface RequestOptions {
   // __Some-New-Token__url
   joinParamsToUrl?: boolean;
@@ -12,8 +14,7 @@ export interface RequestOptions {
   joinPrefix?: boolean;
   // __Some-New-Token__， __Some-New-Token__apiUrl
   apiUrl?: string;
-  // __Some-New-Token__
-  errorMessageMode?: 'none' | 'modal';
+  errorMessageMode?: ErrorMessageMode;
 }
 
 export interface CreateAxiosOptions extends AxiosRequestConfig {

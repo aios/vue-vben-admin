@@ -67,7 +67,7 @@ const transform: AxiosTransform = {
         // errorMessageMode=‘modal’__Some-New-Token__modal__Some-New-Token__，__Some-New-Token__，__Some-New-Token__
         if (options.errorMessageMode === 'modal') {
           createErrorModal({ title: t('sys.api.errorTip'), content: message });
-        } else {
+        } else if (options.errorMessageMode === 'message') {
           createMessage.error(message);
         }
       }
@@ -218,9 +218,7 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           joinParamsToUrl: false,
           // __Some-New-Token__
           formatDate: true,
-          // __Some-New-Token__
-          errorMessageMode: 'none',
-          // __Some-New-Token__
+          errorMessageMode: 'message',
           apiUrl: globSetting.apiUrl,
         },
       },

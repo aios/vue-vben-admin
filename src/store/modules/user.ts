@@ -21,8 +21,8 @@ import { getUserInfoById, loginApi, loginTgApi } from '/@/api/sys/user';
 import { getLocal, getSession, setLocal, setSession } from '/@/utils/helper/persistent';
 import { useProjectSetting } from '/@/hooks/setting';
 import { useI18n } from '/@/hooks/web/useI18n';
-import { ParsedQuery } from 'query-string';
 import { appStore } from '/@/store/modules/app';
+import { ErrorMessageMode } from '/@/utils/http/axios/types';
 
 export type UserInfo = Omit<GetUserInfoByUserIdModel, 'roles'>;
 
@@ -127,7 +127,9 @@ class User extends VuexModule {
   @Action
   async login(params: LoginParams, goHome = true): Promise<GetUserInfoByUserIdModel | null> {
     try {
-      const data = await loginApi(params);
+      const { goHome = true, mode, ...loginParams } = params;
+      const data = await loginApi(loginParams, mode);
+
       const { token, userId } = data;
       // get user info
       const userInfo = await this.getUserInfoAction({ userId });
@@ -137,7 +139,7 @@ class User extends VuexModule {
 
       // const name = FULL_PAGE_NOT_FOUND_ROUTE.name;
       // name && router.removeRoute(name);
-      goHome && (await router.push(PageEnum.BASE_HOME));
+      goHome && router.replace(PageEnum.BASE_HOME);
       return userInfo;
     } catch (error) {
       return null;

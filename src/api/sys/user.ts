@@ -5,7 +5,7 @@ import {
   GetUserInfoByUserIdParams,
   GetUserInfoByUserIdModel,
 } from './model/userModel';
-import { ParsedQuery } from 'query-string';
+import { ErrorMessageMode } from '/@/utils/http/axios/types';
 
 enum Api {
   Login = '/login',
@@ -44,7 +44,7 @@ export function loginApi(params: LoginParams) {
       params,
     },
     {
-      errorMessageMode: 'modal',
+      errorMessageMode: mode,
     }
   );
 }
