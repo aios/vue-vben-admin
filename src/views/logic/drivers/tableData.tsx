@@ -19,31 +19,31 @@ export function getColumns(): BasicColumn[] {
       title: t('routes.logic.staff.drivers.fields.name'),
       dataIndex: 'name',
       sorter: true,
-      // width: 220,
+      width: 160,
     },
     {
       title: t('routes.logic.staff.drivers.fields.client'),
       dataIndex: 'client',
       slots: { customRender: 'client' },
-      // width: 120,
+      width: 160,
     },
     {
       title: t('routes.logic.staff.drivers.fields.locations'),
       dataIndex: 'client',
       slots: { customRender: 'locations' },
-      // width: 120,
+      width: 180,
     },
     {
       title: t('routes.logic.staff.drivers.fields.salary'),
       dataIndex: 'salary',
       slots: { customRender: 'salary' },
-      // width: 120,
+      width: 80,
     },
     {
       title: t('routes.logic.staff.drivers.fields.unpaid_salary'),
       dataIndex: 'unpaid_salary',
       slots: { customRender: 'unpaid_salary' },
-      // width: 120,
+      width: 80,
     },
   ];
 }

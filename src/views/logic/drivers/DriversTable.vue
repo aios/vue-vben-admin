@@ -18,11 +18,14 @@
     </template>
 
     <template #locations="{ record }">
-      <a-tag v-for="location in record.locations" :key="location.id">
-        <a>
-          {{location.name_chain}}
-        </a>
-      </a-tag>
+      <div v-for="location in record.locations" :key="location.id">
+        <a-tag>
+          <a>
+            {{location.name_chain}}
+          </a>
+        </a-tag>
+      </div>
+
     </template>
 
     <template #salary="{ record }">
