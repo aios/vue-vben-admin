@@ -21,7 +21,7 @@ export async function runPreserve() {
     errorConsole(
       'Do not include Chinese, Japanese or Korean in the full path of the project directory, please modify the directory name and run again!'
     );
-    errorConsole('__Some-New-Token__、__Some-New-Token__、__Some-New-Token__,__Some-New-Token__!');
+    errorConsole('Do not include Chinese, Japanese or Korean in the full path of the project directory, please modify the directory name and run again!');
     process.exit(1);
   }
 
