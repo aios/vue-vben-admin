@@ -6,7 +6,7 @@ import { createRouter, /*createWebHashHistory,*/ createWebHistory } from 'vue-ro
 import { createGuard } from './guard/';
 
 import { basicRoutes } from './routes/';
-import { scrollBehavior } from './scrollBehaviour';
+import { scrollBehavior } from './scrollBehavior';
 
 export const hashRouter = createWebHistory();
 

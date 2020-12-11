@@ -1,11 +1,11 @@
 <template>
   <div class="flex p-4">
     <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
-      <BasicTree :treeData="treeData" :actionList="actionList" />
+      <BasicTree :tree-data="treeData" :action-list="actionList" />
     </CollapseContainer>
 
     <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
-      <BasicTree :treeData="treeData" :beforeRightClick="getRightMenuList" />
+      <BasicTree :tree-data="treeData" :before-right-click="getRightMenuList" />
     </CollapseContainer>
   </div>
 </template>

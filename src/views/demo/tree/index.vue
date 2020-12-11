@@ -1,19 +1,19 @@
 <template>
   <div class="flex p-4">
     <CollapseContainer title="__Some-New-Token__" :style="{ width: '33%' }" class="mr-4">
-      <BasicTree :treeData="treeData" />
+      <BasicTree :tree-data="treeData" />
     </CollapseContainer>
 
     <CollapseContainer title="__Some-New-Token__" class="mr-4" :style="{ width: '33%' }">
-      <BasicTree :treeData="treeData" :checkable="true" />
+      <BasicTree :tree-data="treeData" :checkable="true" />
     </CollapseContainer>
 
     <CollapseContainer title="__Some-New-Token__/__Some-New-Token__" :style="{ width: '33%' }">
       <BasicTree
-        :treeData="treeData"
+        :tree-data="treeData"
         :checkable="true"
-        :expandedKeys="['0-0']"
-        :checkedKeys="['0-0']"
+        :expanded-keys="['0-0']"
+        :checked-keys="['0-0']"
       />
     </CollapseContainer>
   </div>
