@@ -30,6 +30,16 @@ export interface DriverSelectItem {
   text: string;
 }
 
+export interface DriverPermissionSelectItem {
+  value: number;
+  text: string;
+}
+
+export interface DriverInput extends StaffSalaryInput {
+  name: string;
+  client_id: number;
+  locations_ids: number[];
+}
 
 export interface DriverFetchResult<T extends DriverTableItem> extends BasicTableFetchResult<T> {
 }

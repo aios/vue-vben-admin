@@ -74,7 +74,7 @@ export function useFormValues({
     const schemas = unref(getSchema);
     const obj: Record<string, any> = {};
     schemas.forEach((item) => {
-      if (item.defaultValue) {
+      if (typeof item.defaultValue !== 'undefined') {
         obj[item.field] = item.defaultValue;
         (formModel as any)[item.field] = item.defaultValue;
       }

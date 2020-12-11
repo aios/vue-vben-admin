@@ -3,6 +3,7 @@ import {
   DriverFetchResult,
   DriverTableItem,
   DriverSelectItem,
+  DriverPermissionSelectItem, DriverInput,
 } from './model';
 
 import { ParsedQuery } from 'query-string';
@@ -42,6 +43,45 @@ export function getDriversForSelect(params?: ParsedQuery) {
       url: '/drivers/for_select',
       method: 'GET',
       params,
+    },
+    {
+      errorMessageMode: 'modal',
+    }
+  );
+}
+
+export function getDriverPermissionsForSelect(params?: ParsedQuery) {
+  return defHttp.request<DriverPermissionSelectItem[]>(
+    {
+      url: '/drivers/permissions',
+      method: 'GET',
+      params,
+    },
+    {
+      errorMessageMode: 'modal',
+    }
+  );
+}
+
+export function createDriver(params: DriverInput) {
+  return defHttp.request(
+    {
+      url: `/drivers`,
+      method: 'POST',
+      params
+    },
+    {
+      errorMessageMode: 'modal',
+    }
+  );
+}
+
+export function updateDriver(id: number, params: DriverInput) {
+  return defHttp.request(
+    {
+      url: `/drivers/${id}`,
+      method: 'PUT',
+      params
     },
     {
       errorMessageMode: 'modal',

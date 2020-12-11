@@ -5,4 +5,5 @@ export default {
   locations: 'Локации',
   salary: 'Зарплата',
   unpaid_salary: 'Долг',
+  permissions: 'Возможности',
 };

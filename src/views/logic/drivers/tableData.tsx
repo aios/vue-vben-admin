@@ -47,7 +47,7 @@ export function getColumns(): BasicColumn[] {
     },
   ];
 }
-export function getFilters(): Partial<FormProps> {
+export function getFormConfig(): Partial<FormProps> {
   const clientList = computed(() => {
     return clientStore.getListForSelectFormatted;
   });
@@ -57,6 +57,9 @@ export function getFilters(): Partial<FormProps> {
   });
 
   return {
+    submitButtonOptions: {
+      text: t('routes.basic.search'),
+    },
     labelWidth: 20,
     size: 'small',
     schemas: [

@@ -1,10 +1,13 @@
 import type {
   DriverSelectItem,
+  DriverPermissionSelectItem,
+  DriverInput,
 } from '/@/api/logic/driver/model';
 
 import {
   getDriversForSelect,
-  deleteDriver,
+  getDriverPermissionsForSelect,
+  deleteDriver, createDriver, updateDriver,
 } from '/@/api/logic/driver/requests';
 
 import store from '/@/store/index';
@@ -19,14 +22,27 @@ hotModuleUnregisterModule(NAME);
 @Module({ namespaced: true, name: NAME, dynamic: true, store })
 class Driver extends VuexModule {
   private listForSelect: DriverSelectItem[] = [];
+  private permissionsList: DriverPermissionSelectItem[] = [];
 
   get getListForSelect(): DriverSelectItem[] {
     return this.listForSelect;
   }
 
+  get getPermissionsListForSelect() {
+    return this.permissionsList.map(permission => ({
+      label: permission.text,
+      value: permission.value,
+    }));
+  }
+
   @Mutation
   commitSetListForSelectState(list: DriverSelectItem[]): void {
     this.listForSelect = list;
+  }
+
+  @Mutation
+  commitSetPermissionsListForSelectState(list: DriverPermissionSelectItem[]): void {
+    this.permissionsList = list;
   }
 
   // use this when create/update/delete location
@@ -50,6 +66,43 @@ class Driver extends VuexModule {
     } catch (error) {
       return [];
     }
+  }
+
+  @Action
+  async loadPermissionsListForSelect(params?: ParsedQuery): Promise<DriverPermissionSelectItem[]> {
+    if (this.listForSelect.length > 0) {
+      return [];
+    }
+
+    try {
+      const list = await getDriverPermissionsForSelect(params);
+
+      this.commitSetPermissionsListForSelectState(list);
+
+      return list;
+    } catch (error) {
+      return [];
+    }
+  }
+
+  @Action
+  create(input: DriverInput) {
+    return createDriver(input)
+      .then(res => {
+        this.commitResetListForSelectState();
+
+        return res;
+      });
+  }
+
+  @Action
+  update(id: number, input: DriverInput) {
+    return updateDriver(id, input)
+      .then(res => {
+        this.commitResetListForSelectState();
+
+        return res;
+      });
   }
 
   @Action

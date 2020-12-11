@@ -60,7 +60,7 @@ const transform: AxiosTransform = {
     const message = res.statusText;
     const result = data;
     // __Some-New-Token__
-    const hasSuccess = code === ResultEnum.SUCCESS;
+    const hasSuccess = code === ResultEnum.SUCCESS || code === ResultEnum.CREATED;
 
     if (!hasSuccess) {
       if (message) {
@@ -77,7 +77,7 @@ const transform: AxiosTransform = {
     }
 
     // __Some-New-Token__，__Some-New-Token__
-    if (code === ResultEnum.SUCCESS) {
+    if (code === ResultEnum.SUCCESS || code === ResultEnum.CREATED) {
       return result;
     }
     // __Some-New-Token__，__Some-New-Token__

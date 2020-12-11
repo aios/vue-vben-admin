@@ -32,7 +32,6 @@
   import { computed, defineComponent, onMounted, reactive, ref, toRefs, unref, watch } from 'vue';
   import type { ValidateFields } from 'ant-design-vue/lib/form/interface';
 
-  import { defineComponent, reactive, ref, computed, unref, onMounted, watch, toRefs } from 'vue';
   import { Form, Row } from 'ant-design-vue';
   import FormItem from './FormItem';
   import { basicProps } from './props';

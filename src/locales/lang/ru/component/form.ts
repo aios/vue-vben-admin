@@ -1,6 +1,6 @@
 export default {
   resetButton: 'Сброс',
-  submitButton: 'Поиск',
+  submitButton: 'Отправить',
   putAway: 'Put away',
   unfold: 'Развернуть',
 

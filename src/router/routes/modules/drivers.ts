@@ -21,6 +21,14 @@ const drivers: AppRouteModule = {
         title: 'routes.logic.staff.drivers.table.title',
       },
     },
+    {
+      path: 'create',
+      name: 'DriverCreate',
+      component: () => import('/@/views/logic/drivers/DriverCreate.vue'),
+      meta: {
+        title: 'routes.logic.staff.drivers.create.title',
+      },
+    },
   ],
 };
 

@@ -1,4 +1,5 @@
 export { default as BasicTable } from './src/BasicTable.vue';
+export { default as CustomTable } from './src/CustomTable.vue';
 export { default as TableAction } from './src/components/TableAction';
 export { default as TableImg } from './src/components/TableImg.vue';
 export { renderEditableCell, renderEditableRow } from './src/components/renderEditable';
