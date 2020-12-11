@@ -1,7 +1,7 @@
 import { defHttp } from '/@/utils/http/axios';
 import {
   DriverFetchResult,
-  DriverTableItem,
+  Driver,
   DriverSelectItem,
   DriverPermissionSelectItem, DriverInput,
 } from './model';
@@ -25,11 +25,23 @@ export function getDrivers(params: ParsedQuery) {
     delete params.order;
   }
 
-  return defHttp.request<DriverFetchResult<DriverTableItem>>(
+  return defHttp.request<DriverFetchResult<Driver>>(
     {
       url: '/drivers',
       method: 'GET',
       params,
+    },
+    {
+      errorMessageMode: 'modal',
+    }
+  );
+}
+
+export function getDriver(id: number) {
+  return defHttp.request<Driver>(
+    {
+      url: `/drivers/${id}`,
+      method: 'GET',
     },
     {
       errorMessageMode: 'modal',

@@ -29,6 +29,14 @@ const drivers: AppRouteModule = {
         title: 'routes.logic.staff.drivers.create.title',
       },
     },
+    {
+      path: ':id',
+      name: 'DriverUpdate',
+      component: () => import('/@/views/logic/drivers/DriverUpdate.vue'),
+      meta: {
+        title: 'routes.logic.staff.drivers.update.title',
+      },
+    },
   ],
 };
 

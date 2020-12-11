@@ -1,10 +1,10 @@
-enum SalaryType {
-  percent = 'percent',
-  fixed = 'fixed',
+export enum SalaryType {
+  percent = 2,
+  fixed = 1,
 }
 
-interface StaffSalaryInput {
-  salary_type: SalaryType
-  salary_percent?: number
-  salary_amount?: number
+export interface StaffSalaryInput {
+  salary_type?: SalaryType
+  salary_percent?: number|string
+  salary_amount?: number|string
 }

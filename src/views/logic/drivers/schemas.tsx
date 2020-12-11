@@ -4,12 +4,12 @@ import {clientStore} from "/@/store/modules/client";
 import {locationStore} from "/@/store/modules/location";
 import {computed, unref} from "vue";
 import {driverStore} from "/@/store/modules/driver";
+import {SalaryType} from "/@/api/logic/salary/model";
 const { t } = useI18n();
 
 interface Errors {
   [field: string]: string[]
 }
-
 
 export const getSchemas = (errors?: Errors): FormSchema[] => {
   const clientList = computed(() => {
@@ -54,10 +54,6 @@ export const getSchemas = (errors?: Errors): FormSchema[] => {
       colProps: {
         span: 24,
       },
-      // itemProps: {
-      //   validateStatus: 'error',
-      //   help: 'asdasdasd',
-      // }
     },
     {
       field: 'client_id',
@@ -126,11 +122,11 @@ export const getSchemas = (errors?: Errors): FormSchema[] => {
           },
           {
             label: t('routes.logic.staff.salary.fields.type_percent'),
-            value: 2,
+            value: SalaryType.percent,
           },
           {
             label: t('routes.logic.staff.salary.fields.type_fixed'),
-            value: 1,
+            value: SalaryType.fixed,
           },
         ],
       },

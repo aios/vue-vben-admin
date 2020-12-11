@@ -53,6 +53,7 @@
   import { defineComponent } from 'vue';
   import {CustomTable, useTable, TableAction, ActionItem} from '/@/components/Table';
   import { getColumns, getFormConfig } from '/@/views/logic/drivers/tableData';
+  import { useRouter } from 'vue-router';
 
   import { getDrivers } from '/@/api/logic/driver/requests';
   import {driverStore} from '/@/store/modules/driver';
@@ -61,7 +62,7 @@
   import { useI18n } from '/@/hooks/web/useI18n';
 
   import { Tag, Row } from 'ant-design-vue';
-  import {DriverTableItem} from "/@/api/logic/driver/model";
+  import {Driver} from "/@/api/logic/driver/model";
 
   import { useMessage } from '/@/hooks/web/useMessage';
 
@@ -71,6 +72,7 @@
     components: { CustomTable, TableAction, ATag: Tag, Row, AButton: Button },
     setup() {
       const { t } = useI18n();
+      const {push} = useRouter();
 
       const {notification} = useMessage();
 
@@ -101,13 +103,13 @@
         },
       });
 
-      const createActions = (record: DriverTableItem): ActionItem[] => {
+      const createActions = (record: Driver): ActionItem[] => {
         return [
           {
             icon: 'ic:outline-edit',
             label: '',
             color: 'warning',
-            onClick: () => {},
+            onClick: () => push(`/drivers/${record.id}`),
           },
           {
             icon: 'ic:outline-delete',

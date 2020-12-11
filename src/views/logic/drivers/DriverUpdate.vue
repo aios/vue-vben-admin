@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <CollapseContainer :title="t('routes.logic.staff.drivers.create.title')">
+    <CollapseContainer :title="t('routes.logic.staff.drivers.update.title')">
       <BasicForm
         :labelWidth="100"
         :schemas="schemas"
@@ -9,13 +9,14 @@
         size="small"
         layout="vertical"
         :wrapperCol="{lg: 24, xl: 16, sm: 24, md: 24}"
+        @register="registerForm"
       />
     </CollapseContainer>
   </div>
 </template>
 <script lang="ts">
-  import { defineComponent, computed, reactive } from 'vue';
-  import { useRouter } from 'vue-router';
+  import { defineComponent, computed, reactive} from 'vue';
+  import {useRoute, useRouter} from 'vue-router';
   import {useTabs} from '/@/hooks/web/useTabs';
 
   import {BasicForm, useForm} from '/@/components/Form/index';
@@ -28,6 +29,8 @@
   import { useI18n } from '/@/hooks/web/useI18n';
 
   import {getSchemas} from './schemas';
+  import {getDriver} from "/@/api/logic/driver/requests";
+  import {DriverInput} from "/@/api/logic/driver/model";
 
   export default defineComponent({
     components: { BasicForm, CollapseContainer },
@@ -35,6 +38,9 @@
       const {t} = useI18n();
       const {push} = useRouter();
       const {closeCurrent} = useTabs();
+
+      const {params: {id}} = useRoute();
+      const driverId: number = <number><unknown>id;
 
       driverStore.loadPermissionsListForSelect();
       clientStore.loadListForSelect();
@@ -44,7 +50,27 @@
         errors: {},
       });
 
-      const [registerForm] = useForm();
+      const [registerForm, {setFieldsValue}] = useForm();
+
+      getDriver(driverId).then(driver => {
+        let driverInput: DriverInput = {
+          name: driver.name,
+          client_id: driver.client ? driver.client.id : '',
+          location_ids: driver.locations.map(l => l.id),
+          permissions: driver.permissions,
+        }
+
+        if (driver.salary) {
+          driverInput = {
+            ...driverInput,
+            salary_type: driver.salary.type,
+            salary_percent: driver.salary.percent,
+            salary_amount: driver.salary.amount_formatted,
+          };
+        }
+
+        setFieldsValue(driverInput);
+      });
 
       const schemas = computed(() => {
         return getSchemas(state.errors);
@@ -56,7 +82,7 @@
           state.errors = {};
 
           try {
-            await driverStore.create(values);
+            await driverStore.update({id: driverId, input: values});
 
             await closeCurrent();
             await push('/drivers');

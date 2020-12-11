@@ -96,7 +96,7 @@ class Driver extends VuexModule {
   }
 
   @Action
-  update(id: number, input: DriverInput) {
+  update({id, input}: {id: number, input: DriverInput}) {
     return updateDriver(id, input)
       .then(res => {
         this.commitResetListForSelectState();
