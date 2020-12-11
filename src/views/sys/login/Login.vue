@@ -76,6 +76,7 @@
         password: '123456',
         // verify: undefined,
       });
+
       const formState = reactive({
         loading: false,
       });

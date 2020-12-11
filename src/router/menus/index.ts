@@ -44,14 +44,12 @@ async function getAsyncMenus() {
   return permissionStore.getBackMenuListState;
 }
 
-// __Some-New-Token__
-export const getFlatMenus = async () => {
+export const getFlatMenus = async (): Promise<Menu[]> => {
   const menus = await getAsyncMenus();
   return flatMenus(menus);
 };
 
-// __Some-New-Token__ __Some-New-Token__
-export const getMenus = async () => {
+export const getMenus = async (): Promise<Menu[]> => {
   const menus = await getAsyncMenus();
   const routes = router.getRoutes();
   return !isBackMode() ? filter(menus, basicFilter(routes)) : menus;
@@ -64,8 +62,7 @@ export async function getCurrentParentPath(currentPath: string) {
   return allParentPath[0];
 }
 
-// __Some-New-Token__1__Some-New-Token__，__Some-New-Token__children
-export async function getShallowMenus() {
+export async function getShallowMenus(): Promise<Menu[]> {
   const menus = await getAsyncMenus();
   const routes = router.getRoutes();
   const shallowMenuList = menus.map((item) => ({ ...item, children: undefined }));
