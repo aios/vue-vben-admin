@@ -3,56 +3,45 @@ import type { PropType } from 'vue';
 
 import { MenuModeEnum, MenuTypeEnum } from '/@/enums/menuEnum';
 import { ThemeEnum } from '/@/enums/appEnum';
+import { propTypes } from '/@/utils/propTypes';
 export const basicProps = {
   items: {
     type: Array as PropType<Menu[]>,
     default: () => [],
   },
-  appendClass: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  appendClass: propTypes.bool,
 
-  collapsedShowTitle: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  collapsedShowTitle: propTypes.bool,
 
-  inlineIndent: {
-    type: Number as PropType<number>,
-    default: 20,
-  },
-  // __Some-New-Token__mode__Some-New-Token__
+  inlineIndent: propTypes.number.def(20),
   mode: {
     type: String as PropType<MenuModeEnum>,
     default: MenuModeEnum.INLINE,
   },
-  showLogo: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  showLogo: propTypes.bool,
   type: {
     type: String as PropType<MenuTypeEnum>,
     default: MenuTypeEnum.MIX,
   },
-  theme: {
-    type: String as PropType<string>,
-    default: ThemeEnum.DARK,
-  },
-  inlineCollapsed: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  theme: propTypes.string.def(ThemeEnum.DARK),
+  inlineCollapsed: propTypes.bool,
 
-  isHorizontal: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
-  accordion: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
+  isHorizontal: propTypes.bool,
+  accordion: propTypes.bool.def(true),
   beforeClickFn: {
     type: Function as PropType<(key: string) => Promise<boolean>>,
   },
+};
+
+export const itemProps = {
+  item: {
+    type: Object as PropType<Menu>,
+    default: {},
+  },
+  level: propTypes.number,
+  theme: propTypes.oneOf(['dark', 'light']),
+  appendClass: propTypes.bool,
+  parentPath: propTypes.string,
+  showTitle: propTypes.bool,
+  isHorizontal: propTypes.bool,
 };

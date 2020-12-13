@@ -1,15 +1,15 @@
-import { ComputedRef } from 'vue';
-import { ThemeEnum } from '/@/enums/appEnum';
-import { MenuModeEnum } from '/@/enums/menuEnum';
+// import { ComputedRef } from 'vue';
+// import { ThemeEnum } from '/@/enums/appEnum';
+// import { MenuModeEnum } from '/@/enums/menuEnum';
 export interface MenuState {
   // __Some-New-Token__
   defaultSelectedKeys: string[];
 
-  // __Some-New-Token__
-  mode: MenuModeEnum;
+  // 模式
+  // mode: MenuModeEnum;
 
-  // __Some-New-Token__
-  theme: ComputedRef<ThemeEnum> | ThemeEnum;
+  // // 主题
+  // theme: ComputedRef<ThemeEnum> | ThemeEnum;
 
   // __Some-New-Token__
   inlineIndent?: number;
