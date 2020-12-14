@@ -50,10 +50,10 @@ const transform: AxiosTransform = {
 
     const { data } = res;
     //console.log(res, options, res.config.url?.search('csrf-cookie') == -1);
-    if (!data) {
-      // return '[HTTP] Request has no return value';
-      return errorResult;
-    }
+    // if (!data) {
+    //   // return '[HTTP] Request has no return value';
+    //   return errorResult;
+    // }
     //  __Some-New-Token__ code，result，message__Some-New-Token__ __Some-New-Token__，__Some-New-Token__ types.ts__Some-New-Token__
     //const { code, result, message } = data;
     const code = res.status;

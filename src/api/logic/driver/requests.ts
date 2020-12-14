@@ -8,22 +8,10 @@ import {
 
 import { ParsedQuery } from 'query-string';
 
-const fixOrder = (order: string): string => {
-  const orders: any = {ascend: 'asc', descend: 'desc'};
-
-  return orders[order] || '';
-}
+import {fixSortParams} from '/@/api/logic/sort';
 
 export function getDrivers(params: ParsedQuery) {
-  if (params.field) {
-    params.sortField = params.field;
-    delete params.field;
-  }
-
-  if (params.order) {
-    params.sortDirection = fixOrder(<string>params.order);
-    delete params.order;
-  }
+  params = fixSortParams(params);
 
   return defHttp.request<DriverFetchResult<Driver>>(
     {

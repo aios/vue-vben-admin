@@ -9,14 +9,14 @@ const drivers: AppRouteModule = {
   redirect: '/drivers/table',
   meta: {
     icon: 'ant-design:table-outlined',
-    title: 'routes.logic.staff.menu.title',
+    title: 'routes.logic.staff.menu.drivers',
   },
 
   children: [
     {
       path: 'table',
       name: 'DriversTable',
-      component: () => import('/@/views/logic/drivers/DriversTable.vue'),
+      component: () => import('/@/views/logic/staff/drivers/Table.vue'),
       meta: {
         title: 'routes.logic.staff.drivers.table.title',
       },
@@ -24,7 +24,7 @@ const drivers: AppRouteModule = {
     {
       path: 'create',
       name: 'DriverCreate',
-      component: () => import('/@/views/logic/drivers/DriverCreate.vue'),
+      component: () => import('/@/views/logic/staff/drivers/Create.vue'),
       meta: {
         title: 'routes.logic.staff.drivers.create.title',
       },
@@ -32,7 +32,7 @@ const drivers: AppRouteModule = {
     {
       path: ':id',
       name: 'DriverUpdate',
-      component: () => import('/@/views/logic/drivers/DriverUpdate.vue'),
+      component: () => import('/@/views/logic/staff/drivers/Update.vue'),
       meta: {
         title: 'routes.logic.staff.drivers.update.title',
       },

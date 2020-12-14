@@ -10,6 +10,10 @@ const menu: MenuModule = {
         path: '/drivers',
         name: 'routes.logic.staff.drivers.table.title',
       },
+      {
+        path: '/operators',
+        name: 'routes.logic.staff.operators.table.title',
+      },
     ],
   },
 };

@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <CollapseContainer :title="t('routes.logic.staff.drivers.create.title')">
+    <CollapseContainer :title="t('routes.logic.staff.operators.create.title')">
       <BasicForm
         :labelWidth="100"
         :schemas="schemas"
@@ -18,13 +18,12 @@
   import { useRouter } from 'vue-router';
   import {useTabs} from '/@/hooks/web/useTabs';
 
-  import {BasicForm, useForm} from '/@/components/Form/index';
+  import {BasicForm, useForm} from '/@/components/Form';
 
-  import { CollapseContainer } from '/@/components/Container/index';
+  import { CollapseContainer } from '/@/components/Container';
 
   import {clientStore} from '/@/store/modules/client';
-  import {locationStore} from '/@/store/modules/location';
-  import {driverStore} from '/@/store/modules/driver';
+  import {operatorStore} from '/@/store/modules/operator';
   import { useI18n } from '/@/hooks/web/useI18n';
 
   import {getSchemas} from './schemas';
@@ -36,9 +35,7 @@
       const {push} = useRouter();
       const {closeCurrent} = useTabs();
 
-      driverStore.loadPermissionsListForSelect();
       clientStore.loadListForSelect();
-      locationStore.loadListForSelect();
 
       let state = reactive({
         errors: {},
@@ -56,10 +53,10 @@
           state.errors = {};
 
           try {
-            await driverStore.create(values);
+            await operatorStore.create(values);
 
             await closeCurrent();
-            await push('/drivers');
+            await push('/operators');
           } catch (e) {
             if (!e.response || e.response.status !== 422) {
               throw e;

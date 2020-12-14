@@ -1,6 +1,6 @@
 <template>
   <div class="m-4">
-    <CollapseContainer :title="t('routes.logic.staff.drivers.update.title')">
+    <CollapseContainer :title="t('routes.logic.staff.operators.update.title')">
       <BasicForm
         :labelWidth="100"
         :schemas="schemas"
@@ -9,7 +9,7 @@
         size="small"
         layout="vertical"
         :wrapperCol="{lg: 24, xl: 16, sm: 24, md: 24}"
-        @register="registerForm"
+        @register="register"
       />
     </CollapseContainer>
   </div>
@@ -19,18 +19,17 @@
   import {useRoute, useRouter} from 'vue-router';
   import {useTabs} from '/@/hooks/web/useTabs';
 
-  import {BasicForm, useForm} from '/@/components/Form/index';
+  import {BasicForm, FormActionType, useForm} from '/@/components/Form';
 
-  import { CollapseContainer } from '/@/components/Container/index';
+  import { CollapseContainer } from '/@/components/Container';
 
   import {clientStore} from '/@/store/modules/client';
-  import {locationStore} from '/@/store/modules/location';
-  import {driverStore} from '/@/store/modules/driver';
+  import {operatorStore} from '/@/store/modules/operator';
   import { useI18n } from '/@/hooks/web/useI18n';
 
   import {getSchemas} from './schemas';
-  import {getDriver} from "/@/api/logic/driver/requests";
-  import {DriverInput} from "/@/api/logic/driver/model";
+  import {getOperator} from "/@/api/logic/operator/requests";
+  import {OperatorInput} from "/@/api/logic/operator/model";
 
   export default defineComponent({
     components: { BasicForm, CollapseContainer },
@@ -40,41 +39,41 @@
       const {closeCurrent} = useTabs();
 
       const {params: {id}} = useRoute();
-      const driverId: number = <number><unknown>id;
+      const operatorId: number = <number><unknown>id;
 
-      driverStore.loadPermissionsListForSelect();
       clientStore.loadListForSelect();
-      locationStore.loadListForSelect();
 
       let state = reactive({
         errors: {},
       });
 
-      const [registerForm, {setFieldsValue}] = useForm();
-
-      getDriver(driverId).then(driver => {
-        let driverInput: DriverInput = {
-          name: driver.name,
-          client_id: driver.client ? driver.client.id : '',
-          location_ids: driver.locations.map(l => l.id),
-          permissions: driver.permissions,
-        }
-
-        if (driver.salary) {
-          driverInput = {
-            ...driverInput,
-            salary_type: driver.salary.type,
-            salary_percent: driver.salary.percent,
-            salary_amount: driver.salary.amount_formatted,
-          };
-        }
-
-        setFieldsValue(driverInput);
-      });
-
       const schemas = computed(() => {
         return getSchemas(state.errors);
       });
+
+      const [registerForm, {setFieldsValue}] = useForm();
+
+      const register = (instance: FormActionType) =>  {
+        registerForm(instance);
+
+        getOperator(operatorId).then(operator => {
+          let operatorInput: OperatorInput = {
+            name: operator.name,
+            client_id: operator.client ? operator.client.id : '',
+          }
+
+          if (operator.salary) {
+            operatorInput = {
+              ...operatorInput,
+              salary_type: operator.salary.type,
+              salary_percent: operator.salary.percent,
+              salary_amount: operator.salary.amount_formatted,
+            };
+          }
+
+          setFieldsValue(operatorInput);
+        });
+      }
 
       return {
         schemas,
@@ -82,10 +81,10 @@
           state.errors = {};
 
           try {
-            await driverStore.update({id: driverId, input: values});
+            await operatorStore.update({id: operatorId, input: values});
 
             await closeCurrent();
-            await push('/drivers');
+            await push('/operators');
           } catch (e) {
             if (!e.response || e.response.status !== 422) {
               throw e;
@@ -94,7 +93,7 @@
             state.errors = {...e.response.data.errors};
           }
         },
-        registerForm,
+        register,
         t,
       };
     },

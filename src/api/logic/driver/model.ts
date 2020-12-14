@@ -1,24 +1,14 @@
 import {BasicTableFetchResult} from "/@/api/logic/baseModel";
-import {SalaryType, StaffSalaryInput} from "/@/api/logic/salary/model";
+import {StaffSalary, StaffSalaryInput} from "/@/api/logic/salary/model";
+import {StaffClient, StaffLocation} from "/@/api/logic/staffModel";
 
-interface DriverClient {
-  id: number;
-  name?: string;
-  username?: string;
-  telegram_id: number;
+interface DriverClient extends StaffClient {
 }
 
-interface DriverSalary {
-  type: SalaryType;
-  percent?: number,
-  amount?: number,
-  amount_formatted?: number,
-  display_value: string;
+interface DriverSalary extends StaffSalary {
 }
 
-interface DriverLocation {
-  id: number;
-  name_chain: string;
+interface DriverLocation extends StaffLocation {
 }
 
 export interface Driver {

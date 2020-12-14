@@ -8,3 +8,11 @@ export interface StaffSalaryInput {
   salary_percent?: number|string
   salary_amount?: number|string
 }
+
+export interface StaffSalary {
+  type: SalaryType;
+  percent?: number,
+  amount?: number,
+  amount_formatted?: number,
+  display_value: string;
+}
