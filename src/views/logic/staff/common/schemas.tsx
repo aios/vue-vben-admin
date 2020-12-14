@@ -3,6 +3,8 @@ import {computed, unref} from "vue";
 import {useI18n} from "/@/hooks/web/useI18n";
 import {clientStore} from "/@/store/modules/client";
 import {locationStore} from "/@/store/modules/location";
+import {botStore} from "/@/store/modules/bot";
+import {productTypeStore} from "/@/store/modules/productType";
 import {SalaryType} from "/@/api/logic/salary/model";
 
 export interface Errors {
@@ -48,6 +50,57 @@ export const getClientField = (): FormSchema => {
     componentProps: {
       placeholder: '',
       options: unref(clientList),
+      showSearch: true,
+      filterOption(input: any, option: any) {
+        return (
+          option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        );
+      },
+    },
+  };
+};
+
+export const getBotField = (): FormSchema => {
+  const botList = computed(() => {
+    return botStore.getListForSelectFormatted;
+  });
+
+  return {
+    field: 'source_id',
+    component: 'Select',
+    label: t('routes.logic.staff.stokers.fields.bot'),
+    colProps: {
+      span: 24,
+    },
+    componentProps: {
+      placeholder: '',
+      options: unref(botList),
+      showSearch: true,
+      filterOption(input: any, option: any) {
+        return (
+          option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        );
+      },
+    },
+  };
+};
+
+export const getProductTypesField = (): FormSchema => {
+  const productTypeList = computed(() => {
+    return productTypeStore.getListForSelectFormatted;
+  });
+
+  return {
+    field: 'product_type_ids',
+    component: 'Select',
+    label: t('routes.logic.staff.stokers.fields.productTypes'),
+    colProps: {
+      span: 24,
+    },
+    componentProps: {
+      mode: 'multiple',
+      placeholder: '',
+      options: unref(productTypeList),
       showSearch: true,
       filterOption(input: any, option: any) {
         return (

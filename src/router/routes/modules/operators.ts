@@ -35,6 +35,7 @@ const operators: AppRouteModule = {
       component: () => import('/@/views/logic/staff/operators/Update.vue'),
       meta: {
         title: 'routes.logic.staff.operators.update.title',
+        hideBreadcrumb: true,
       },
     },
   ],
