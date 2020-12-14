@@ -35,6 +35,7 @@ const drivers: AppRouteModule = {
       component: () => import('/@/views/logic/staff/drivers/Update.vue'),
       meta: {
         title: 'routes.logic.staff.drivers.update.title',
+        hideBreadcrumb: true,
       },
     },
   ],

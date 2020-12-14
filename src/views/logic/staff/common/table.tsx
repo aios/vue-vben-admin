@@ -4,6 +4,8 @@ import {useMessage} from "/@/hooks/web/useMessage";
 import {computed} from "vue";
 import {clientStore} from "/@/store/modules/client";
 import {locationStore} from "/@/store/modules/location";
+import {productTypeStore} from "/@/store/modules/productType";
+import {botStore} from "/@/store/modules/bot";
 
 const { t } = useI18n();
 
@@ -91,6 +93,34 @@ export const getClientFilterSchema = (): FormSchema => {
   };
 }
 
+export const getBotFilterSchema = (): FormSchema => {
+  const botList = computed(() => {
+    return botStore.getListForSelectFormatted;
+  });
+
+  return {
+    field: `bot_id`,
+    label: '',
+    component: 'Select',
+    defaultValue: null,
+    componentProps: {
+      placeholder: t('routes.logic.staff.stokers.fields.bot'),
+      options: botList,
+      showSearch: true,
+      filterOption(input: any, option: any) {
+        return (
+          option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        );
+      },
+    },
+    colProps: {
+      lg: 6,
+      xl: 4,
+      xxl: 4,
+    },
+  };
+}
+
 export const getLocationFilterSchema = (): FormSchema => {
   const locationList = computed(() => {
     return locationStore.getListForSelectFormatted;
@@ -104,6 +134,34 @@ export const getLocationFilterSchema = (): FormSchema => {
     componentProps: {
       placeholder: t('routes.logic.staff.fields.location'),
       options: locationList,
+      showSearch: true,
+      filterOption(input: any, option: any) {
+        return (
+          option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        );
+      },
+    },
+    colProps: {
+      lg: 8,
+      xl: 5,
+      xxl: 5,
+    },
+  };
+};
+
+export const getProductTypeFilterSchema = (): FormSchema => {
+  const productTypeList = computed(() => {
+    return productTypeStore.getListForSelectFormatted;
+  });
+
+  return {
+    field: `product_type_id`,
+    label: '',
+    component: 'Select',
+    defaultValue: null,
+    componentProps: {
+      placeholder: t('routes.logic.staff.stokers.fields.productType'),
+      options: productTypeList,
       showSearch: true,
       filterOption(input: any, option: any) {
         return (
