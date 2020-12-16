@@ -1,14 +1,17 @@
 import type { Menu, MenuModule } from '/@/router/types';
 import type { RouteRecordNormalized } from 'vue-router';
+
 import { appStore } from '/@/store/modules/app';
 import { permissionStore } from '/@/store/modules/permission';
-import { transformMenuModule, flatMenus, getAllParentPath } from '/@/router/helper/menuHelper';
+import { transformMenuModule, getAllParentPath } from '/@/router/helper/menuHelper';
 import { filter } from '/@/utils/helper/treeHelper';
 import router from '/@/router';
 import { PermissionModeEnum } from '/@/enums/appEnum';
 import { pathToRegexp } from 'path-to-regexp';
 
 import modules from 'globby!/@/router/menus/modules/**/*.@(ts)';
+
+const reg = /(((https?:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(?::\d+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)$/;
 
 const menuModules: MenuModule[] = [];
 
@@ -37,18 +40,11 @@ const staticMenus: Menu[] = [];
 })();
 
 async function getAsyncMenus() {
-  // __Some-New-Token__ __Some-New-Token__
-  if (!isBackMode()) {
-    return staticMenus;
-  }
-  return permissionStore.getBackMenuListState;
+  // 前端角色控制菜单 直接取菜单文件
+  return !isBackMode() ? staticMenus : permissionStore.getBackMenuListState;
 }
 
-export const getFlatMenus = async (): Promise<Menu[]> => {
-  const menus = await getAsyncMenus();
-  return flatMenus(menus);
-};
-
+// 获取菜单 树级
 export const getMenus = async (): Promise<Menu[]> => {
   const menus = await getAsyncMenus();
   const routes = router.getRoutes();
@@ -59,12 +55,13 @@ export const getMenus = async (): Promise<Menu[]> => {
 export async function getCurrentParentPath(currentPath: string) {
   const menus = await getAsyncMenus();
   const allParentPath = await getAllParentPath(menus, currentPath);
-  return allParentPath[0];
+  return allParentPath?.[0];
 }
 
 export async function getShallowMenus(): Promise<Menu[]> {
   const menus = await getAsyncMenus();
   const routes = router.getRoutes();
+
   const shallowMenuList = menus.map((item) => ({ ...item, children: undefined }));
   return !isBackMode() ? shallowMenuList.filter(basicFilter(routes)) : shallowMenuList;
 }
@@ -77,27 +74,24 @@ export async function getChildrenMenus(parentPath: string) {
   return parent.children;
 }
 
-// __Some-New-Token__children
-export async function getFlatChildrenMenus(children: Menu[]) {
-  return flatMenus(children);
-}
-
-// __Some-New-Token__
+// 通用过滤方法
 function basicFilter(routes: RouteRecordNormalized[]) {
   return (menu: Menu) => {
     const matchRoute = routes.find((route) => {
-      if (route.meta.externalLink) {
+      const match = route.path.match(reg)?.[0];
+      if (match && match === menu.path) {
         return true;
       }
 
-      if (route.meta) {
-        if (route.meta.carryParam) {
-          return pathToRegexp(route.path).test(menu.path);
-        }
-        if (route.meta.ignoreAuth) return true;
+      if (route.meta?.carryParam) {
+        return pathToRegexp(route.path).test(menu.path);
       }
+      const isSame = route.path === menu.path;
+      if (!isSame) return false;
 
-      return route.path === menu.path;
+      if (route.meta?.ignoreAuth) return true;
+
+      return isSame || pathToRegexp(route.path).test(menu.path);
     });
 
     if (!matchRoute) return false;

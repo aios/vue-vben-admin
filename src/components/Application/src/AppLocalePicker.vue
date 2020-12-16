@@ -12,8 +12,8 @@
     :overlayClassName="`${prefixCls}-overlay`"
   >
     <span :class="prefixCls">
-      <GlobalOutlined :class="`${prefixCls}__icon`" />
-      <span v-if="showText">{{ getLangText }}</span>
+      <Icon icon="cil:language" />
+      <span v-if="showText" :class="`${prefixCls}__text`">{{ getLangText }}</span>
     </span>
   </Dropdown>
 </template>
@@ -31,9 +31,10 @@
   import { propTypes } from '/@/utils/propTypes';
   import { useDesign } from '/@/hooks/web/useDesign';
 
+  import Icon from '/@/components/Icon';
   export default defineComponent({
     name: 'AppLocalPicker',
-    components: { GlobalOutlined, Dropdown },
+    components: { GlobalOutlined, Dropdown, Icon },
     props: {
       // Whether to display text
       showText: propTypes.bool.def(true),
@@ -89,8 +90,8 @@
     align-items: center;
     cursor: pointer;
 
-    &__icon {
-      margin-right: 4px;
+    &__text {
+      margin-left: 6px;
     }
   }
 </style>

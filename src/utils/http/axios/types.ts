@@ -15,6 +15,8 @@ export interface RequestOptions {
   // __Some-New-Token__， __Some-New-Token__apiUrl
   apiUrl?: string;
   errorMessageMode?: ErrorMessageMode;
+  // 是否加入时间戳
+  joinTime?: boolean;
 }
 
 export interface CreateAxiosOptions extends AxiosRequestConfig {

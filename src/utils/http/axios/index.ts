@@ -3,7 +3,6 @@
 
 import type { AxiosResponse } from 'axios';
 import type { CreateAxiosOptions, RequestOptions, Result } from './types';
-
 import { VAxios } from './Axios';
 import { getToken } from '/@/utils/auth';
 import { AxiosTransform } from './axiosTransform';
@@ -16,11 +15,11 @@ import { useMessage } from '/@/hooks/web/useMessage';
 import { ContentTypeEnum, RequestEnum, ResultEnum } from '/@/enums/httpEnum';
 
 import { isString } from '/@/utils/is';
-import { formatRequestDate } from '/@/utils/dateUtil';
-import { deepMerge, setObjToUrlParams } from '/@/utils';
+import { setObjToUrlParams, deepMerge } from '/@/utils';
 import { errorStore } from '/@/store/modules/error';
 import { errorResult } from './const';
 import { useI18n } from '/@/hooks/web/useI18n';
+import { createNow, formatRequestDate } from './helper';
 
 const globSetting = useGlobSetting();
 const prefix = globSetting.urlPrefix;
@@ -107,8 +106,7 @@ const transform: AxiosTransform = {
 
   // __Some-New-Token__config
   beforeRequestHook: (config, options) => {
-    config.withCredentials = true;
-    const { apiUrl, joinPrefix, joinParamsToUrl, formatDate } = options;
+    const { apiUrl, joinPrefix, joinParamsToUrl, formatDate, joinTime = true } = options;
 
     if (joinPrefix) {
       config.url = `${prefix}${config.url}`;
@@ -122,17 +120,14 @@ const transform: AxiosTransform = {
       }
     }
     if (config.method?.toUpperCase() === RequestEnum.GET) {
-      const now = new Date().getTime();
       if (!isString(config.params)) {
         config.data = {
-          // __Some-New-Token__ get __Some-New-Token__，__Some-New-Token__。
-          params: Object.assign(config.params || {}, {
-            _t: now,
-          }),
+          // 给 get 请求加上时间戳参数，避免从缓存中拿数据。
+          params: Object.assign(config.params || {}, createNow(joinTime, false)),
         };
       } else {
-        // __Some-New-Token__restful__Some-New-Token__
-        config.url = config.url + config.params;
+        // 兼容restful风格
+        config.url = config.url + config.params + `${createNow(joinTime, true)}`;
         config.params = undefined;
       }
     } else {
@@ -203,6 +198,9 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
         // __Some-New-Token__，__Some-New-Token__
         prefixUrl: prefix,
         headers: { 'Content-Type': ContentTypeEnum.JSON },
+        // 如果是form-data格式
+        // headers: { 'Content-Type': ContentTypeEnum.FORM_URLENCODED },
+        // 数据处理方式
         withCredentials: true,
         // __Some-New-Token__
         transform,
@@ -218,6 +216,8 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
           formatDate: true,
           errorMessageMode: 'message',
           apiUrl: globSetting.apiUrl,
+          //  是否加入时间戳
+          joinTime: true,
         },
       },
       opt || {}

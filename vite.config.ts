@@ -123,8 +123,9 @@ const viteConfig: UserConfig = {
   // The package will be recompiled using rollup, and the new package compiled into the esm module specification will be put into node_modules/.vite_opt_cache
   optimizeDeps: {
     include: [
-      'echarts/map/js/Ukraine',
+      'qs',
       'ant-design-vue/es/locale/ru_RU',
+      'echarts/map/js/Ukraine',
       'ant-design-vue/es/locale/en_US',
       'ant-design-vue/es/locale/uk_UA',
       '@ant-design/icons-vue',
