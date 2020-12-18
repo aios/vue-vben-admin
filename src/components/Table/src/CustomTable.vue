@@ -46,7 +46,7 @@
   } from './types/table';
   import { PaginationProps } from './types/pagination';
 
-  import { defineComponent, ref, computed, unref, watch, nextTick, toRaw } from 'vue';
+  import {defineComponent, ref, computed, unref, watch, nextTick, toRaw} from 'vue';
   import { Table } from 'ant-design-vue';
   import renderTitle from './components/renderTitle';
   import renderFooter from './components/renderFooter';
@@ -70,6 +70,7 @@
   import { ROW_KEY } from './const';
   import './style/index.less';
   import { useExpose } from '/@/hooks/core/useExpose';
+  import {WebLocalStorage} from '/@/utils/cache';
   export default defineComponent({
     components: { Table, BasicForm },
     props: basicProps,
@@ -177,10 +178,15 @@
 
       const getFormProps = computed(() => {
         const { formConfig } = unref(getBindValues);
+        const { filtersStorageKey } = unref(getMergeProps);
+
         const formProps: FormProps = {
           showAdvancedButton: true,
           ...(formConfig as FormProps),
           compact: true,
+          model: filtersStorageKey
+            ? WebLocalStorage.get(filtersStorageKey, {})
+            : {},
         };
         return formProps;
       });
@@ -212,9 +218,15 @@
 
       function handleSearchInfoChange(info: any) {
         const { handleSearchInfoFn } = unref(getMergeProps);
+        const { filtersStorageKey } = unref(getMergeProps);
         if (handleSearchInfoFn && isFunction(handleSearchInfoFn)) {
           info = handleSearchInfoFn(info) || info;
         }
+
+        if (filtersStorageKey) {
+          WebLocalStorage.set(filtersStorageKey, info);
+        }
+
         fetch({ searchInfo: info, page: 1 });
       }
 
@@ -224,14 +236,23 @@
         filters: Partial<Record<string, string[]>>,
         sorter: SorterResult
       ) {
-        const { clearSelectOnPageChange, sortFn } = unref(getMergeProps);
+        const { clearSelectOnPageChange, sortFn, pageStorageKey, sortStorageKey } = unref(getMergeProps);
         if (clearSelectOnPageChange) {
           clearSelectedRowKeys();
         }
         setPagination(pagination);
 
+        if (pageStorageKey) {
+          WebLocalStorage.set(pageStorageKey, pagination.current);
+        }
+
         if (sorter && isFunction(sortFn)) {
           const sortInfo = sortFn(sorter);
+
+          if (sortStorageKey) {
+            WebLocalStorage.set(sortStorageKey, sortInfo);
+          }
+
           fetch({ sortInfo });
           return;
         }

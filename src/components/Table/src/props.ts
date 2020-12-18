@@ -174,4 +174,16 @@ export const basicProps = {
     type: Object as PropType<{ x: number | true; y: number }>,
     default: null,
   },
+
+  filtersStorageKey: {
+    type: String as PropType<string>,
+  },
+
+  pageStorageKey: {
+    type: String as PropType<string>,
+  },
+
+  sortStorageKey: {
+    type: String as PropType<string>,
+  },
 };

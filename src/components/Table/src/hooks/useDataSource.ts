@@ -12,6 +12,7 @@ import { get } from 'lodash-es';
 import { useProps } from './useProps';
 
 import { FETCH_SETTING, ROW_KEY } from '../const';
+import {WebLocalStorage} from "/@/utils/cache";
 interface ActionType {
   getPaginationRef: ComputedRef<false | PaginationProps>;
   setPagination: (info: Partial<PaginationProps>) => void;
@@ -81,7 +82,11 @@ export function useDataSource(
   });
 
   async function fetch(opt?: FetchParams) {
-    const { api, searchInfo, fetchSetting, beforeFetch, afterFetch, useSearchForm } = unref(
+    const {
+      api, searchInfo, fetchSetting,
+      beforeFetch, afterFetch, useSearchForm,
+      sortStorageKey,
+    } = unref(
       propsRef
     );
     if (!api || !isFunction(api)) return;
@@ -97,10 +102,18 @@ export function useDataSource(
         pageParams[sizeField] = pageSize;
       }
 
+      let sortFromStorage = {};
+
+      if (sortStorageKey) {
+        sortFromStorage = WebLocalStorage.get(sortStorageKey, {})
+      }
+      console.log('---', sortFromStorage);
+      console.log('---+++---', opt ? opt.searchInfo : {});
       let params: any = {
         ...pageParams,
         ...(useSearchForm ? getFieldsValue() : {}),
         ...searchInfo,
+        ...sortFromStorage,
         ...(opt ? opt.searchInfo : {}),
         ...(opt ? opt.sortInfo : {}),
         ...(opt ? opt.filterInfo : {}),

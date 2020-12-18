@@ -53,11 +53,6 @@ export function getFormConfig(): Partial<FormProps> {
     },
     labelWidth: 20,
     size: 'small',
-    submitFunc: (): Promise<void> => {
-      console.log('');
-
-      return Promise.resolve();
-    },
     schemas: [
       {
         field: `name`,

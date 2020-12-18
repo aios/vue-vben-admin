@@ -75,6 +75,9 @@
         api: getDrivers,
         columns: getColumns(),
         formConfig: getFormConfig(),
+        filtersStorageKey: 'driversFilters',
+        pageStorageKey: 'driversPage',
+        sortStorageKey: 'driversSort',
 
         ...tableSettings,
       });

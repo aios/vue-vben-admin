@@ -9,6 +9,7 @@ import { isBoolean } from '/@/utils/is';
 import { PAGE_SIZE, PAGE_SIZE_OPTIONS } from '../const';
 import { useProps } from './useProps';
 import { useI18n } from '/@/hooks/web/useI18n';
+import {WebLocalStorage} from "/@/utils/cache";
 
 const { t } = useI18n();
 export function usePagination(refProps: ComputedRef<BasicTableProps>) {
@@ -16,12 +17,21 @@ export function usePagination(refProps: ComputedRef<BasicTableProps>) {
   const { propsRef } = useProps(refProps);
 
   const getPaginationRef = computed((): PaginationProps | false => {
-    const { pagination } = unref(propsRef);
+    const { pagination, pageStorageKey } = unref(propsRef);
     if (isBoolean(pagination) && !pagination) {
       return false;
     }
+
+    let current: number = 1;
+
+    if (pageStorageKey) {
+      current = WebLocalStorage.get(pageStorageKey, 1)
+    }
+
+    console.log(current);
+
     return {
-      current: 1,
+      current,
       pageSize: PAGE_SIZE,
       size: 'small',
       defaultPageSize: PAGE_SIZE,

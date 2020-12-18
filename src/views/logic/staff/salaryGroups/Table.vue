@@ -137,6 +137,9 @@
         api: getSalaryGroups,
         columns: getColumns(),
         formConfig: getFormConfig(),
+        filtersStorageKey: 'salaryGroupsFilters',
+        pageStorageKey: 'salaryGroupsPage',
+        sortStorageKey: 'salaryGroupsSort',
 
         ...tableSettings,
       });

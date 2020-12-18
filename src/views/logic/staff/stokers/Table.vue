@@ -90,6 +90,7 @@
         api: getStokers,
         columns: getColumns(),
         formConfig: getFormConfig(),
+        filtersStorageKey: 'stokersFilters',
 
         ...tableSettings,
       });

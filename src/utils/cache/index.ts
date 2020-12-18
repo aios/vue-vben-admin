@@ -13,6 +13,8 @@ const createOptions = (storage = sessionStorage) => {
 
 export const WebStorage = create(createOptions());
 
+export const WebLocalStorage = create(createOptions(localStorage));
+
 export const createStorage = (storage: Storage = sessionStorage) => {
   return create(createOptions(storage))!;
 };

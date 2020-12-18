@@ -369,6 +369,12 @@ export interface BasicTableProps<T = any> {
    * @param expandedRows
    */
   onExpandedRowsChange?: (expandedRows: string[] | number[]) => void;
+
+  filtersStorageKey?: string;
+
+  pageStorageKey?: string;
+
+  sortStorageKey?: string;
 }
 
 export interface BasicColumn extends ColumnProps {

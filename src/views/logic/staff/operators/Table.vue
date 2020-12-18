@@ -70,6 +70,7 @@
         api: getOperators,
         columns: getColumns(),
         formConfig: getFormConfig(),
+        filtersStorageKey: 'operatorsFilters',
 
         ...tableSettings,
       });
