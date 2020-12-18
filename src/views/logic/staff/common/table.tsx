@@ -1,15 +1,16 @@
 import {useI18n} from "/@/hooks/web/useI18n";
-import {ActionItem, FormSchema} from "/@/components/Table";
+import {ActionItem, BasicTableProps, FormSchema} from "/@/components/Table";
 import {useMessage} from "/@/hooks/web/useMessage";
 import {computed} from "vue";
 import {clientStore} from "/@/store/modules/client";
 import {locationStore} from "/@/store/modules/location";
 import {productTypeStore} from "/@/store/modules/productType";
 import {botStore} from "/@/store/modules/bot";
+import {staffStore} from "/@/store/modules/staff";
 
 const { t } = useI18n();
 
-export const tableSettings = {
+export const tableSettings: Partial<BasicTableProps> = {
   useSearchForm: true,
   showTableSetting: true,
   rowKey: 'id',
@@ -121,9 +122,9 @@ export const getBotFilterSchema = (): FormSchema => {
   };
 }
 
-export const getLocationFilterSchema = (): FormSchema => {
+export const getLocationFilterSchema = (onlyRoot: boolean = false): FormSchema => {
   const locationList = computed(() => {
-    return locationStore.getListForSelectFormatted;
+    return locationStore.getListForSelectFormatted.filter(l => onlyRoot ? l.depth === 0 : true);
   });
 
   return {
@@ -162,6 +163,34 @@ export const getProductTypeFilterSchema = (): FormSchema => {
     componentProps: {
       placeholder: t('routes.logic.staff.stokers.fields.productType'),
       options: productTypeList,
+      showSearch: true,
+      filterOption(input: any, option: any) {
+        return (
+          option.label.toLowerCase().indexOf(input.toLowerCase()) >= 0
+        );
+      },
+    },
+    colProps: {
+      lg: 8,
+      xl: 5,
+      xxl: 5,
+    },
+  };
+};
+
+export const getStaffFilterSchema = (): FormSchema => {
+  const staffList = computed(() => {
+    return staffStore.getListForSelectFormatted;
+  });
+
+  return {
+    field: `staff`,
+    label: '',
+    component: 'Select',
+    defaultValue: null,
+    componentProps: {
+      placeholder: t('routes.logic.staff.salaryGroups.fields.staffOne'),
+      options: staffList,
       showSearch: true,
       filterOption(input: any, option: any) {
         return (

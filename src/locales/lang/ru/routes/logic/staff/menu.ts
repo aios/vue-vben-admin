@@ -3,4 +3,5 @@ export default {
   drivers: 'Курьеры',
   operators: 'Операторы',
   stokers: 'Ответственные',
+  salaryGroups: 'Зарплата',
 };

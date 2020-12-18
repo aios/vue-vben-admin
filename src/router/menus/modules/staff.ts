@@ -22,6 +22,11 @@ const menu: MenuModule = {
         name: 'routes.logic.staff.stokers.table.title',
         icon: 'grommet-icons:user-manager',
       },
+      {
+        path: '/salaryGroups',
+        name: 'routes.logic.staff.salaryGroups.table.title',
+        icon: 'fa:dollar',
+      },
     ],
   },
 };

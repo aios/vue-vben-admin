@@ -1,0 +1,16 @@
+export default {
+  name: 'Название',
+  staff: 'Сотрудники',
+  staffOne: 'Сотрудник',
+  displayValue: 'Сумма',
+  active: 'Активность',
+  locations: 'Локации',
+  divideType: 'Распределение',
+  divideTypeAll: 'Делить на всех',
+  divideTypeEach: 'Каждому',
+  chose: 'Выбрать',
+  allLocations: 'Все',
+  allDrivers: 'Все курьеры',
+  allOperators: 'Все операторы',
+  allStokers: 'Все ответственные',
+};

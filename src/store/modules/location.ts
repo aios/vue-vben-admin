@@ -28,6 +28,7 @@ class Location extends VuexModule {
       return {
         value: item.value,
         label: item.text,
+        depth: item.depth,
       };
     });
   }
