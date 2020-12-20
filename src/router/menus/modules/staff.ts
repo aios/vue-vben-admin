@@ -25,7 +25,12 @@ const menu: MenuModule = {
       {
         path: '/salaryGroups',
         name: 'routes.logic.staff.salaryGroups.table.title',
-        icon: 'fa:dollar',
+        icon: 'ic:outline-attach-money',
+      },
+      {
+        path: '/payrolls',
+        name: 'routes.logic.staff.payrolls.table.title',
+        icon: 'gridicons:money',
       },
     ],
   },
