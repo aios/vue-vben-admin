@@ -32,6 +32,11 @@ const menu: MenuModule = {
         name: 'routes.logic.staff.payrolls.table.title',
         icon: 'gridicons:money',
       },
+      {
+        path: '/staffPayments',
+        name: 'routes.logic.staff.payments.table.title',
+        icon: 'ic:outline-money-off',
+      },
     ],
   },
 };
