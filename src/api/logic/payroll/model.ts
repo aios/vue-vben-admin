@@ -12,3 +12,10 @@ export interface Payroll {
 
 export interface PayrollFetchResult<T extends Payroll> extends BasicTableFetchResult<T> {
 }
+
+export interface PayrollStatisticPoint {
+  amount: string;
+  year: number;
+  month: number;
+  day?: number;
+}

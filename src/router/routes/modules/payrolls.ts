@@ -21,6 +21,14 @@ const payrolls: AppRouteModule = {
         title: 'routes.logic.staff.payrolls.table.title',
       },
     },
+    {
+      path: 'statistic',
+      name: 'PayrollsStatistic',
+      component: () => import('/@/views/logic/staff/payrolls/Statistic.vue'),
+      meta: {
+        title: 'routes.logic.staff.payrolls.statistic.title',
+      },
+    },
   ],
 };
 

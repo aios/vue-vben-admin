@@ -1,7 +1,7 @@
 import {useI18n} from "/@/hooks/web/useI18n";
 import {ActionItem, BasicTableProps, FormSchema} from "/@/components/Table";
 import {useMessage} from "/@/hooks/web/useMessage";
-import {computed} from "vue";
+import {computed, unref} from "vue";
 import {clientStore} from "/@/store/modules/client";
 import {locationStore} from "/@/store/modules/location";
 import {productTypeStore} from "/@/store/modules/productType";
@@ -190,7 +190,7 @@ export const getStaffFilterSchema = (): FormSchema => {
     defaultValue: null,
     componentProps: {
       placeholder: t('routes.logic.staff.salaryGroups.fields.staffOne'),
-      options: staffList,
+      options: unref(staffList),
       showSearch: true,
       filterOption(input: any, option: any) {
         return (
