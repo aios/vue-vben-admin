@@ -109,8 +109,7 @@ export function useDataSource(
       if (sortStorageKey) {
         sortFromStorage = WebLocalStorage.get(sortStorageKey, {})
       }
-      console.log('---', sortFromStorage);
-      console.log('---+++---', opt ? opt.searchInfo : {});
+
       let params: any = {
         ...pageParams,
         ...(useSearchForm ? getFieldsValue() : {}),

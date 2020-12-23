@@ -28,8 +28,6 @@ export function usePagination(refProps: ComputedRef<BasicTableProps>) {
       current = WebLocalStorage.get(pageStorageKey, 1)
     }
 
-    console.log(current);
-
     return {
       current,
       pageSize: PAGE_SIZE,

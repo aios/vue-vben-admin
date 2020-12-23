@@ -4,4 +4,6 @@ export default {
   operators: 'Операторы',
   stokers: 'Ответственные',
   salaryGroups: 'Зарплата',
+  payrolls: 'Начисления',
+  staffPayments: 'Выплаты',
 };
