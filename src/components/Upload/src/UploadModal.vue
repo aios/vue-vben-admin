@@ -125,7 +125,7 @@
 
         // __Some-New-Token__,__Some-New-Token__
         if (accept.length > 0 && !checkFileType(file, accept)) {
-          createMessage.error!(t('acomponent.upload.cceptUpload', [accept.join(',')]));
+          createMessage.error!(t('component.upload.acceptUpload', [accept.join(',')]));
           return false;
         }
         const commonItem = {

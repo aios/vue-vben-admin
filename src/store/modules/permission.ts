@@ -20,6 +20,7 @@ import { transformRouteToMenu } from '/@/router/helper/menuHelper';
 import { useMessage } from '/@/hooks/web/useMessage';
 // import { warn } from '/@/utils/log';
 import { useI18n } from '/@/hooks/web/useI18n';
+import { PAGE_NOT_FOUND_ROUTE } from '/@/router/constant';
 
 const { createMessage } = useMessage();
 const NAME = 'permission';
@@ -114,15 +115,16 @@ class Permission extends VuexModule {
       if (!paramId) {
         throw new Error('paramId is undefined!');
       }
-      let routeList: any[] = await getMenuListById({ id: paramId });
-      // __Some-New-Token__
+      let routeList = (await getMenuListById({ id: paramId })) as AppRouteRecordRaw[];
+
+      // 动态引入组件
       routeList = transformObjToRoute(routeList);
       //  __Some-New-Token__
       const backMenuList = transformRouteToMenu(routeList);
 
       this.commitBackMenuListState(backMenuList);
 
-      routes = routeList;
+      routes = [PAGE_NOT_FOUND_ROUTE, ...routeList];
     }
     return routes;
   }
