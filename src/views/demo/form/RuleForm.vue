@@ -84,12 +84,15 @@
           required: true,
           // @ts-ignore
           validator: async (rule, value) => {
+            if (!value) {
+              return Promise.reject('值不能为空');
+            }
             if (value === '1') {
               return Promise.reject('__Some-New-Token__1');
             }
             return Promise.resolve();
           },
-          trigger: 'blur',
+          trigger: 'change',
         },
       ],
     },

@@ -40,7 +40,7 @@ export function setObjToUrlParams(baseUrl: string, obj: any): string {
   return url;
 }
 
-export function deepMerge<T = any>(src: any, target: any): T {
+export function deepMerge<T = any>(src: any = {}, target: any = {}): T {
   let key: string;
   for (key in target) {
     if (target.hasOwnProperty(key))

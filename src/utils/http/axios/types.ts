@@ -33,9 +33,9 @@ export interface Result<T = any> {
 }
 // multipart/form-data：__Some-New-Token__
 export interface UploadFileParams {
-  // __Some-New-Token__
-  data?: { [key: string]: any };
-  // __Some-New-Token__
+  // 其他参数
+  data?: Indexable;
+  // 文件参数的接口字段名
   name?: string;
   // __Some-New-Token__
   file: File | Blob;
