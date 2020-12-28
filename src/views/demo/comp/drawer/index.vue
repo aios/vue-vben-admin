@@ -5,20 +5,18 @@
       >__Some-New-Token__Drawer</a-button
     >
 
-    <Alert message="__Some-New-Token__" show-icon />
-    <a-button type="primary" class="my-4" @click="openDrawer2">__Some-New-Token__Drawer</a-button>
-    <Alert message="__Some-New-Token__/__Some-New-Token__footer" show-icon />
-    <a-button type="primary" class="my-4" @click="openDrawer3">__Some-New-Token__Drawer</a-button>
+    <Alert message="内外同时控制显示隐藏" show-icon />
+    <a-button type="primary" class="my-4" @click="openDrawer2(true)">打开Drawer</a-button>
+    <Alert message="自适应高度/显示footer" show-icon />
+    <a-button type="primary" class="my-4" @click="openDrawer3(true)">打开Drawer</a-button>
 
     <Alert
       message="__Some-New-Token__,__Some-New-Token__ transferModalData __Some-New-Token__，__Some-New-Token__ receiveDrawerDataRef __Some-New-Token__。__Some-New-Token__"
       show-icon
     />
-    <a-button type="primary" class="my-4" @click="send"
-      >__Some-New-Token__Drawer__Some-New-Token__</a-button
-    >
-    <Alert message="__Some-New-Token__" show-icon />
-    <a-button type="primary" class="my-4" @click="openDrawer5">__Some-New-Token__Drawer</a-button>
+    <a-button type="primary" class="my-4" @click="send">打开Drawer并传递数据</a-button>
+    <Alert message="详情页模式" show-icon />
+    <a-button type="primary" class="my-4" @click="openDrawer5(true)">打开详情Drawer</a-button>
     <Drawer1 @register="register1" />
     <Drawer2 @register="register2" />
     <Drawer3 @register="register3" />

@@ -10,51 +10,31 @@ import type {
 } from './types/table';
 import type { FormProps } from '/@/components/Form';
 import { DEFAULT_SORT_FN, FETCH_SETTING } from './const';
+import { propTypes } from '/@/utils/propTypes';
 
 // __Some-New-Token__ types/table
 export const basicProps = {
   tableSetting: {
     type: Object as PropType<TableSetting>,
   },
-  inset: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  inset: propTypes.bool,
   sortFn: {
     type: Function as PropType<(sortInfo: SorterResult) => any>,
     default: DEFAULT_SORT_FN,
   },
 
-  showTableSetting: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
-  autoCreateKey: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  striped: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  showSummary: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  showTableSetting: propTypes.bool,
+  autoCreateKey: propTypes.bool.def(true),
+  striped: propTypes.bool.def(true),
+  showSummary: propTypes.bool,
 
   summaryFunc: {
     type: [Function, Array] as PropType<(...arg: any[]) => any[]>,
     default: null,
   },
 
-  canColDrag: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  isTreeTable: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  canColDrag: propTypes.bool.def(true),
+  isTreeTable: propTypes.bool,
   api: {
     type: Function as PropType<(...arg: any[]) => Promise<any>>,
     default: null,
@@ -77,24 +57,18 @@ export const basicProps = {
       return FETCH_SETTING;
     },
   },
-  // __Some-New-Token__
-  immediate: { type: Boolean as PropType<boolean>, default: true },
+  // 立即请求接口
+  immediate: propTypes.bool.def(true),
 
-  emptyDataIsShowTable: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  // __Some-New-Token__
+  emptyDataIsShowTable: propTypes.bool.def(true),
+  // 额外的请求参数
   searchInfo: {
     type: Object as PropType<any>,
     default: null,
   },
-  // __Some-New-Token__
-  useSearchForm: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
-  // __Some-New-Token__
+  // 使用搜索表单
+  useSearchForm: propTypes.bool,
+  // 表单配置
   formConfig: {
     type: Object as PropType<Partial<FormProps>>,
     default: null,
@@ -103,10 +77,7 @@ export const basicProps = {
     type: [Array] as PropType<BasicColumn[]>,
     default: null,
   },
-  showIndexColumn: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
+  showIndexColumn: propTypes.bool.def(true),
   indexColumnProps: {
     type: Object as PropType<BasicColumn>,
     default: null,
@@ -115,22 +86,10 @@ export const basicProps = {
     type: Object as PropType<BasicColumn>,
     default: null,
   },
-  ellipsis: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  canResize: {
-    type: Boolean as PropType<boolean>,
-    default: true,
-  },
-  clearSelectOnPageChange: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
-  resizeHeightOffset: {
-    type: Number as PropType<number>,
-    default: 0,
-  },
+  ellipsis: propTypes.bool.def(true),
+  canResize: propTypes.bool.def(true),
+  clearSelectOnPageChange: propTypes.bool,
+  resizeHeightOffset: propTypes.number.def(0),
   rowSelection: {
     type: Object as PropType<TableRowSelection | null>,
     default: null,
@@ -142,30 +101,22 @@ export const basicProps = {
   titleHelpMessage: {
     type: [String, Array] as PropType<string | string[]>,
   },
-  maxHeight: {
-    type: Number as PropType<number>,
-  },
+  maxHeight: propTypes.number,
   dataSource: {
-    type: Array as PropType<any[]>,
+    type: Array as PropType<Recordable[]>,
     default: null,
   },
   rowKey: {
-    type: [String, Function] as PropType<string | ((record: any) => string)>,
+    type: [String, Function] as PropType<string | ((record: Recordable) => string)>,
     default: '',
   },
-  bordered: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  bordered: propTypes.bool,
   pagination: {
     type: [Object, Boolean] as PropType<PaginationProps | boolean>,
     default: null,
   },
 
-  loading: {
-    type: Boolean as PropType<boolean>,
-    default: false,
-  },
+  loading: propTypes.bool,
   rowClassName: {
     type: Function as PropType<(record: TableCustomRecord<any>, index: number) => string>,
   },

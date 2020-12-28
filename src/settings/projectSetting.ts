@@ -37,7 +37,7 @@ const setting: ProjectConfig = {
   showLogo: false,
 
   // Whether to show footer
-  showFooter: true,
+  showFooter: false,
 
   // locale setting
   locale: {
