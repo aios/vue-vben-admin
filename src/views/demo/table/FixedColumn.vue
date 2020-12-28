@@ -74,11 +74,11 @@
           slots: { customRender: 'action' },
         },
       });
-      function handleDelete(record: any) {
-        console.log('__Some-New-Token__', record);
+      function handleDelete(record: Recordable) {
+        console.log('点击了删除', record);
       }
-      function handleOpen(record: any) {
-        console.log('__Some-New-Token__', record);
+      function handleOpen(record: Recordable) {
+        console.log('点击了启用', record);
       }
       return {
         registerTable,

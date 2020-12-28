@@ -13,12 +13,10 @@
     components: { BasicTitle },
     props: {
       title: {
-        type: [Function, String] as PropType<string | ((data: any) => string)>,
-        default: '',
+        type: [Function, String] as PropType<string | ((data: Recordable) => string)>,
       },
       getSelectRows: {
-        type: Function as PropType<() => any[]>,
-        default: () => {},
+        type: Function as PropType<() => Recordable[]>,
       },
       helpMessage: {
         type: [String, Array] as PropType<string | string[]>,

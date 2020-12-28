@@ -124,7 +124,9 @@ export interface TableSetting {
 }
 
 export interface BasicTableProps<T = any> {
-  // __Some-New-Token__
+  // 点击行选中
+  clickToRowSelect?: boolean;
+  // 自定义排序方法
   sortFn?: (sortInfo: SorterResult) => any;
   // __Some-New-Token__padding
   inset?: boolean;
@@ -141,9 +143,7 @@ export interface BasicTableProps<T = any> {
   showSummary?: boolean;
   // __Some-New-Token__
   canColDrag?: boolean;
-  // __Some-New-Token__
-  isTreeTable?: boolean;
-  // __Some-New-Token__
+  // 接口请求对象
   api?: (...arg: any) => Promise<any>;
   // __Some-New-Token__
   beforeFetch?: Fn;
@@ -157,9 +157,9 @@ export interface BasicTableProps<T = any> {
   immediate?: boolean;
   // __Some-New-Token__，__Some-New-Token__
   emptyDataIsShowTable?: boolean;
-  // __Some-New-Token__
-  searchInfo?: any;
-  // __Some-New-Token__
+  // 额外的请求参数
+  searchInfo?: Recordable;
+  // 使用搜索表单
   useSearchForm?: boolean;
   // __Some-New-Token__
   formConfig?: Partial<FormProps>;
@@ -180,10 +180,10 @@ export interface BasicTableProps<T = any> {
   // __Some-New-Token__
   clearSelectOnPageChange?: boolean;
   //
-  rowKey?: string | ((record: any) => string);
-  // __Some-New-Token__
-  dataSource?: any[];
-  // __Some-New-Token__
+  rowKey?: string | ((record: Recordable) => string);
+  // 数据
+  dataSource?: Recordable[];
+  // 标题右侧提示
   titleHelpMessage?: string | string[];
   // __Some-New-Token__
   maxHeight?: number;

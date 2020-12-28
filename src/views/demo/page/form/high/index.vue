@@ -3,11 +3,11 @@
     <a-page-header title="__Some-New-Token__" :ghost="false"> __Some-New-Token__。 </a-page-header>
 
     <div class="m-5">
-      <a-card title="__Some-New-Token__" :bordered="false">
-        <BasicForm @register="register" layout="vertical" />
+      <a-card title="仓库管理" :bordered="false">
+        <BasicForm @register="register" />
       </a-card>
-      <a-card title="__Some-New-Token__" :bordered="false" class="mt-5">
-        <BasicForm @register="registerTask" layout="vertical" />
+      <a-card title="任务管理" :bordered="false" class="mt-5">
+        <BasicForm @register="registerTask" />
       </a-card>
       <a-card title="__Some-New-Token__" :bordered="false" class="mt-5">
         <PersonTable ref="tableRef" />

@@ -2,9 +2,8 @@
   <div class="p-4">
     <BasicTable
       :rowSelection="{ type: 'checkbox' }"
-      :isTreeTable="true"
-      title="__Some-New-Token__"
-      titleHelpMessage="__Some-New-Token__"
+      title="树形表格"
+      titleHelpMessage="树形组件不能和序列号列同时存在"
       :columns="columns"
       :dataSource="data"
       rowKey="id"

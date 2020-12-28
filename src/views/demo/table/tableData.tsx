@@ -5,13 +5,13 @@ export function getBasicColumns(): BasicColumn[] {
   return [
     {
       title: 'ID',
-      width: 150,
       dataIndex: 'id',
+      width: 150,
     },
     {
       title: '__Some-New-Token__',
       dataIndex: 'name',
-      width: 120,
+      width: 150,
     },
     {
       title: '__Some-New-Token__',
@@ -20,14 +20,16 @@ export function getBasicColumns(): BasicColumn[] {
     {
       title: '__Some-New-Token__',
       dataIndex: 'no',
-      width: 80,
+      width: 150,
     },
     {
-      title: '__Some-New-Token__',
+      title: '开始时间',
+      width: 120,
       dataIndex: 'beginTime',
     },
     {
-      title: '__Some-New-Token__',
+      title: '结束时间',
+      width: 120,
       sorter: true,
       dataIndex: 'endTime',
     },
