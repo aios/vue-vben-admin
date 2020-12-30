@@ -1,16 +1,21 @@
 <template>
-  <div v-if="imgList && imgList.length" class="basic-table-img__preview">
-    <template v-for="(img, index) in imgList" :key="img">
-      <img :width="size" :src="img" @click="handlePreview(index)" />
-    </template>
+  <div :class="prefixCls" v-if="imgList && imgList.length">
+    <PreviewGroup>
+      <template v-for="img in imgList" :key="img">
+        <Image :width="size" :src="img" />
+      </template>
+    </PreviewGroup>
   </div>
 </template>
 <script lang="ts">
   import { defineComponent, PropType } from 'vue';
-  import { createImgPreview } from '/@/components/Preview';
+  import { useDesign } from '/@/hooks/web/useDesign';
+
+  import { Image } from 'ant-design-vue';
 
   export default defineComponent({
-    name: 'TableAction',
+    name: 'TableImage',
+    components: { Image, PreviewGroup: Image.PreviewGroup },
     props: {
       imgList: {
         type: Array as PropType<string[]>,
@@ -21,16 +26,25 @@
         default: 40,
       },
     },
-    setup(props) {
-      function handlePreview(index: number) {
-        const { imgList } = props;
-
-        createImgPreview({
-          imageList: imgList as string[],
-          index: index,
-        });
-      }
-      return { handlePreview };
+    setup() {
+      const { prefixCls } = useDesign('basic-table-img');
+      return { prefixCls };
     },
   });
 </script>
+<style lang="less">
+  @prefix-cls: ~'@{namespace}-basic-table-img';
+
+  .@{prefix-cls} {
+    display: flex;
+
+    .ant-image {
+      margin-right: 4px;
+      cursor: zoom-in;
+
+      img {
+        border-radius: 2px;
+      }
+    }
+  }
+</style>

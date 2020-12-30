@@ -10,6 +10,12 @@
           :imgList="['https://picsum.photos/id/66/346/216', 'https://picsum.photos/id/67/346/216']"
         />
       </template>
+
+      <template #category="{ record }">
+        <Tag color="green">
+          {{ record.no }}
+        </Tag>
+      </template>
     </BasicTable>
   </div>
 </template>
@@ -25,7 +31,7 @@
       slots: { customRender: 'id' },
     },
     {
-      title: '__Some-New-Token__',
+      slots: { customRender: 'category' },
       dataIndex: 'name',
       width: 120,
     },
@@ -60,6 +66,7 @@
         title: '__Some-New-Token__',
         api: demoListApi,
         columns: columns,
+        bordered: true,
       });
 
       return {

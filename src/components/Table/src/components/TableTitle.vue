@@ -1,15 +1,16 @@
 <template>
-  <BasicTitle v-if="tableTitle" class="basic-table-title" :help-message="helpMessage">
-    {{ tableTitle }}
+  <BasicTitle :class="prefixCls" v-if="getTitle" :helpMessage="helpMessage">
+    {{ getTitle }}
   </BasicTitle>
 </template>
 <script lang="ts">
   import { computed, defineComponent, PropType } from 'vue';
 
   import { BasicTitle } from '/@/components/Basic/index';
+  import { useDesign } from '/@/hooks/web/useDesign';
   import { isFunction } from '/@/utils/is';
   export default defineComponent({
-    name: 'TableTitle',
+    name: 'BasicTableTitle',
     components: { BasicTitle },
     props: {
       title: {
@@ -24,7 +25,9 @@
       },
     },
     setup(props) {
-      const tableTitle = computed(() => {
+      const { prefixCls } = useDesign('basic-table-title');
+
+      const getTitle = computed(() => {
         const { title, getSelectRows = () => {} } = props;
         let tit = title;
 
@@ -36,7 +39,16 @@
         return tit;
       });
 
-      return { tableTitle };
+      return { getTitle, prefixCls };
     },
   });
 </script>
+<style lang="less">
+  @prefix-cls: ~'@{namespace}-basic-table-title';
+
+  .@{prefix-cls} {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+</style>
