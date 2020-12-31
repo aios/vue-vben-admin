@@ -11,7 +11,7 @@ import { REDIRECT_NAME } from './constant';
 
 // app router
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes: basicRoutes as RouteRecordRaw[],
   strict: true,
   scrollBehavior: scrollBehavior,

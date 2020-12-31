@@ -91,9 +91,10 @@ export default (mode: 'development' | 'production'): UserConfig => {
     optimizeDeps: {
       include: [
         'qs',
-        'echarts/map/js/china',
-        'ant-design-vue/es/locale/zh_CN',
+        'echarts/map/js/Ukraine',
+        'ant-design-vue/es/locale/ru_RU',
         'ant-design-vue/es/locale/en_US',
+        'ant-design-vue/es/locale/uk_UA',
         '@ant-design/icons-vue',
       ],
     },
