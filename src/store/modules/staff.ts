@@ -1,10 +1,6 @@
-import type {
-  StaffSelectItem,
-} from '/@/api/logic/staff/model';
+import type { StaffSelectItem } from '/@/api/logic/staff/model';
 
-import {
-  getStaffForSelect,
-} from '/@/api/logic/staff/requests';
+import { getStaffForSelect } from '/@/api/logic/staff/requests';
 
 import store from '/@/store/index';
 import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';

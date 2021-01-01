@@ -7,7 +7,7 @@
   import { useECharts } from '/@/hooks/web/useECharts';
   import { mapData } from './data';
 
-  import 'echarts/map/js/ukraine';
+  import 'echarts/map/js/china';
   export default defineComponent({
     props: {
       width: {

@@ -13,22 +13,22 @@ const orders: AppRouteModule = {
   },
 
   children: [
-    {
-      path: 'staff_groups_table',
-      name: 'StaffGroupsTable',
-      component: () => import('/@/views/logic/staff/StaffGroupTable.vue'),
-      meta: {
-        title: 'routes.logic.staff.groups_table.title',
-      },
-    },
-    {
-      path: 'staff_withdraw_table',
-      name: 'StaffWithdrawTable',
-      component: () => import('/@/views/logic/staff/StaffWithdrawTable.vue'),
-      meta: {
-        title: 'routes.logic.staff.withdraw_table.title',
-      },
-    },
+    // {
+    //   path: 'staff_groups_table',
+    //   name: 'StaffGroupsTable',
+    //   component: () => import('/@/views/logic/staff/StaffGroupTable.vue'),
+    //   meta: {
+    //     title: 'routes.logic.staff.groups_table.title',
+    //   },
+    // },
+    // {
+    //   path: 'staff_withdraw_table',
+    //   name: 'StaffWithdrawTable',
+    //   component: () => import('/@/views/logic/staff/StaffWithdrawTable.vue'),
+    //   meta: {
+    //     title: 'routes.logic.staff.withdraw_table.title',
+    //   },
+    // },
   ],
 };
 
