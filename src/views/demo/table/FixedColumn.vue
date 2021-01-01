@@ -41,7 +41,6 @@
     {
       title: '__Some-New-Token__',
       dataIndex: 'address',
-      width: 260,
     },
     {
       title: '__Some-New-Token__',
@@ -67,6 +66,7 @@
         api: demoListApi,
         columns: columns,
         rowSelection: { type: 'radio' },
+        bordered: true,
         actionColumn: {
           width: 160,
           title: 'Action',

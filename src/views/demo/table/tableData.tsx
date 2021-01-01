@@ -7,12 +7,16 @@ export function getBasicColumns(): BasicColumn[] {
       title: 'ID',
       dataIndex: 'id',
       fixed: 'left',
-      width: 400,
+      width: 200,
     },
     {
       title: '__Some-New-Token__',
       dataIndex: 'name',
       width: 150,
+      filters: [
+        { text: 'Male', value: 'male' },
+        { text: 'Female', value: 'female' },
+      ],
     },
     {
       title: '__Some-New-Token__',
@@ -22,11 +26,13 @@ export function getBasicColumns(): BasicColumn[] {
       title: '__Some-New-Token__',
       dataIndex: 'no',
       width: 150,
+      sorter: true,
       defaultHidden: true,
     },
     {
       title: '开始时间',
       width: 120,
+      sorter: true,
       dataIndex: 'beginTime',
     },
     {
