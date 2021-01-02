@@ -1,6 +1,6 @@
 import type { ProjectConfig } from '/@/types/config';
 
-import { MenuTypeEnum, MenuModeEnum, TriggerEnum } from '/@/enums/menuEnum';
+import { MenuTypeEnum, MenuModeEnum, TriggerEnum, MixSidebarTriggerEnum } from '/@/enums/menuEnum';
 import { CacheTypeEnum } from '/@/enums/cacheEnum';
 import { ContentEnum, PermissionModeEnum, ThemeEnum, RouterTransitionEnum } from '/@/enums/appEnum';
 import { primaryColor } from '../../build/config/lessModifyVars';
@@ -108,6 +108,8 @@ const setting: ProjectConfig = {
     accordion: true,
     // Switch page to close menu
     closeMixSidebarOnChange: false,
+    // Module opening method ‘click’ |'hover'
+    mixSideTrigger: MixSidebarTriggerEnum.CLICK,
   },
 
   // Multi-label
