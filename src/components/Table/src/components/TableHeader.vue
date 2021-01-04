@@ -1,11 +1,11 @@
 <template>
-  <slot name="tableTitle" v-if="$slots.tableTitle" />
-  <TableTitle :helpMessage="titleHelpMessage" :title="title" v-if="!$slots.tableTitle && title" />
+  <slot v-if="$slots.tableTitle" name="tableTitle" />
+  <TableTitle v-if="!$slots.tableTitle && title" :help-message="titleHelpMessage" :title="title" />
 
   <div :class="`${prefixCls}__toolbar`">
     <slot name="toolbar" />
-    <Divider type="vertical" v-if="$slots.toolbar" />
-    <TableSetting :setting="tableSetting" v-if="showTableSetting" />
+    <Divider v-if="$slots.toolbar" type="vertical" />
+    <TableSetting v-if="showTableSetting" :setting="tableSetting" />
   </div>
 </template>
 <script lang="ts">

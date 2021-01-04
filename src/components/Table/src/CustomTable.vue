@@ -46,11 +46,11 @@
   } from './types/table';
   import { PaginationProps } from './types/pagination';
 
-  import {defineComponent, ref, computed, unref, watch, nextTick, toRaw} from 'vue';
+  import { defineComponent, ref, computed, unref, watch, nextTick, toRaw } from 'vue';
   import { Table } from 'ant-design-vue';
-  import renderTitle from './components/renderTitle';
-  import renderFooter from './components/renderFooter';
-  import renderExpandIcon from './components/renderExpandIcon';
+  import renderTitle from './components/TableTitle.vue';
+  import renderFooter from './components/TableFooter.vue';
+  import renderExpandIcon from './components/EditTableHeaderIcon.vue';
   import { BasicForm, FormProps, useForm } from '/@/components/Form/index';
 
   import { isFunction, isString } from '/@/utils/is';
@@ -184,9 +184,7 @@
           showAdvancedButton: true,
           ...(formConfig as FormProps),
           compact: true,
-          model: filtersStorageKey
-            ? WebLocalStorage.get(filtersStorageKey, {})
-            : {},
+          model: filtersStorageKey ? WebLocalStorage.get(filtersStorageKey, {}) : {},
         };
         return formProps;
       });
@@ -236,7 +234,9 @@
         filters: Partial<Record<string, string[]>>,
         sorter: SorterResult
       ) {
-        const { clearSelectOnPageChange, sortFn, pageStorageKey, sortStorageKey } = unref(getMergeProps);
+        const { clearSelectOnPageChange, sortFn, pageStorageKey, sortStorageKey } = unref(
+          getMergeProps
+        );
         if (clearSelectOnPageChange) {
           clearSelectedRowKeys();
         }
