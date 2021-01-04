@@ -89,15 +89,15 @@
           } as BasicTableProps;
         }
       );
-      const { loadingRef } = useLoading(getMergeProps);
-      const { getPaginationRef, setPagination } = usePagination(getMergeProps);
-      const { getColumnsRef, setColumns } = useColumns(getMergeProps, getPaginationRef);
+      const { getLoading, setLoading } = useLoading(getMergeProps);
+      const { getPaginationInfo, setPagination } = usePagination(getMergeProps);
+      const { getColumnsRef, setColumns } = useColumns(getMergeProps, getPaginationInfo);
       const { getDataSourceRef, setTableData, fetch, getAutoCreateKey } = useDataSource(
         getMergeProps,
         {
-          getPaginationRef,
-          loadingRef,
+          getPaginationInfo,
           setPagination,
+          setLoading,
           getFieldsValue,
         },
         emit
@@ -139,10 +139,10 @@
                       tableSetting
                     ),
               };
-        const pagination = unref(getPaginationRef);
+        const pagination = unref(getPaginationInfo);
         const rowSelection = unref(getRowSelectionRef);
         const scroll = unref(getScrollRef);
-        const loading = unref(loadingRef);
+        const loading = unref(getLoading);
         const rowKey = unref(getRowKey);
         const columns = unref(getColumnsRef);
         const dataSource = unref(getDataSourceRef);
@@ -301,7 +301,7 @@
         setSelectedRowKeys,
         setColumns,
         getPaginationRef: () => {
-          return unref(getPaginationRef);
+          return unref(getPaginationInfo);
         },
         getColumns: (opt?: GetColumnsParams) => {
           const { ignoreIndex, ignoreAction } = opt || {};
