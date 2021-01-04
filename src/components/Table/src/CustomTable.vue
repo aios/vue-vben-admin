@@ -70,7 +70,7 @@
   import { ROW_KEY } from './const';
   import './style/index.less';
   import { useExpose } from '/@/hooks/core/useExpose';
-  import {WebLocalStorage} from '/@/utils/cache';
+  import { WebLocalStorage } from '/@/utils/cache';
   export default defineComponent({
     components: { Table, BasicForm },
     props: basicProps,
