@@ -1,11 +1,11 @@
 <template>
-  <div class="m-4">
-    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
+  <PageWrapper title="导出示例" content="根据数组格式的数据进行导出">
+    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
       <template #toolbar>
         <a-button @click="aoaToExcel">__Some-New-Token__</a-button>
       </template>
     </BasicTable>
-  </div>
+  </PageWrapper>
 </template>
 
 <script lang="ts">
@@ -13,9 +13,10 @@
   import { BasicTable } from '/@/components/Table';
   import { aoaToSheetXlsx } from '/@/components/Excel';
   import { arrHeader, arrData, columns, data } from './data';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
-    components: { BasicTable },
+    components: { BasicTable, PageWrapper },
     setup() {
       function aoaToExcel() {
         // __Some-New-Token__data__Some-New-Token__header__Some-New-Token__

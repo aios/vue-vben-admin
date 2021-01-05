@@ -1,12 +1,12 @@
 <template>
-  <div class="m-4">
-    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
+  <PageWrapper title="导出示例" content="可以选择导出格式">
+    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
       <template #toolbar>
         <a-button @click="openModal">__Some-New-Token__</a-button>
       </template>
     </BasicTable>
     <ExpExcelModel @register="register" @success="defaultHeader" />
-  </div>
+  </PageWrapper>
 </template>
 
 <script lang="ts">
@@ -15,9 +15,10 @@
   import { jsonToSheetXlsx, ExpExcelModel, ExportModalResult } from '/@/components/Excel';
   import { columns, data } from './data';
   import { useModal } from '/@/components/Modal';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
-    components: { BasicTable, ExpExcelModel },
+    components: { BasicTable, ExpExcelModel, PageWrapper },
     setup() {
       function defaultHeader({ filename, bookType }: ExportModalResult) {
         // __Some-New-Token__Object.keys(data[0])__Some-New-Token__header

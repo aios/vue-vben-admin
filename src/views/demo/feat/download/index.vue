@@ -1,7 +1,7 @@
 <template>
-  <div class="m-5 demo-box">
-    <a-alert message="__Some-New-Token__" />
-    <a-button type="primary" class="my-4" @click="handleDownByData"> __Some-New-Token__ </a-button>
+  <PageWrapper title="文件下载示例">
+    <a-alert message="根据后台接口文件流下载" />
+    <a-button type="primary" class="my-4" @click="handleDownByData"> 文件流下载 </a-button>
 
     <a-alert message="__Some-New-Token__" />
     <a-button type="primary" class="my-4" @click="handleDownloadByUrl">
@@ -19,7 +19,7 @@
     <a-button type="primary" class="my-4" @click="handleDownloadByOnlineUrl">
       __Some-New-Token__Url__Some-New-Token__
     </a-button>
-  </div>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
@@ -30,7 +30,10 @@
     downloadByOnlineUrl,
   } from '/@/utils/file/download';
   import imgBase64 from './imgBase64';
+  import { PageWrapper } from '/@/components/Page';
+
   export default defineComponent({
+    components: { PageWrapper },
     setup() {
       function handleDownByData() {
         downloadByData('text content', 'testName.txt');

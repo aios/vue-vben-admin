@@ -1,6 +1,5 @@
 <template>
-  <div class="p-4 lazy-base-demo">
-    <Alert message="__Some-New-Token__" description="__Some-New-Token__" type="info" show-icon />
+  <PageWrapper title="懒加载自定义动画示例" content="懒加载组件显示动画">
     <div class="lazy-base-demo-wrap">
       <h1>__Some-New-Token__</h1>
 
@@ -10,18 +9,17 @@
         </LazyContainer>
       </div>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import { Skeleton, Alert } from 'ant-design-vue';
+  import { Skeleton } from 'ant-design-vue';
   import TargetContent from './TargetContent.vue';
   import { LazyContainer } from '/@/components/Container/index';
+  import { PageWrapper } from '/@/components/Page';
+
   export default defineComponent({
-    components: { LazyContainer, TargetContent, Skeleton, Alert },
-    setup() {
-      return {};
-    },
+    components: { LazyContainer, TargetContent, Skeleton, PageWrapper },
   });
 </script>
 <style lang="less">

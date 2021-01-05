@@ -33,10 +33,10 @@
   import { defineComponent, ref } from 'vue';
   import { BasicTable } from '/@/components/Table';
   import { getBasicColumns, getBasicData } from './tableData';
-  import { useI18n } from '/@/hooks/web/useI18n';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
-    components: { BasicTable },
+    components: { BasicTable, PageWrapper },
     setup() {
       const { t } = useI18n();
       const canResize = ref(false);

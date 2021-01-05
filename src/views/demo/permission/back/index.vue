@@ -1,9 +1,10 @@
 <template>
-  <div class="p-4 m-4 demo">
-    <Alert
-      message="__Some-New-Token__mock__Some-New-Token__， id__Some-New-Token__1 __Some-New-Token__ 2 __Some-New-Token__mock/sys/menu.ts__Some-New-Token__"
-      show-icon
-    />
+  <PageWrapper
+    title="后台权限示例"
+    contentBackgrond
+    contentClass="p-4"
+    content="目前mock了两组数据， id为1 和 2 具体返回的菜单可以在mock/sys/menu.ts内查看"
+  >
     <CurrentPermissionMode />
 
     <Alert class="mt-4" type="info" message="__Some-New-Token__" show-icon />
@@ -19,17 +20,17 @@
         </a-button>
       </a-button-group>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
-  import { Alert } from 'ant-design-vue';
   import CurrentPermissionMode from '../CurrentPermissionMode.vue';
   import { RoleEnum } from '/@/enums/roleEnum';
   import { usePermission } from '/@/hooks/web/usePermission';
-
+  import { PageWrapper } from '/@/components/Page';
+  import { Alert } from 'ant-design-vue';
   export default defineComponent({
-    components: { Alert, CurrentPermissionMode },
+    components: { Alert, CurrentPermissionMode, PageWrapper },
     setup() {
       const { changeMenu } = usePermission();
       return {

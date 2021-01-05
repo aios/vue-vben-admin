@@ -1,12 +1,12 @@
 <template>
-  <div class="m-4">
-    <BasicTable title="__Some-New-Token__" :columns="columns" :dataSource="data">
+  <PageWrapper title="导出示例" content="根据JSON格式的数据进行导出">
+    <BasicTable title="基础表格" :columns="columns" :dataSource="data">
       <template #toolbar>
         <a-button @click="defaultHeader">__Some-New-Token__：__Some-New-Token__</a-button>
         <a-button @click="customHeader">__Some-New-Token__：__Some-New-Token__</a-button>
       </template>
     </BasicTable>
-  </div>
+  </PageWrapper>
 </template>
 
 <script lang="ts">
@@ -14,9 +14,10 @@
   import { BasicTable } from '/@/components/Table';
   import { jsonToSheetXlsx } from '/@/components/Excel';
   import { columns, data } from './data';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
-    components: { BasicTable },
+    components: { BasicTable, PageWrapper },
     setup() {
       function defaultHeader() {
         // __Some-New-Token__Object.keys(data[0])__Some-New-Token__header

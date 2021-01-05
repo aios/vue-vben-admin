@@ -1,10 +1,5 @@
 <template>
-  <div class="p-4">
-    <Alert
-      message="__Some-New-Token__el-scrollbar，__Some-New-Token__,__Some-New-Token__,__Some-New-Token__"
-      type="info"
-    />
-
+  <PageWrapper title="滚动组件函数示例" content="基于el-scrollbar">
     <div class="my-4">
       <a-button @click="scrollTo(100)" class="mr-2"
         >__Some-New-Token__100px__Some-New-Token__</a-button
@@ -24,15 +19,16 @@
         </ul>
       </ScrollContainer>
     </div>
-  </div>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent, ref, unref } from 'vue';
   import { CollapseContainer } from '/@/components/Container/index';
   import { ScrollContainer, ScrollActionType } from '/@/components/Container/index';
-  import { Alert } from 'ant-design-vue';
+  import { PageWrapper } from '/@/components/Page';
+
   export default defineComponent({
-    components: { CollapseContainer, ScrollContainer, Alert },
+    components: { CollapseContainer, ScrollContainer, PageWrapper },
     setup() {
       const scrollRef = ref<Nullable<ScrollActionType>>(null);
       const getScroll = () => {

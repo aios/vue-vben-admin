@@ -1,9 +1,10 @@
 <template>
-  <div class="demo p-4 m-4">
-    <Alert
-      message="__Some-New-Token__，__Some-New-Token__，__Some-New-Token__，__Some-New-Token__，__Some-New-Token__ src/layout/default/index__Some-New-Token__"
-      show-icon
-    />
+  <PageWrapper
+    title="前端权限按钮示例"
+    contentBackgrond
+    contentClass="p-4"
+    content="由于刷新的时候会请求用户信息接口，会根据接口重置角色信息，所以刷新后界面会恢复原样，如果不需要，可以注释 src/layout/default/index内的获取用户信息接口"
+  >
     <CurrentPermissionMode />
 
     <p>
@@ -62,7 +63,7 @@
     <a-button v-auth="[RoleEnum.TEST, RoleEnum.SUPER]" color="error" class="mx-4">
       __Some-New-Token__[test,super]__Some-New-Token__
     </a-button>
-  </div>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { computed, defineComponent } from 'vue';
@@ -72,9 +73,10 @@
   import { RoleEnum } from '/@/enums/roleEnum';
   import { usePermission } from '/@/hooks/web/usePermission';
   import { Authority } from '/@/components/Authority';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
-    components: { Alert, CurrentPermissionMode, Divider, Authority },
+    components: { Alert, PageWrapper, CurrentPermissionMode, Divider, Authority },
     setup() {
       const { changeRole, hasPermission } = usePermission();
       return {

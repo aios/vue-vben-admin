@@ -1,6 +1,6 @@
 <template>
-  <div class="m-4">
-    <CollapseContainer title="Antv Icon__Some-New-Token__ (__Some-New-Token__)">
+  <PageWrapper title="Icon组件示例">
+    <CollapseContainer title="Antv Icon使用 (直接按需引入相应组件即可)">
       <div class="flex justify-around">
         <GithubFilled :style="{ fontSize: '30px' }" />
         <QqCircleFilled :style="{ fontSize: '30px' }" />
@@ -26,8 +26,8 @@
       message="__Some-New-Token__Iconify__Some-New-Token__"
       description="Icon__Some-New-Token__,__Some-New-Token__。__Some-New-Token__。__Some-New-Token__。"
     />
-    <a-button type="link" @click="toIconify">Iconify __Some-New-Token__</a-button>
-  </div>
+    <a-button type="link" @click="toIconify">Iconify 图标大全</a-button>
+  </PageWrapper>
 </template>
 <script lang="ts">
   import { defineComponent } from 'vue';
@@ -46,9 +46,11 @@
   import Icon from '/@/components/Icon/index';
 
   import { openWindow } from '/@/utils';
+  import { PageWrapper } from '/@/components/Page';
 
   export default defineComponent({
     components: {
+      PageWrapper,
       CollapseContainer,
       GithubFilled,
       QqCircleFilled,
