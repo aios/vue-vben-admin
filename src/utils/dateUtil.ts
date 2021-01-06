@@ -14,7 +14,7 @@ export function formatToDate(date: moment.MomentInput = null, format = DATE_FORM
   return moment(date).format(format);
 }
 
-export const formatAgo = (str: string | number) => {
+export function formatAgo(str: string | number) {
   if (!str) return '';
   const date = new Date(Number(str));
   const time = new Date().getTime() - date.getTime(); // __Some-New-Token__-__Some-New-Token__ = __Some-New-Token__（__Some-New-Token__ = __Some-New-Token__）
@@ -35,6 +35,6 @@ export const formatAgo = (str: string | number) => {
   } else {
     return parseInt(String(time / 31536000000)) + '__Some-New-Token__';
   }
-};
+}
 
 export const dateUtil = moment;

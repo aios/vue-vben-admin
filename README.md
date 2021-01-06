@@ -256,8 +256,8 @@ yarn clean:lib # __Some-New-Token__node_modules，__Some-New-Token__window__Some
 
 **Some-New-Token**，**Some-New-Token** star **Some-New-Token**
 
-- [vite-plugin-mock](https://github.com/anncwb/vite-plugin-mock)
-- [vite-plugin-html](https://github.com/anncwb/vite-plugin-html)
+- [vite-plugin-mock](https://github.com/vbenjs/vite-plugin-mock)
+- [vite-plugin-html](https://github.com/vbenjs/vite-plugin-html)
 
 ## **Some-New-Token**
 
